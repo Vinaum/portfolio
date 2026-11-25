@@ -2,9 +2,6 @@ import type { Dictionary } from "@/content/types";
 import { SectionHeader } from "@/components/ui/primitives";
 import { companyLogo } from "@/lib/logos";
 
-/** "mono" renders official logos in off-white to sit inside the palette; "original" keeps brand colours. */
-const logoTreatment: "mono" | "original" = "mono";
-
 export function Companies({ dict, index }: { dict: Dictionary; index: string }) {
   const { companies: c, ids } = dict;
   return (
@@ -37,16 +34,15 @@ export function Companies({ dict, index }: { dict: Dictionary; index: string }) 
 
                 <h3 className="mt-8 flex min-h-[4rem] items-end lg:mt-12 lg:min-h-[5.5rem]">
                   {logo ? (
-                    <>
+                    <span className="company-logo-wrap inline-flex max-w-[78%]" data-treatment={logo.treatment}>
                       {/* eslint-disable-next-line @next/next/no-img-element -- static export, intrinsic logo files */}
                       <img
-                        src={logo}
+                        src={logo.src}
                         alt={co.name}
-                        className={`company-logo h-auto max-h-16 w-auto max-w-[78%] object-contain object-left ${
-                          logoTreatment === "mono" ? "is-mono" : ""
-                        }`}
+                        data-treatment={logo.treatment}
+                        className="company-logo h-auto max-h-16 w-auto max-w-full object-contain object-left"
                       />
-                    </>
+                    </span>
                   ) : (
                     <span className="company-wordmark font-display text-[clamp(3rem,5vw,4.75rem)] font-medium leading-[0.9] tracking-[-0.05em]">
                       {co.name}

@@ -49,7 +49,7 @@ src/content/
 
 ## Company logos
 
-Drop official files into `public/logos/` as `pier.svg`, `gobots.svg` and `pagegroup.svg` (PNG or WebP also work) and rebuild. They are detected at build time and rendered in monochrome off-white to match the palette; switch `logoTreatment` to `"original"` in `src/components/sections/Companies.tsx` to keep brand colours. Without a file, the company name is set as a typographic wordmark. Optional `role` and `period` fields per company in `companies.featured` appear only when filled.
+Drop official files into `public/logos/` named `pier`, `gobots` and `pagegroup` (`.svg`, `.png`, `.webp` or `.jpg`) and rebuild. The build reads each file's header: transparent logos become an off-white silhouette; logos on an opaque background have the background removed and the artwork turned light. Override per company in `logoOverrides` (`src/lib/logos.ts`). Without a file, the company name is set as a typographic wordmark. Optional `role` and `period` fields per company in `companies.featured` appear only when filled.
 
 ## Deploying to GitHub Pages
 

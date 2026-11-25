@@ -817,13 +817,26 @@
 .company:hover .company-wordmark {
   color: var(--color-paper);
 }
-.company-logo.is-mono {
-  filter: brightness(0) invert(0.9);
-  opacity: 0.86;
+.company-logo {
+  opacity: 0.88;
   transition: opacity 400ms;
 }
-.company:hover .company-logo.is-mono {
+.company:hover .company-logo {
   opacity: 1;
+}
+/* Isolated, page-coloured backdrop so the screen blend below has something to blend with. */
+.company-logo-wrap[data-treatment="invert"] {
+  isolation: isolate;
+  background: var(--color-obsidian);
+}
+/* Transparent artwork → solid off-white silhouette. */
+.company-logo[data-treatment="silhouette"] {
+  filter: brightness(0) invert(0.91);
+}
+/* Opaque background (usually white) → background drops out, artwork turns light. */
+.company-logo[data-treatment="invert"] {
+  filter: grayscale(1) invert(1) contrast(1.4) brightness(0.95);
+  mix-blend-mode: screen;
 }
 
 /* ============================================================
