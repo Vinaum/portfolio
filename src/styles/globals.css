@@ -1,0 +1,799 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — Dark Editorial Technology
+   ============================================================ */
+@theme {
+  --color-obsidian: #111513;
+  --color-graphite: #1b2420;
+  --color-deep-graphite: #222a26;
+  --color-deep-green: #146b4c;
+  --color-accent: #36a477;
+  --color-paper: #e8eae5;
+  --color-muted: #929b94;
+  --color-line: #303a34;
+
+  --font-display: "Space Grotesk Variable", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --breakpoint-xs: 30rem;
+}
+
+:root {
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --max: 90rem;
+  --header-h: 4.25rem;
+  --dur-reveal: 900ms;
+  color-scheme: dark;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  html {
+    background: var(--color-obsidian);
+    color: var(--color-paper);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: clip;
+    min-height: 100dvh;
+  }
+  ::selection {
+    background: var(--color-deep-green);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 1.5px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+/* ============================================================
+   LAYOUT PRIMITIVES
+   ============================================================ */
+.container-x {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Faint architectural column guides — the page's drawing grid. */
+.guides {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.guides > div {
+  height: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.guides span {
+  border-left: 1px solid rgb(48 58 52 / 0.32);
+}
+.guides span:last-child {
+  border-right: 1px solid rgb(48 58 52 / 0.32);
+}
+@media (max-width: 47.99rem) {
+  .guides > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .guides span:nth-child(n + 3) {
+    display: none;
+  }
+  .guides span:nth-child(2) {
+    border-right: 1px solid rgb(48 58 52 / 0.32);
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5.4vw, 5.9rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.4vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+.t-h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+.t-lead {
+  font-size: clamp(1.15rem, 1.5vw, 1.375rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-paper);
+}
+.t-body {
+  color: rgb(232 234 229 / 0.78);
+  max-width: 62ch;
+}
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.t-mono-sm {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(232 234 229 / 0.55);
+}
+
+/* ============================================================
+   LINKS, BUTTONS, MICRO-INTERACTIONS
+   ============================================================ */
+.link-u {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 420ms var(--ease-out-expo), color 200ms;
+  padding-bottom: 2px;
+}
+.link-u:hover,
+.link-u:focus-visible {
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  color: var(--color-paper);
+}
+
+.btn {
+  --btn-bg: transparent;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  height: 3.25rem;
+  padding-inline: 1.35rem 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-line);
+  background: var(--btn-bg);
+  color: var(--color-paper);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    border-color 300ms,
+    color 300ms,
+    transform 160ms var(--ease-out-expo);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 520ms var(--ease-out-expo);
+}
+.btn:hover::before,
+.btn:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.btn:hover,
+.btn:focus-visible {
+  color: var(--color-obsidian);
+  border-color: var(--color-accent);
+}
+.btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+.btn-primary {
+  --btn-bg: var(--color-deep-green);
+  border-color: var(--color-deep-green);
+}
+.btn .arrow {
+  transition: transform 420ms var(--ease-out-expo);
+}
+.btn:hover .arrow,
+.btn:focus-visible .arrow {
+  transform: translateX(4px);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-line);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* Status dot — the only pulsing element on the page. */
+.pulse-dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  flex: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pulse-dot::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--color-accent);
+    animation: pulse 2.6s var(--ease-out-expo) infinite;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   REVEAL SYSTEM — only active when JS is running and motion is allowed.
+   Content is fully visible without JS or with reduced motion.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition:
+      opacity var(--dur-reveal) var(--ease-out-expo),
+      transform var(--dur-reveal) var(--ease-out-expo);
+    transition-delay: calc(var(--d, 0) * 1ms);
+  }
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+  .js [data-reveal="fade"] {
+    transform: none;
+  }
+
+  /* Mask-based typography: each word rises from behind its own clip line. */
+  .js .mask-words .w {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+  }
+  .js .mask-words .w > span {
+    display: inline-block;
+    transform: translate3d(0, 105%, 0);
+    transition: transform 1100ms var(--ease-out-expo);
+    transition-delay: calc(var(--i, 0) * 45ms + var(--d, 0) * 1ms);
+  }
+  .js .mask-words.is-in .w > span {
+    transform: none;
+  }
+
+  /* Line drawing for SVG paths with pathLength="1". */
+  .js .draw .dl {
+    stroke-dasharray: var(--len, 1000);
+    stroke-dashoffset: var(--len, 1000);
+    transition: stroke-dashoffset 1400ms var(--ease-in-out-quart);
+    transition-delay: calc(var(--d, 0) * 1ms);
+  }
+  .js .draw.is-in .dl,
+  .js .is-in .draw .dl {
+    stroke-dashoffset: 0;
+  }
+  .js .draw .dn {
+    opacity: 0;
+    transition: opacity 700ms var(--ease-out-expo);
+    transition-delay: calc(var(--d, 0) * 1ms);
+  }
+  .js .draw.is-in .dn,
+  .js .is-in .draw .dn {
+    opacity: 1;
+  }
+
+  /* Section rule that draws across when a section enters. */
+  .js .rule-draw {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1400ms var(--ease-in-out-quart);
+  }
+  .js .is-in .rule-draw,
+  .js .rule-draw.is-in {
+    transform: scaleX(1);
+  }
+}
+
+/* Subtle parallax — CSS scroll-driven, no JS. Progressive enhancement. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-parallax] {
+      animation: parallax linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+    [data-parallax="slow"] {
+      animation-name: parallax-slow;
+    }
+  }
+}
+@keyframes parallax {
+  from {
+    transform: translate3d(0, 48px, 0);
+  }
+  to {
+    transform: translate3d(0, -48px, 0);
+  }
+}
+@keyframes parallax-slow {
+  from {
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    transform: translate3d(0, -24px, 0);
+  }
+}
+
+/* ============================================================
+   DIAGRAMS
+   ============================================================ */
+.dg {
+  --dg-line: #3c4a42;
+  --dg-label: var(--color-muted);
+  overflow: visible;
+}
+.dg text {
+  font-family: var(--font-mono);
+}
+.dg .node-rect {
+  fill: var(--color-graphite);
+  stroke: var(--dg-line);
+  stroke-width: 1;
+  transition:
+    stroke 300ms,
+    fill 300ms;
+}
+.dg .node[data-tone="primary"] .node-rect {
+  fill: var(--color-deep-green);
+  stroke: var(--color-accent);
+}
+.dg .node[data-tone="accent"] .node-rect {
+  fill: var(--color-deep-graphite);
+  stroke: var(--color-accent);
+}
+.dg .node[data-tone="ghost"] .node-rect {
+  fill: transparent;
+  stroke-dasharray: 3 3;
+}
+.dg .node[data-tone="muted"] .node-rect {
+  fill: var(--color-obsidian);
+}
+.dg .node-label {
+  fill: var(--color-paper);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.dg .node-sub {
+  fill: var(--color-muted);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+}
+.dg .node[data-tone="primary"] .node-sub {
+  fill: rgb(232 234 229 / 0.78);
+}
+.dg .node-tick {
+  fill: var(--color-accent);
+}
+.dg .edge-path {
+  fill: none;
+  stroke: var(--dg-line);
+  stroke-width: 1.25;
+  transition: stroke 300ms;
+}
+.dg .edge-path.is-dashed {
+  stroke-dasharray: 4 4;
+}
+.dg .edge-label {
+  fill: var(--dg-label);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  paint-order: stroke;
+  stroke: var(--color-obsidian);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+.dg .edge-arrow {
+  fill: var(--dg-line);
+  transition: fill 300ms;
+}
+.dg .group-rect {
+  fill: rgb(27 36 32 / 0.35);
+  stroke: var(--color-line);
+  stroke-dasharray: 2 4;
+}
+.dg .group-label {
+  fill: var(--color-muted);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+.dg .packet {
+  fill: var(--color-accent);
+}
+.dg-planned .node-rect {
+  stroke-dasharray: 5 4;
+}
+.dg-planned .edge-path {
+  stroke-dasharray: 5 4;
+}
+
+/* Hover / active state: highlighted connections turn green. */
+.dg .edge.is-hot .edge-path,
+.dg-live .edge[data-flow="true"] .edge-path {
+  stroke: var(--color-accent);
+}
+.dg .edge.is-hot .edge-arrow,
+.dg-live .edge[data-flow="true"] .edge-arrow {
+  fill: var(--color-accent);
+}
+.dg .node.is-hot .node-rect {
+  stroke: var(--color-accent);
+}
+.dg .edge.is-dim,
+.dg .node.is-dim {
+  filter: opacity(0.35);
+}
+.dg .edge,
+.dg .node {
+  transition: filter 300ms;
+}
+
+/* Packets: hidden unless motion is allowed. */
+.dg .packets {
+  display: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dg .packets {
+    display: inline;
+  }
+  .dg-live .edge[data-flow="true"] .edge-path {
+    stroke-dasharray: 6 6;
+    animation: march 1.2s linear infinite;
+  }
+}
+@keyframes march {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+/* ============================================================
+   HERO DIAGRAM
+   ============================================================ */
+.hero-dg {
+  --mx: 0;
+  --my: 0;
+}
+.hero-dg .layer-back {
+  transform: translate3d(calc(var(--mx) * -6px), calc(var(--my) * -6px), 0);
+  transition: transform 900ms var(--ease-out-expo);
+}
+.hero-dg .layer-front {
+  transform: translate3d(calc(var(--mx) * 10px), calc(var(--my) * 10px), 0);
+  transition: transform 900ms var(--ease-out-expo);
+}
+.hero-dg .layer-annot {
+  transform: translate3d(calc(var(--mx) * 18px), calc(var(--my) * 18px), 0);
+  transition: transform 900ms var(--ease-out-expo);
+}
+.hero-dg .node {
+  cursor: default;
+}
+@keyframes draw-in {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 47.99rem) {
+  .hero-dg .hide-sm {
+    display: none;
+  }
+  .hero-dg .node-label {
+    font-size: 16px;
+  }
+  .hero-dg .node-sub {
+    display: none;
+  }
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  transition:
+    background-color 400ms,
+    border-color 400ms,
+    backdrop-filter 400ms;
+  border-bottom: 1px solid transparent;
+}
+.site-header[data-scrolled="true"] {
+  background-color: rgb(17 21 19 / 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: var(--color-line);
+}
+.nav-link {
+  position: relative;
+  color: var(--color-muted);
+  transition: color 250ms;
+}
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[aria-current="true"] {
+  color: var(--color-paper);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms var(--ease-out-expo);
+}
+.nav-link[aria-current="true"]::after {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   PROJECT PLATES
+   ============================================================ */
+.plate {
+  position: relative;
+  transition: background-color 500ms var(--ease-out-expo);
+}
+.plate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-graphite);
+  opacity: 0;
+  transition: opacity 500ms var(--ease-out-expo);
+  z-index: 0;
+}
+.plate:hover::before,
+.plate:focus-within::before {
+  opacity: 0.55;
+}
+.plate > * {
+  position: relative;
+  z-index: 1;
+}
+.plate .plate-title {
+  transition: color 300ms;
+}
+.plate:hover .plate-title {
+  color: var(--color-paper);
+}
+.plate .plate-cta .arrow {
+  transition: transform 500ms var(--ease-out-expo);
+}
+.plate:hover .plate-cta .arrow {
+  transform: translateX(6px);
+}
+.plate .plate-figure {
+  transition: transform 900ms var(--ease-out-expo);
+}
+.plate:hover .plate-figure {
+  transform: scale(1.015);
+}
+
+/* ============================================================
+   TECHNOLOGY MAP
+   ============================================================ */
+.tech-item {
+  transition:
+    opacity 400ms,
+    color 300ms;
+}
+.tech-map[data-filter="applied"] .tech-item[data-status="study"],
+.tech-map[data-filter="study"] .tech-item[data-status="applied"] {
+  opacity: 0.22;
+}
+.marker {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border: 1px solid var(--color-accent);
+}
+.marker[data-status="applied"] {
+  background: var(--color-accent);
+}
+.marker[data-status="study"] {
+  background: transparent;
+  border-color: var(--color-muted);
+}
+
+/* ============================================================
+   JOURNEY
+   ============================================================ */
+.journey-rail-progress {
+  transform-origin: top;
+  transform: scaleY(var(--p, 0));
+  transition: transform 300ms linear;
+}
+.chapter-link {
+  color: var(--color-muted);
+  transition: color 300ms;
+}
+.chapter-link[aria-current="step"] {
+  color: var(--color-paper);
+}
+.chapter-link[aria-current="step"] .chapter-index {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   PRINCIPLES
+   ============================================================ */
+.principle {
+  transition: color 500ms;
+}
+.principle .principle-title {
+  transition:
+    color 500ms var(--ease-out-expo),
+    -webkit-text-stroke-color 500ms;
+}
+.principle:hover .principle-title {
+  color: var(--color-paper);
+  -webkit-text-stroke-color: transparent;
+}
+
+/* ============================================================
+   MISC
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--color-accent);
+  color: var(--color-obsidian);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Project plates: connections come alive on hover — no idle animation. */
+.plate:hover .dg .edge[data-flow="true"] .edge-path,
+.plate:focus-within .dg .edge[data-flow="true"] .edge-path {
+  stroke: var(--color-accent);
+}
+.plate:hover .dg .edge[data-flow="true"] .edge-arrow,
+.plate:focus-within .dg .edge[data-flow="true"] .edge-arrow {
+  fill: var(--color-accent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .plate:hover .dg .edge[data-flow="true"] .edge-path {
+    stroke-dasharray: 6 6;
+    animation: march 1.2s linear infinite;
+  }
+}
+
+/* Principles: outlined type fills in as each statement enters. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .principle .principle-title {
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(232 234 229 / 0.5);
+    transition:
+      color 1200ms var(--ease-out-expo) 250ms,
+      -webkit-text-stroke-color 1200ms var(--ease-out-expo) 250ms;
+  }
+  .js .principle.is-in .principle-title {
+    color: var(--color-paper);
+    -webkit-text-stroke-color: transparent;
+  }
+}
+
+}
