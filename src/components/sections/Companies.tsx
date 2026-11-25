@@ -28,21 +28,21 @@ export function Companies({ dict, index }: { dict: Dictionary; index: string }) 
                 style={{ ["--d" as string]: i * 120 }}
               >
                 <span className="company-rule absolute inset-x-0 top-[-1px] h-px bg-accent" aria-hidden="true" />
-                <div className="t-mono flex items-center justify-between gap-4 text-muted">
+                <div className="t-mono flex items-start justify-between gap-4 text-muted lg:min-h-[2.6rem]">
                   <span className="text-accent">E.{String(i + 1).padStart(2, "0")}</span>
                   <span className="text-right">{co.sector}</span>
                 </div>
 
-                <h3 className="mt-8 flex min-h-[4rem] items-end lg:mt-12 lg:min-h-[6rem]">
+                <h3 className="mt-8 flex min-h-[5rem] items-center justify-center lg:mt-12 lg:min-h-[6.5rem]">
                   {logo ? (
-                    <LogoMark logo={logo} alt={co.name} height={3.5} />
+                    <LogoMark logo={logo} alt={co.name} height={3.5} align="center" />
                   ) : (
                     <span className="company-wordmark font-display text-[clamp(3rem,5vw,4.75rem)] font-medium leading-[0.9] tracking-[-0.05em]">
                       {co.name}
                     </span>
                   )}
                 </h3>
-                {co.brands ? <p className="t-mono-sm mt-4 text-muted">{co.brands}</p> : <p className="t-mono-sm mt-4 opacity-0" aria-hidden="true">·</p>}
+                {co.brands ? <p className="t-mono-sm mt-4 text-center text-muted">{co.brands}</p> : <p className="t-mono-sm mt-4 opacity-0" aria-hidden="true">·</p>}
 
                 <p className="mt-8 border-t border-line pt-8 font-display text-[1.4rem] leading-[1.2] tracking-[-0.02em] text-paper">
                   {co.descriptor}

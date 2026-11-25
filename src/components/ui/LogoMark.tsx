@@ -8,12 +8,14 @@ export function LogoMark({
   logo,
   alt,
   height,
+  align = "left",
   className = "",
 }: {
   logo: Logo;
   alt: string;
   /** Base height in rem before the per-logo scale is applied. */
   height: number;
+  align?: "left" | "center";
   className?: string;
 }) {
   return (
@@ -23,7 +25,7 @@ export function LogoMark({
         src={logo.src}
         alt={alt}
         data-treatment={logo.treatment}
-        className="company-logo w-auto max-w-full object-contain object-left"
+        className={`company-logo w-auto max-w-full object-contain ${align === "center" ? "object-center" : "object-left"}`}
         style={{ height: `${(height * logo.scale).toFixed(2)}rem` }}
       />
     </span>
