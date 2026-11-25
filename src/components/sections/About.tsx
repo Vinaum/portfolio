@@ -20,7 +20,7 @@ export function About({ dict, index }: { dict: Dictionary; index: string }) {
                 <p className="t-mono-sm text-accent">{edu.label}</p>
                 <div className="mt-6 flex min-h-[4.5rem] items-end">
                   {unicamp ? (
-                    <LogoMark logo={unicamp} alt={`${edu.short} — ${edu.institution}`} height={3.6} />
+                    <LogoMark logo={unicamp} alt={`${edu.short} — ${edu.institution}`} height={4.6} />
                   ) : (
                     <span className="company-wordmark font-display text-[3.4rem] font-medium leading-[0.85] tracking-[-0.045em]">
                       {edu.short}

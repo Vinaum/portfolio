@@ -17,6 +17,7 @@ export type LogoTreatment = "silhouette" | "tonal" | "invert" | "original";
 /** Optional per-logo override. Leave empty to let the build decide from the file. */
 export const logoOverrides: Partial<Record<LogoId, LogoTreatment>> = {
   gobots: "tonal",
+  unicamp: "original", // file already prepared for dark backgrounds (light artwork, red accents)
 };
 
 /** Intrinsic size from the file header (PNG, WebP, SVG viewBox); null when unknown. */
@@ -61,10 +62,8 @@ export const logoScale: Partial<Record<LogoId, number>> = {
   pier: 0.85, // heavy, bold letters read large
   gobots: 1.1,
   pagegroup: 1.3, // fine serif strokes read small
-  unicamp: 1.3, // fine serif strokes read small
 };
 
-export const logoOverrides = { ..., unicamp: "tonal" };  
 
 /** Company ids, "unicamp", or any client id used in the clients section. */
 export type LogoId = CompanyId | "unicamp" | (string & {});
