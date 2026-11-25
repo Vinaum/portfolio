@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { Dictionary } from "@/content/types";
 import { SectionHeader } from "@/components/ui/primitives";
 
-export function Journey({ dict }: { dict: Dictionary }) {
+export function Journey({ dict, index }: { dict: Dictionary; index: string }) {
   const { journey: j, ids } = dict;
   const [active, setActive] = useState(0);
 
@@ -29,7 +29,7 @@ export function Journey({ dict }: { dict: Dictionary }) {
   return (
     <section id={ids.experience} aria-labelledby="journey-title" className="relative border-t border-line py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index="07" label={j.label} code={j.code} title={j.title} titleId="journey-title">
+        <SectionHeader index={index} label={j.label} code={j.code} title={j.title} titleId="journey-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {j.intro}
           </p>

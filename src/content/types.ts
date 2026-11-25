@@ -160,6 +160,7 @@ export interface Dictionary {
   };
   ids: {
     about: string;
+    clients: string;
     companies: string;
     teams: string;
     capabilities: string;
@@ -204,6 +205,20 @@ export interface Dictionary {
     paragraphs: string[];
     factsTitle: string;
     facts: { k: string; v: string }[];
+    education: { label: string; degree: string; institution: string; short: string };
+  };
+  clients: {
+    label: string;
+    code: string;
+    title: string;
+    intro: string;
+    /**
+     * Only organizations you have permission to name publicly.
+     * `logo` is the file name in public/logos (without extension); `context` says how you worked together.
+     * The section is hidden while this list is empty.
+     */
+    items: { name: string; logo?: string; context: string }[];
+    note: string;
   };
   companies: {
     label: string;

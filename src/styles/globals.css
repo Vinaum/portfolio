@@ -833,6 +833,10 @@
 .company-logo[data-treatment="silhouette"] {
   filter: brightness(0) invert(0.91);
 }
+/* Multi-tone transparent artwork → greyscale, lifted, internal detail kept. */
+.company-logo[data-treatment="tonal"] {
+  filter: grayscale(1) brightness(1.75) contrast(1.05);
+}
 /* Opaque background (usually white) → background drops out, artwork turns light. */
 .company-logo[data-treatment="invert"] {
   filter: grayscale(1) invert(1) contrast(1.4) brightness(0.95);

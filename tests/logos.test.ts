@@ -37,3 +37,20 @@ describe("logo transparency detection", () => {
     expect(hasTransparency(Buffer.alloc(10), "jpg")).toBe(false);
   });
 });
+
+import { readFileSync } from "node:fs";
+import { imageSize, opticalScale } from "@/lib/logos";
+
+describe("logo sizing", () => {
+  it("reads dimensions of the committed logo files", () => {
+    expect(imageSize(readFileSync("public/logos/pier.png"), "png")).toEqual({ w: 365, h: 97 });
+    expect(imageSize(readFileSync("public/logos/gobots.webp"), "webp")).toEqual({ w: 343, h: 160 });
+    expect(imageSize(readFileSync("public/logos/pagegroup.webp"), "webp")).toEqual({ w: 658, h: 150 });
+  });
+  it("balances wide and compact marks", () => {
+    expect(opticalScale({ w: 300, h: 100 })).toBeCloseTo(1);
+    expect(opticalScale({ w: 600, h: 100 })).toBeLessThan(1);
+    expect(opticalScale({ w: 200, h: 100 })).toBeGreaterThan(1);
+    expect(opticalScale(null)).toBe(1);
+  });
+});

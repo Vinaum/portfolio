@@ -1,10 +1,13 @@
 import type { Dictionary } from "@/content/types";
 import { site } from "@/content";
 import { HeroDiagram } from "@/components/diagrams/HeroDiagram";
+import { LogoMark } from "@/components/ui/LogoMark";
+import { findLogo } from "@/lib/logos";
 import { ArrowDown, ArrowRight, MaskWords } from "@/components/ui/primitives";
 
 export function Hero({ dict }: { dict: Dictionary }) {
   const { hero, ids } = dict;
+  const unicamp = findLogo("unicamp");
   // Keep the closing period as the single accent mark in the headline.
   const headline = hero.headline.replace(/\.$/, "");
 
@@ -75,6 +78,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
                 className={`t-mono flex items-center gap-3 py-5 text-muted ${i > 0 ? "sm:border-l sm:border-line sm:pl-5" : ""} ${i > 0 ? "border-t border-line sm:border-t-0" : ""}`}
               >
                 <span className="text-accent">{String(i + 1).padStart(2, "0")}</span>
+                {i === 0 && unicamp ? <LogoMark logo={unicamp} alt="" height={1.4} /> : null}
                 {f}
               </li>
             ))}

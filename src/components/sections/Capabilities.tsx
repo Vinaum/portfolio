@@ -2,12 +2,12 @@ import type { Dictionary } from "@/content/types";
 import { SectionHeader } from "@/components/ui/primitives";
 import { CapabilityFigure } from "@/components/diagrams/CapabilityFigure";
 
-export function Capabilities({ dict }: { dict: Dictionary }) {
+export function Capabilities({ dict, index }: { dict: Dictionary; index: string }) {
   const { capabilities: c, ids } = dict;
   return (
     <section id={ids.capabilities} aria-labelledby="capabilities-title" className="relative border-t border-line bg-graphite/40 py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index="03" label={c.label} code={c.code} title={c.title} titleId="capabilities-title">
+        <SectionHeader index={index} label={c.label} code={c.code} title={c.title} titleId="capabilities-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {c.intro}
           </p>
@@ -41,7 +41,7 @@ export function Capabilities({ dict }: { dict: Dictionary }) {
                   <CapabilityFigure id={item.id} title={item.title} />
                 </div>
                 <figcaption className="t-mono-sm mt-3 flex justify-between text-muted">
-                  <span>FIG. 03.{i + 1}</span>
+                  <span>FIG. {index}.{i + 1}</span>
                   <span>{item.title}</span>
                 </figcaption>
               </figure>

@@ -24,6 +24,7 @@ export const ptBR: Dictionary = {
     ],
   },
   ids: {
+    clients: "clientes",
     companies: "empresas",
     teams: "formacao-de-times",
     about: "sobre",
@@ -79,6 +80,12 @@ export const ptBR: Dictionary = {
       "Depois vieram tecnologia, telecomunicações e desenvolvimento de negócios — e mais de sete anos em recrutamento especializado em tecnologia, incluindo a liderança de equipes de até 17 consultores de recrutamento. Esse trabalho me colocou em conversa constante com engenheiros e gestores de contratação sobre stacks, arquiteturas e o que um time realmente precisa. Foi onde aprendi a traduzir entre profundidade técnica e intenção de negócio.",
       "Hoje eu construo. Projetos independentes — uma plataforma operacional multi-inquilino, um site médico com conteúdo gerenciável, um portal de comunidade — são onde aplico engenharia, integração e visão de produto de ponta a ponta: da descoberta de requisitos às políticas de segurança do banco e aos pipelines de publicação.",
     ],
+    education: {
+      label: "Formação",
+      degree: "Engenharia de Computação",
+      institution: "Universidade Estadual de Campinas",
+      short: "UNICAMP",
+    },
     factsTitle: "Em resumo",
     facts: [
       { k: "Graduação", v: "Engenharia de Computação — UNICAMP" },
@@ -206,6 +213,14 @@ export const ptBR: Dictionary = {
       systems: "Sistemas",
       people: "Pessoas",
     },
+  },
+  clients: {
+    label: "Clientes",
+    code: "CONFIANÇA",
+    title: "Empresas que já confiaram no meu trabalho.",
+    intro: "Organizações com quem trabalhei ou para quem entreguei.",
+    items: [],
+    note: "Nomes e logotipos pertencem às respectivas empresas e identificam colaborações anteriores.",
   },
   capabilities: {
     label: "Competências",

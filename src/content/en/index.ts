@@ -24,6 +24,7 @@ export const en: Dictionary = {
     ],
   },
   ids: {
+    clients: "clients",
     companies: "companies",
     teams: "team-building",
     about: "about",
@@ -79,6 +80,12 @@ export const en: Dictionary = {
       "Then came technology, telecommunications and business development — followed by more than seven years in specialized technology recruitment, including leading recruitment teams of up to 17 consultants. That work kept me in constant conversation with engineers and hiring managers about stacks, architectures and what a team really needs. It’s where I learned to translate between technical depth and business intent.",
       "Today I build. Independent projects — a multi-tenant operations platform, a content-managed medical website, a community portal — are where I apply engineering, integration and product thinking end to end: from requirements discovery to database security policies to deployment pipelines.",
     ],
+    education: {
+      label: "Education",
+      degree: "Computer Engineering",
+      institution: "Universidade Estadual de Campinas",
+      short: "UNICAMP",
+    },
     factsTitle: "At a glance",
     facts: [
       { k: "Degree", v: "Computer Engineering — UNICAMP" },
@@ -206,6 +213,14 @@ export const en: Dictionary = {
       systems: "Systems",
       people: "People",
     },
+  },
+  clients: {
+    label: "Clients",
+    code: "TRUST",
+    title: "Companies that have trusted my work.",
+    intro: "Organizations I have worked with or delivered for.",
+    items: [],
+    note: "Names and logos belong to their respective owners and are shown to identify past collaborations.",
   },
   capabilities: {
     label: "Capabilities",

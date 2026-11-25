@@ -9,6 +9,7 @@ import { About } from "@/components/sections/About";
 import { Capabilities } from "@/components/sections/Capabilities";
 import { Companies } from "@/components/sections/Companies";
 import { TeamBuilding } from "@/components/sections/TeamBuilding";
+import { Clients } from "@/components/sections/Clients";
 import { Work } from "@/components/sections/Work";
 import { Technology } from "@/components/sections/Technology";
 import { Journey } from "@/components/sections/Journey";
@@ -18,6 +19,19 @@ import { Contact } from "@/components/sections/Contact";
 export function HomePage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const alt = homePath(otherLocale(locale));
+  // Section order. Numbering follows automatically; empty sections are skipped.
+  const sections = [
+    { key: "about", C: About },
+    { key: "companies", C: Companies },
+    { key: "capabilities", C: Capabilities },
+    { key: "teams", C: TeamBuilding },
+    { key: "work", C: Work },
+    { key: "clients", C: Clients, show: dict.clients.items.length > 0 },
+    { key: "technology", C: Technology },
+    { key: "experience", C: Journey },
+    { key: "principles", C: Principles },
+    { key: "contact", C: Contact },
+  ].filter((s) => s.show !== false);
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd(dict)) }} />
@@ -25,15 +39,9 @@ export function HomePage({ locale }: { locale: Locale }) {
       <Header dict={dict} locale={locale} alternateHref={alt} onHome />
       <main id="main">
         <Hero dict={dict} />
-        <About dict={dict} />
-        <Companies dict={dict} index="02" />
-        <Capabilities dict={dict} />
-        <TeamBuilding dict={dict} index="04" />
-        <Work dict={dict} />
-        <Technology dict={dict} />
-        <Journey dict={dict} />
-        <Principles dict={dict} />
-        <Contact dict={dict} />
+        {sections.map(({ key, C }, i) => (
+          <C key={key} dict={dict} index={String(i + 1).padStart(2, "0")} />
+        ))}
       </main>
       <Footer dict={dict} />
     </>

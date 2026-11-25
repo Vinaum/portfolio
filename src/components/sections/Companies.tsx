@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/content/types";
 import { SectionHeader } from "@/components/ui/primitives";
 import { companyLogo } from "@/lib/logos";
+import { LogoMark } from "@/components/ui/LogoMark";
 
 export function Companies({ dict, index }: { dict: Dictionary; index: string }) {
   const { companies: c, ids } = dict;
@@ -32,17 +33,9 @@ export function Companies({ dict, index }: { dict: Dictionary; index: string }) 
                   <span className="text-right">{co.sector}</span>
                 </div>
 
-                <h3 className="mt-8 flex min-h-[4rem] items-end lg:mt-12 lg:min-h-[5.5rem]">
+                <h3 className="mt-8 flex min-h-[4rem] items-end lg:mt-12 lg:min-h-[6rem]">
                   {logo ? (
-                    <span className="company-logo-wrap inline-flex max-w-[78%]" data-treatment={logo.treatment}>
-                      {/* eslint-disable-next-line @next/next/no-img-element -- static export, intrinsic logo files */}
-                      <img
-                        src={logo.src}
-                        alt={co.name}
-                        data-treatment={logo.treatment}
-                        className="company-logo h-auto max-h-16 w-auto max-w-full object-contain object-left"
-                      />
-                    </span>
+                    <LogoMark logo={logo} alt={co.name} height={3.5} />
                   ) : (
                     <span className="company-wordmark font-display text-[clamp(3rem,5vw,4.75rem)] font-medium leading-[0.9] tracking-[-0.05em]">
                       {co.name}

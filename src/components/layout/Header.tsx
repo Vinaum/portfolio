@@ -42,12 +42,13 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
   // Active section indicator.
   useEffect(() => {
     if (!onHome) return;
-    const sections = [ids.about, ids.companies, ids.capabilities, ids.teams, ids.work, ids.technology, ids.experience, ids.principles, ids.contact]
+    const sections = [ids.about, ids.clients, ids.companies, ids.capabilities, ids.teams, ids.work, ids.technology, ids.experience, ids.principles, ids.contact]
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
     const map: Record<string, string> = {
       [ids.teams]: ids.capabilities,
       [ids.technology]: ids.work,
+      [ids.clients]: ids.work,
       [ids.experience]: ids.companies,
     };
     const io = new IntersectionObserver(

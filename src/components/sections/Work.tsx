@@ -3,13 +3,13 @@ import { getProjects } from "@/content";
 import { SectionHeader } from "@/components/ui/primitives";
 import { ProjectPlate } from "@/components/projects/ProjectPlate";
 
-export function Work({ dict }: { dict: Dictionary }) {
+export function Work({ dict, index }: { dict: Dictionary; index: string }) {
   const { work, ids } = dict;
   const projects = getProjects(dict.locale);
   return (
     <section id={ids.work} aria-labelledby="work-title" className="relative border-t border-line py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index="05" label={work.label} code={work.code} title={work.title} titleId="work-title">
+        <SectionHeader index={index} label={work.label} code={work.code} title={work.title} titleId="work-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {work.intro}
           </p>
