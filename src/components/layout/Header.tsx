@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Dictionary, Locale } from "@/content/types";
-import { homePath, sectionHref, site } from "@/content";
+import { homePath, site } from "@/content";
 import { storageKeys } from "@/content/shared/site";
+import type { MenuItem } from "@/lib/menu";
 
 interface Props {
   dict: Dictionary;
@@ -12,23 +13,50 @@ interface Props {
   /** Equivalent page in the other language. */
   alternateHref: string;
   onHome: boolean;
+  menu: MenuItem[];
+  /** Home section id → menu key, for the active indicator. */
+  sectionKeys: Record<string, MenuItem["key"]>;
+  /** Menu item to mark as current on non-home pages. */
+  currentKey?: MenuItem["key"];
 }
 
-export function Header({ dict, locale, alternateHref, onHome }: Props) {
-  const { nav, ids } = dict;
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true" className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}>
+      <path d="M1 1l3.5 3.5L8 1" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
+const isInternal = (href: string) => href.startsWith("/") || href.startsWith("#");
+
+function NavAnchor({ href, className, children, onClick, current }: { href: string; className?: string; children: React.ReactNode; onClick?: () => void; current?: boolean }) {
+  // Hash links stay plain anchors (smooth scroll on the same page); paths use next/link (basePath, prefetch).
+  if (href.startsWith("#")) {
+    return (
+      <a href={href} className={className} onClick={onClick} aria-current={current ? "true" : undefined}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className} onClick={onClick} aria-current={current ? "true" : undefined} prefetch={isInternal(href) ? undefined : false}>
+      {children}
+    </Link>
+  );
+}
+
+export function Header({ dict, locale, alternateHref, onHome, menu, sectionKeys, currentKey }: Props) {
+  const { nav } = dict;
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<MenuItem["key"] | null>(currentKey ?? null);
   const [open, setOpen] = useState(false);
+  const [dropdown, setDropdown] = useState<MenuItem["key"] | null>(null);
+  const [expanded, setExpanded] = useState<MenuItem["key"] | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-
-  const links = [
-    { id: ids.work, label: nav.work },
-    { id: ids.capabilities, label: nav.capabilities },
-    { id: ids.companies, label: nav.experience },
-    { id: ids.about, label: nav.about },
-    { id: ids.contact, label: nav.contact },
-  ];
+  const navRef = useRef<HTMLElement>(null);
+  const hoverTimer = useRef<number | undefined>(undefined);
 
   // Header surface changes once the page leaves the top.
   useEffect(() => {
@@ -39,34 +67,42 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
     return () => io.disconnect();
   }, []);
 
-  // Active section indicator.
+  // Active section indicator (home only).
   useEffect(() => {
     if (!onHome) return;
-    const sections = [ids.work, ids.clients, ids.capabilities, ids.companies, ids.about, ids.beyond, ids.learning, ids.contact]
+    const els = Object.keys(sectionKeys)
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
-    const map: Record<string, string> = {
-      [ids.clients]: ids.work,
-    };
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) setActive(map[e.target.id] ?? e.target.id);
-        }
+        for (const e of entries) if (e.isIntersecting) setActive(sectionKeys[e.target.id] ?? null);
       },
       { rootMargin: "-45% 0px -50% 0px" },
     );
-    sections.forEach((s) => io.observe(s));
-    const hero = document.getElementById("hero");
-    const heroIo = new IntersectionObserver(([e]) => e.isIntersecting && setActive(null), {
-      rootMargin: "-45% 0px -50% 0px",
-    });
-    if (hero) heroIo.observe(hero);
-    return () => {
-      io.disconnect();
-      heroIo.disconnect();
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [onHome, sectionKeys]);
+
+  // Desktop dropdowns: Escape closes, clicking outside closes.
+  useEffect(() => {
+    if (!dropdown) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        const key = dropdown;
+        setDropdown(null);
+        navRef.current?.querySelector<HTMLButtonElement>(`[data-toggle="${key}"]`)?.focus();
+      }
     };
-  }, [onHome, ids]);
+    const onDown = (e: PointerEvent) => {
+      if (!navRef.current?.contains(e.target as Node)) setDropdown(null);
+    };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("pointerdown", onDown);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("pointerdown", onDown);
+    };
+  }, [dropdown]);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -127,6 +163,15 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
     </div>
   );
 
+  const openOnHover = (key: MenuItem["key"]) => {
+    window.clearTimeout(hoverTimer.current);
+    setDropdown(key);
+  };
+  const closeOnLeave = () => {
+    window.clearTimeout(hoverTimer.current);
+    hoverTimer.current = window.setTimeout(() => setDropdown(null), 180);
+  };
+
   return (
     <header className="site-header fixed inset-x-0 top-0 z-50" data-scrolled={scrolled || open ? "true" : "false"}>
       <div className="container-x flex h-[var(--header-h)] items-center justify-between gap-6">
@@ -137,29 +182,64 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
           <span className="t-mono hidden text-paper sm:inline">{site.shortName}</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="t-mono flex items-center gap-8">
-            {links.map((l) => (
-              <li key={l.id}>
-                <a
-                  href={sectionHref(locale, l.id, onHome)}
-                  className="nav-link"
-                  aria-current={active === l.id ? "true" : undefined}
+        {/* Desktop navigation */}
+        <nav ref={navRef} aria-label={nav.menu} className="hidden lg:block">
+          <ul className="t-mono flex items-center gap-7">
+            {menu.map((item) => {
+              const isOpen = dropdown === item.key;
+              const panelId = `nav-panel-${item.key}`;
+              return (
+                <li
+                  key={item.key}
+                  className="relative flex items-center gap-1.5"
+                  onMouseEnter={item.children ? () => openOnHover(item.key) : undefined}
+                  onMouseLeave={item.children ? closeOnLeave : undefined}
                 >
-                  {l.label}
-                </a>
-              </li>
-            ))}
+                  <NavAnchor href={item.href} className="nav-link" current={active === item.key}>
+                    {item.label}
+                  </NavAnchor>
+                  {item.children ? (
+                    <>
+                      <button
+                        type="button"
+                        data-toggle={item.key}
+                        className="grid h-6 w-5 place-items-center text-muted transition-colors hover:text-accent"
+                        aria-expanded={isOpen}
+                        aria-controls={panelId}
+                        aria-label={`${nav.submenu} ${item.label}`}
+                        onClick={() => setDropdown(isOpen ? null : item.key)}
+                      >
+                        <Chevron open={isOpen} />
+                      </button>
+                      <div
+                        id={panelId}
+                        hidden={!isOpen}
+                        className="nav-panel absolute left-[-1rem] top-full pt-3"
+                      >
+                        <ul className="min-w-[17rem] border border-line bg-obsidian/95 py-2 backdrop-blur-md">
+                          {item.children.map((c) => (
+                            <li key={c.href}>
+                              <NavAnchor
+                                href={c.href}
+                                onClick={() => setDropdown(null)}
+                                className="block px-4 py-2.5 normal-case tracking-[0.02em] text-paper/80 transition-colors hover:bg-graphite hover:text-paper focus-visible:bg-graphite"
+                              >
+                                {c.label}
+                              </NavAnchor>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </>
+                  ) : null}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
         <div className="flex items-center gap-6">
-          <a
-            href={site.linkedin}
-            target="_blank"
-            rel="me noopener noreferrer"
-            className="t-mono hidden text-muted transition-colors hover:text-accent xl:inline"
-          >
+          <a href={site.linkedin} target="_blank" rel="me noopener noreferrer" className="t-mono hidden text-muted transition-colors hover:text-accent xl:inline">
             LinkedIn ↗
           </a>
           {langSwitch}
@@ -173,37 +253,64 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
           >
             <span>{open ? nav.close : nav.menu}</span>
             <span aria-hidden="true" className="relative block h-2.5 w-4">
-              <span
-                className={`absolute left-0 h-px w-4 bg-current transition-transform duration-300 ${open ? "top-1/2 rotate-45" : "top-0"}`}
-              />
-              <span
-                className={`absolute left-0 h-px w-4 bg-current transition-transform duration-300 ${open ? "top-1/2 -rotate-45" : "bottom-0"}`}
-              />
+              <span className={`absolute left-0 h-px w-4 bg-current transition-transform duration-300 ${open ? "top-1/2 rotate-45" : "top-0"}`} />
+              <span className={`absolute left-0 h-px w-4 bg-current transition-transform duration-300 ${open ? "top-1/2 -rotate-45" : "bottom-0"}`} />
             </span>
           </button>
         </div>
       </div>
 
+      {/* Mobile navigation: compact accordion */}
       <div
         id="mobile-menu"
         ref={menuRef}
         hidden={!open}
         className="fixed inset-x-0 bottom-0 top-[var(--header-h)] overflow-y-auto border-t border-line bg-obsidian lg:hidden"
       >
-        <nav aria-label="Mobile" className="container-x flex min-h-full flex-col justify-between py-10">
-          <ol className="flex flex-col">
-            {links.map((l) => (
-              <li key={l.id} className="border-b border-line">
-                <a
-                  href={sectionHref(locale, l.id, onHome)}
-                  onClick={() => setOpen(false)}
-                  className="flex items-baseline gap-5 py-5 font-display text-[2.1rem] leading-none tracking-[-0.03em] text-paper transition-colors hover:text-accent"
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ol>
+        <nav aria-label={nav.menu} className="container-x flex min-h-full flex-col justify-between py-8">
+          <ul className="flex flex-col">
+            {menu.map((item) => {
+              const isOpen = expanded === item.key;
+              const panelId = `m-panel-${item.key}`;
+              return (
+                <li key={item.key} className="border-b border-line">
+                  <div className="flex items-center justify-between gap-4">
+                    <NavAnchor
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      current={active === item.key}
+                      className="flex-1 py-4 font-display text-[1.7rem] leading-none tracking-[-0.03em] text-paper transition-colors hover:text-accent aria-[current=true]:text-accent"
+                    >
+                      {item.label}
+                    </NavAnchor>
+                    {item.children ? (
+                      <button
+                        type="button"
+                        className="grid h-11 w-11 place-items-center border border-line text-paper"
+                        aria-expanded={isOpen}
+                        aria-controls={panelId}
+                        aria-label={`${nav.submenu} ${item.label}`}
+                        onClick={() => setExpanded(isOpen ? null : item.key)}
+                      >
+                        <Chevron open={isOpen} />
+                      </button>
+                    ) : null}
+                  </div>
+                  {item.children ? (
+                    <ul id={panelId} hidden={!isOpen} className="pb-4 pl-1">
+                      {item.children.map((c) => (
+                        <li key={c.href}>
+                          <NavAnchor href={c.href} onClick={() => setOpen(false)} className="t-mono block py-2.5 normal-case tracking-[0.02em] text-paper/75 hover:text-accent">
+                            {c.label}
+                          </NavAnchor>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </li>
+              );
+            })}
+          </ul>
           <div className="t-mono mt-10 flex flex-col gap-3 text-muted">
             <a className="link-u w-fit" href={`mailto:${site.email}`}>
               {site.email}

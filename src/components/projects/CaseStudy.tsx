@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Diagram } from "@/components/diagrams/Diagram";
 import { ArrowRight, ArrowUpRight, MaskWords } from "@/components/ui/primitives";
 import { projectJsonLd } from "@/lib/seo";
+import { buildMenu, sectionToMenuKey } from "@/lib/menu";
 
 function Bullets({ items }: { items: string[] }) {
   return (
@@ -46,7 +47,15 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
 
   return (
     <>
-      <Header dict={dict} locale={locale} alternateHref={alternate} onHome={false} />
+      <Header
+        dict={dict}
+        locale={locale}
+        alternateHref={alternate}
+        onHome={false}
+        menu={buildMenu(dict, locale, false)}
+        sectionKeys={sectionToMenuKey(dict)}
+        currentKey="projects"
+      />
       <main id="main">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd(dict, project)) }} />
         <article aria-labelledby="case-title">

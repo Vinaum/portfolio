@@ -87,7 +87,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
           </ul>
           <div className="col-span-2 hidden items-center justify-end lg:flex">
             <a href={`#${ids.work}`} className="t-mono flex items-center gap-3 text-muted transition-colors hover:text-accent">
-              {dict.nav.work}
+              {dict.nav.projects}
               <ArrowDown />
             </a>
           </div>

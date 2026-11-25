@@ -1,7 +1,9 @@
-import type { Dictionary } from "@/content/types";
+import type { CompanyId, Dictionary } from "@/content/types";
 import { SectionHeader } from "@/components/ui/primitives";
 import { LogoMark } from "@/components/ui/LogoMark";
 import { findLogo } from "@/lib/logos";
+
+export const companyAnchor = (id: CompanyId | "others") => `exp-${id}`;
 
 /** Professional experience: four featured companies with equal weight, the rest as a quiet second layer. */
 export function Companies({ dict }: { dict: Dictionary }) {
@@ -19,8 +21,13 @@ export function Companies({ dict }: { dict: Dictionary }) {
           {c.featured.map((co, i) => {
             const logo = findLogo(co.id);
             return (
-              <li key={co.id} className="company relative flex flex-col" data-reveal style={{ ["--d" as string]: i * 100 }}>
-                {/* Logo band: same height for all four, logos centred and optically balanced */}
+              <li
+                key={co.id}
+                id={companyAnchor(co.id)}
+                className="company relative flex scroll-mt-28 flex-col"
+                data-reveal
+                style={{ ["--d" as string]: i * 100 }}
+              >
                 <h3 className="flex h-28 items-center justify-center border-b border-line">
                   {logo ? (
                     <LogoMark logo={logo} alt={co.name} height={2.6} align="center" />
@@ -34,23 +41,43 @@ export function Companies({ dict }: { dict: Dictionary }) {
 
                 <p className="t-mono-sm mt-6 text-muted">
                   {co.sector}
-                  <span className="block pt-1 text-muted/70">{co.brands ?? "\u00a0"}</span>
+                  <span className="block pt-1 text-muted/70">{co.brands ?? " "}</span>
                 </p>
-                <p className="mt-5 text-[0.95rem] leading-relaxed text-paper/70 xl:min-h-[9.5rem]">{co.description}</p>
-                <div className="pt-7">
-                  <p className="t-mono-sm text-accent">{c.relationshipLabel}</p>
-                  <p className="mt-2 font-display text-[1.15rem] leading-snug tracking-[-0.015em] text-paper">
-                    {co.relationship}
-                    {co.period ? <span className="text-paper/50"> · {co.period}</span> : null}
-                  </p>
-                </div>
+                <p className="mt-3 text-[0.88rem] leading-relaxed text-paper/55 xl:min-h-[4.25rem]">{co.description}</p>
+
+                <dl className="mt-6 flex flex-col gap-6">
+                  <div>
+                    <dt className="t-mono-sm text-accent">{c.roleLabel}</dt>
+                    <dd className="mt-2 font-display text-[1.2rem] leading-snug tracking-[-0.015em] text-paper xl:min-h-[3.25rem]">
+                      {co.relationship}
+                      {co.period ? <span className="text-paper/50"> · {co.period}</span> : null}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="t-mono-sm text-muted">{c.responsibilitiesLabel}</dt>
+                    <dd>
+                      <ul className="mt-2">
+                        {co.responsibilities.map((r) => (
+                          <li key={r} className="flex gap-2 py-1 text-[0.92rem] leading-snug text-paper/80">
+                            <span className="mt-[0.6rem] h-px w-2.5 shrink-0 bg-line" aria-hidden="true" />
+                            {r}
+                          </li>
+                        ))}
+                      </ul>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="t-mono-sm text-muted">{c.skillsLabel}</dt>
+                    <dd className="mt-2 text-[0.9rem] text-accent">{co.skills.join(" · ")}</dd>
+                  </div>
+                </dl>
               </li>
             );
           })}
         </ol>
 
         {/* Secondary layer */}
-        <div className="grid-12 mt-28 gap-y-6" data-reveal>
+        <div id={companyAnchor("others")} className="grid-12 mt-28 scroll-mt-28 gap-y-6" data-reveal>
           <h3 className="t-mono col-span-12 text-muted lg:col-span-3">{c.othersTitle}</h3>
           <ul className="col-span-12 lg:col-span-9">
             {c.others.map((o) => (

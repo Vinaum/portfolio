@@ -105,10 +105,11 @@ export interface ProjectContent {
 }
 
 export interface Capability {
-  id: "architecture" | "integration" | "cloud" | "business";
+  id: "architecture" | "integration" | "cloud" | "people";
   title: string;
   summary: string;
-  keywords: string[];
+  /** "applied" = used in the documented projects or professional work; "study" = courses and labs only. */
+  items: { text: string; status?: "applied" | "study" }[];
   evidenceLabel: string;
   evidence: string;
 }
@@ -145,16 +146,14 @@ export interface FeaturedCompany {
   sector: string;
   /** What the company is — verifiable facts only. */
   description: string;
-  /** Your actual relationship with it, as confirmed by you. */
+  /** Your actual role, as confirmed by you. */
   relationship: string;
+  /** Responsibilities confirmed by you — never inferred. */
+  responsibilities: string[];
+  /** Competencies the role developed (framing of the confirmed responsibilities). */
+  skills: string[];
   /** Optional — fill only with confirmed information. */
   period?: string;
-}
-
-export interface TeamDimension {
-  id: "technical" | "composition" | "behavioral" | "business";
-  title: string;
-  body: string;
 }
 
 export interface Dictionary {
@@ -180,16 +179,19 @@ export interface Dictionary {
   nav: {
     skip: string;
     home: string;
-    about: string;
+    projects: string;
     capabilities: string;
-    work: string;
     experience: string;
+    about: string;
     contact: string;
+    otherExperience: string;
+    submenu: string;
     menu: string;
     close: string;
     language: string;
     switchTo: string;
   };
+
   hero: {
     role: string;
     roleSub: string;
@@ -207,14 +209,17 @@ export interface Dictionary {
     label: string;
     title: string;
     lead: string;
-    paragraphs: string[];
+    convergence: { label: string; steps: { title: string; body: string }[]; closing: string };
     education: {
       label: string;
       institution: string;
       short: string;
       items: { level: string; title: string; institution?: string }[];
     };
+    entrepreneurship: { label: string; name: string; role: string; body: string; highlights: { value: string; label: string }[] };
+    leadership: { label: string; body: string; stat: { value: string; label: string; note: string } };
   };
+
 
   clients: {
     label: string;
@@ -232,35 +237,28 @@ export interface Dictionary {
     label: string;
     title: string;
     intro: string;
-    relationshipLabel: string;
+    roleLabel: string;
+    responsibilitiesLabel: string;
+    skillsLabel: string;
     featured: FeaturedCompany[];
     othersTitle: string;
     others: { name: string; area: string; role?: string; note?: string }[];
     trademarkNote: string;
   };
 
-  teams: {
-    label: string;
-    /** Short, descriptive heading used inside About & Leadership. */
-    title: string;
-    statement: string;
-    dimensionsLabel: string;
-    dimensions: TeamDimension[];
-    stat: { value: string; label: string; note: string };
-    bridge: {
-      label: string;
-      quote: string;
-      intro: string;
-      abilities: string[];
-    };
-  };
+
+
   capabilities: {
     label: string;
     title: string;
     intro: string;
+    applied: string;
+    study: string;
+    studyNote: string;
     items: Capability[];
-    stack: { title: string; applied: string; study: string; studyNote: string };
+    people: { kicker: string; message: string; perspective: string };
   };
+
   work: {
     label: string;
     title: string;
@@ -282,18 +280,19 @@ export interface Dictionary {
       title: string;
       body: string;
       note: string;
-      toolsLabel: string;
       tools: string[];
-      skillsLabel: string;
       skills: string[];
     };
-    leadership: {
+    association: {
       label: string;
-      title: string;
-      institutional: { label: string; role: string; organization: string; points: string[] };
-      impact: { label: string; title: string; partner: string; body: string; points: string[] };
+      role: string;
+      organization: string;
+      body: string;
+      partner: string;
+      points: string[];
     };
   };
+
   learning: {
     label: string;
     title: string;
@@ -301,12 +300,13 @@ export interface Dictionary {
     note: string;
     recordLink: string;
     introductory: string;
-    trail: string;
-    /** "{n}" is replaced by the number of courses. */
+    /** "{n}" is replaced by a number. */
     courseOne: string;
     courseMany: string;
+    more: string;
     areas: Record<"devops" | "programming" | "security" | "business" | "ai" | "frontend", string>;
   };
+
   contact: {
     label: string;
     headline: string;

@@ -7,7 +7,7 @@ export const ptBR: Dictionary = {
   meta: {
     title: "Vinicius Sartori | Solutions Engineer e Integração de Sistemas",
     description:
-      "Vinicius Campanha Sartori, Engenheiro de Computação pela UNICAMP. Solutions Engineer com experiência em integração de sistemas, APIs, automação, cloud e desenvolvimento de soluções digitais.",
+      "Vinicius Campanha Sartori — Engenheiro de Computação (UNICAMP) e Solutions Engineer: integração de sistemas, APIs, automação, cloud e formação de times.",
     keywords: [
       "Solutions Engineer",
       "Integração de sistemas",
@@ -36,11 +36,13 @@ export const ptBR: Dictionary = {
   nav: {
     skip: "Pular para o conteúdo",
     home: "Início",
-    about: "Sobre",
+    projects: "Projetos",
     capabilities: "Competências",
-    work: "Projetos",
     experience: "Experiência",
+    about: "Sobre",
     contact: "Contato",
+    otherExperience: "Outras experiências",
+    submenu: "Mostrar seções de",
     menu: "Menu",
     close: "Fechar",
     language: "Idioma",
@@ -48,14 +50,14 @@ export const ptBR: Dictionary = {
   },
   hero: {
     role: "Solutions Engineer",
-    roleSub: "Integração de Sistemas · Cloud e Automação",
-    headline: "Conectando desafios de negócio a soluções tecnológicas.",
+    roleSub: "Integração de Sistemas · Arquitetura de Soluções · Automação",
+    headline: "Conectando tecnologia, negócios e pessoas em soluções que funcionam.",
     supporting:
-      "Engenheiro de Computação que combina tecnologia, pensamento sistêmico e visão de negócios para desenhar e implementar soluções digitais relevantes.",
+      "Engenheiro de Computação pela UNICAMP. Desenho e integro soluções considerando o problema técnico, o contexto de negócio e as pessoas que vão construí-las e usá-las — uma visão formada em mais de sete anos avaliando talentos técnicos e liderando times.",
     ctaPrimary: "Conheça meus projetos",
     ctaSecondary: "Vamos conversar",
     availability: "Disponível para novas oportunidades",
-    availabilityDetail: "Soluções · Integração · Implantação",
+    availabilityDetail: "Soluções · Integração · Implantação · Consultoria",
     facts: [
       "Engenharia de Computação — UNICAMP",
       "Cofundador — Raiz Universitária",
@@ -63,131 +65,130 @@ export const ptBR: Dictionary = {
     ],
     diagramTitle: "Diagrama de contexto do sistema",
     diagramDescription:
-      "Um diagrama de arquitetura que conecta Negócio a Aplicações e Dados, Aplicações a APIs, e APIs a Cloud, Automação e Infraestrutura.",
+      "Um diagrama de arquitetura que conecta Pessoas e Negócio a Aplicações e Dados, Aplicações a APIs, e APIs a Cloud, Automação e Infraestrutura.",
   },
   about: {
     label: "Sobre, formação e liderança",
-    title: "Tecnologia é mais do que código. É entender como tudo se conecta.",
+    title: "Boas soluções começam com a compreensão dos problemas. Grandes soluções dependem também das pessoas que as constroem.",
     lead:
-      "Meu caminho não foi uma linha reta dentro do software — e é exatamente isso que define como eu trabalho com ele.",
-    paragraphs: [
-      "Sou engenheiro de computação pela UNICAMP, onde aprendi a enxergar a tecnologia como um conjunto de sistemas interdependentes. Também fui cofundador da Raiz Universitária — minha primeira lição sobre transformar uma ideia em algo que as pessoas realmente usam.",
-      "Depois, a carreira me levou ao outro lado da tecnologia: telecomunicações, vendas e mais de sete anos em recrutamento especializado, liderando times de consultores. Foi onde aprendi a traduzir entre profundidade técnica e intenção de negócio.",
-      "Hoje eu construo. Projetos independentes — uma plataforma operacional multi-inquilino, um site médico com conteúdo gerenciável, um portal de comunidade — são onde aplico engenharia, integração e visão de produto de ponta a ponta.",
-    ],
+      "Minha trajetória não foi linear — e é justamente esse o ponto. Engenharia, negócios e pessoas não são três carreiras separadas na minha história; são partes de uma mesma forma de trabalhar.",
+    convergence: {
+      label: "Como as peças convergem",
+      steps: [
+        { title: "Engenharia de Computação", body: "Pensamento sistêmico e base técnica." },
+        { title: "Empreendedorismo", body: "Transformar uma ideia em algo que as pessoas usam." },
+        { title: "Recrutamento de tecnologia", body: "Mais de sete anos lendo competências técnicas, maturidade e necessidades de times." },
+        { title: "Liderança de times", body: "Desenvolver consultores e liderar equipes de até 17 pessoas." },
+        { title: "Ensino", body: "Tornar conceitos técnicos acessíveis a iniciantes." },
+        { title: "Associações e projetos sociais", body: "Coordenar pessoas e instituições em torno de um objetivo comum." },
+        { title: "Soluções digitais", body: "Desenhar, integrar e publicar aplicações reais." },
+      ],
+      closing:
+        "Minha atuação com soluções não é um recomeço. É o ponto em que a formação técnica, a experiência empresarial e o conhecimento sobre pessoas finalmente se encontram.",
+    },
     education: {
-      label: "Formação",
+      label: "Formação acadêmica",
       institution: "Universidade Estadual de Campinas",
       short: "UNICAMP",
       items: [
         { level: "Graduação", title: "Engenharia de Computação", institution: "UNICAMP" },
         { level: "Pós-graduação", title: "Engenharia de Hardware" },
-        { level: "MBA", title: "Gestão de Pessoas e Resultados" },
+        { level: "MBA", title: "Gestão de Pessoas e Performance" },
       ],
+    },
+    entrepreneurship: {
+      label: "Empreendedorismo",
+      name: "Raiz Universitária",
+      role: "Cofundador",
+      body: "Minha primeira lição sobre transformar uma ideia em algo que as pessoas realmente usam — com recursos limitados e prazos reais.",
+      highlights: [
+        { value: "80", label: "eventos" },
+        { value: "5", label: "universidades" },
+        { value: "10 mil+", label: "estudantes na comunidade" },
+        { value: "3º", label: "lugar no Desafio UNICAMP de Inovação Tecnológica" },
+      ],
+    },
+    leadership: {
+      label: "Liderança",
+      body:
+        "No PageGroup e na Share People Hub liderei times de recrutamento: desenvolvendo e treinando consultores, cuidando da relação com clientes e conduzindo metas e indicadores. Eram times de recrutamento — não de engenharia — e me ensinaram como pessoas, competências e objetivos se encaixam.",
+      stat: { value: "17", label: "consultores de recrutamento no maior time que liderei", note: "Times de recrutamento, não de engenharia de software." },
     },
   },
   companies: {
     label: "Experiência profissional",
     title: "Onde aprendi como empresas de tecnologia realmente funcionam.",
     intro:
-      "Quatro empresas moldaram mais a minha visão — uma insurtech, uma empresa de IA aplicada e duas consultorias de recrutamento especializado, uma delas um grupo global.",
-    relationshipLabel: "Minha atuação",
+      "Quatro empresas moldaram mais a minha visão: uma insurtech, uma empresa de IA aplicada e duas consultorias de recrutamento especializado.",
+    roleLabel: "Função",
+    responsibilitiesLabel: "Responsabilidades",
+    skillsLabel: "Desenvolveu",
     featured: [
       {
         id: "pier",
         name: "Pier",
         sector: "Insurtech",
-        description:
-          "A primeira seguradora digital do Brasil autorizada pela Susep — e a primeira insurtech do país a se tornar seguradora.",
-        relationship: "Recrutador de tecnologia no time interno.",
+        description: "A primeira seguradora digital do Brasil autorizada pela Susep.",
+        relationship: "Recrutador de tecnologia no time interno",
+        responsibilities: [
+          "Recrutamento de perfis técnicos",
+          "Alinhamento de perfis com gestores técnicos",
+          "Avaliação técnica e comportamental",
+          "Atração de talentos e employer branding",
+        ],
+        skills: ["Avaliação técnica de talentos", "Gestão de stakeholders"],
       },
       {
         id: "gobots",
         name: "GoBots",
         sector: "IA aplicada · E-commerce",
-        description:
-          "Empresa brasileira de IA que automatiza atendimento e vendas de lojistas em marketplaces como Mercado Livre, Amazon, Shopee e Magalu.",
-        relationship: "Gerente de Vendas.",
+        description: "Automação com IA para lojistas em marketplaces como Mercado Livre, Amazon, Shopee e Magalu.",
+        relationship: "Gerente de Vendas",
+        responsibilities: [
+          "Prospecção e gestão do pipeline comercial",
+          "Apresentação de um produto de IA a clientes empresariais",
+          "Levantamento das necessidades do cliente antes da proposta",
+        ],
+        skills: ["Descoberta de negócio", "Apresentação de soluções"],
       },
       {
         id: "pagegroup",
         name: "PageGroup",
         brands: "Page Outsourcing · Michael Page",
         sector: "Recrutamento especializado",
-        description:
-          "O grupo por trás de Michael Page, Page Executive, Page Personnel e Page Outsourcing — empresa do índice FTSE 250, com operações em mais de 30 países.",
-        relationship: "Liderança de um time de consultores de recrutamento.",
+        description: "Grupo de recrutamento do índice FTSE 250, com operações em mais de 30 países.",
+        relationship: "Liderança de um time de consultores de recrutamento",
+        responsibilities: [
+          "Desenvolvimento e treinamento de consultores",
+          "Recrutamento de tecnologia para empresas clientes",
+          "Relacionamento com clientes",
+          "Metas e indicadores do time",
+        ],
+        skills: ["Liderança e desenvolvimento de equipes", "Gestão de clientes"],
       },
       {
         id: "sharepeoplehub",
         name: "Share People Hub",
         brands: "antiga Share RH",
         sector: "Soluções em RH · Recrutamento",
-        description:
-          "Hub de soluções em RH fundado em 2015 em São Paulo, com recrutamento especializado e de tecnologia, executive search e RPO.",
-        relationship:
-          "Liderança de diversas equipes e coordenação de projetos completos de recrutamento, seleção e Education Recruiting.",
+        description: "Hub de soluções em RH fundado em 2015 em São Paulo.",
+        relationship: "Liderança de diversas equipes e coordenação de projetos completos",
+        responsibilities: [
+          "Projetos completos de recrutamento, seleção e Education Recruiting",
+          "Recrutamento de tecnologia",
+          "Desenho de processos seletivos",
+          "Desenvolvimento e treinamento de consultores",
+          "Gestão de clientes e stakeholders",
+        ],
+        skills: ["Coordenação de projetos", "Desenho de processos", "Team Building"],
       },
     ],
-    othersTitle: "Também na minha trajetória",
+    othersTitle: "Outras experiências",
     others: [
-      {
-        name: "Raiz Universitária",
-        area: "Empreendedorismo",
-        role: "Cofundador",
-        note: "80 eventos · 5 universidades · 10 mil+ estudantes · 3º lugar no Desafio UNICAMP de Inovação Tecnológica",
-      },
       { name: "Trópico Telecomunicações", area: "Tecnologia e telecom" },
-      { name: "Projetos independentes", area: "Engenharia de soluções" },
+      { name: "Projetos independentes de tecnologia", area: "Engenharia de soluções — veja Projetos" },
     ],
     trademarkNote: "Nomes e logotipos pertencem às respectivas empresas.",
-  },
-  teams: {
-    label: "Formação de times",
-    title: "Construindo times que constroem soluções.",
-    statement:
-      "Formar times de alta performance não é apenas encontrar pessoas talentosas. É entender como competências técnicas, perfis comportamentais, estilos de comunicação e forças complementares se combinam para resolver desafios complexos de negócio.",
-    dimensionsLabel: "Quatro dimensões",
-    dimensions: [
-      {
-        id: "technical",
-        title: "Avaliação Técnica",
-        body: "Entender competências técnicas, especializações e experiência profissional — ler uma stack, uma trajetória e um nível de senioridade pelo que realmente significam.",
-      },
-      {
-        id: "composition",
-        title: "Composição de Times",
-        body: "Identificar perfis complementares e combinar forças diferentes, para que o time cubra o que nenhuma pessoa cobre sozinha.",
-      },
-      {
-        id: "behavioral",
-        title: "Inteligência Comportamental",
-        body: "Entender estilos de comunicação, colaboração, liderança e características comportamentais — como as pessoas vão trabalhar juntas, não só o que sabem.",
-      },
-      {
-        id: "business",
-        title: "Alinhamento ao Negócio",
-        body: "Conectar pessoas, capacidades e objetivos da organização. O time certo é definido pelo problema que o negócio precisa resolver.",
-      },
-    ],
-    stat: {
-      value: "17",
-      label: "consultores de recrutamento no maior time que liderei",
-      note: "Times de recrutamento — não times de engenharia de software.",
-    },
-    bridge: {
-      label: "Pessoas · Tecnologia · Negócio",
-      quote: "Entendo os dois lados da tecnologia: os sistemas que precisam funcionar e as pessoas que os fazem funcionar.",
-      intro:
-        "Os anos em recrutamento de tecnologia, liderança de times e contato próximo com o negócio me deram prática diária exatamente no que o trabalho com soluções exige:",
-      abilities: [
-        "Entender requisitos de negócio.",
-        "Comunicar-me com stakeholders técnicos e não técnicos.",
-        "Identificar competências complementares.",
-        "Entender restrições organizacionais e operacionais.",
-        "Fazer a ponte entre as expectativas do negócio e a execução técnica.",
-      ],
-    },
   },
   clients: {
     label: "Clientes",
@@ -198,57 +199,84 @@ export const ptBR: Dictionary = {
   },
   capabilities: {
     label: "Competências em Solutions Engineering",
-    title: "Quatro áreas onde a engenharia encontra o negócio.",
-    intro:
-      "A profundidade varia entre elas, e prefiro mostrar a afirmar — cada área indica de onde vem a experiência.",
-    stack: {
-      title: "Ferramentas por evidência",
-      applied: "Aplicadas em projetos",
-      study: "Em estudo",
-      studyNote: "Cursos e prática de laboratório — não experiência profissional.",
-    },
+    title: "Tecnologia, negócio e pessoas — quatro pilares de uma mesma prática.",
+    intro: "Cada pilar indica de onde vem a experiência. Em Cloud, cada item aparece como aplicado em projetos ou em estudo.",
+    applied: "Aplicado",
+    study: "Em estudo",
+    studyNote: "Cursos e prática de laboratório — não experiência profissional.",
     items: [
       {
         id: "architecture",
-        title: "Arquitetura de Soluções",
-        summary:
-          "Entender requisitos, analisar restrições, desenhar arquiteturas e avaliar escolhas de tecnologia.",
-        keywords: ["Requisitos", "Restrições", "Trade-offs", "Registro de decisões"],
+        title: "Solutions Engineering & Architecture",
+        summary: "Entender o problema primeiro e, depois, desenhar uma solução que o negócio consiga sustentar.",
+        items: [
+          { text: "Levantamento e análise de requisitos" },
+          { text: "Desenho de soluções" },
+          { text: "Arquitetura de sistemas" },
+          { text: "Análise de viabilidade" },
+          { text: "Decisões técnicas orientadas a objetivos de negócio" },
+        ],
         evidenceLabel: "Aplicado em",
-        evidence:
-          "Um plano técnico escrito, com decisões explícitas e aprovadas antes da implementação — plataforma de gestão condominial.",
+        evidence: "Um plano técnico escrito, com decisões explícitas aprovadas antes da implementação — plataforma de gestão condominial.",
       },
       {
         id: "integration",
-        title: "Integração de Sistemas",
-        summary:
-          "APIs REST, webhooks, interoperabilidade entre sistemas e SaaS, automação de processos de negócio e comunicação entre aplicações.",
-        keywords: ["REST", "Webhooks", "Eventos", "Automação de fluxos"],
+        title: "Systems Integration & Automation",
+        summary: "Conectar aplicações, dados e processos para que funcionem como um único sistema.",
+        items: [
+          { text: "APIs REST" },
+          { text: "Webhooks e gatilhos orientados a eventos" },
+          { text: "Integração entre sistemas e SaaS" },
+          { text: "Automação de processos de negócio" },
+          { text: "Modelagem e fluxo de dados" },
+          { text: "Tratamento de erros e confiabilidade: idempotência, travas, validação" },
+        ],
         evidenceLabel: "Aplicado em",
-        evidence:
-          "Um gatilho no banco que chama a API do GitHub para reconstruir e republicar um site estático quando o conteúdo muda — site médico.",
+        evidence: "Um gatilho no banco que chama a API do GitHub para republicar um site; operações de estoque idempotentes e seguras contra concorrência.",
       },
       {
         id: "cloud",
-        title: "Cloud e Infraestrutura",
-        summary:
-          "Computação em nuvem, automação de infraestrutura, contêineres, infraestrutura como código e fundamentos de cloud.",
-        keywords: ["CI/CD", "Postgres gerenciado", "Hospedagem estática", "IaC"],
+        title: "Cloud & Infrastructure",
+        summary: "Hospedagem, pipelines e segurança do que eu construo — com uma linha clara entre prática e estudo.",
+        items: [
+          { text: "Plataformas gerenciadas: Supabase, Vercel, GitHub Pages", status: "applied" },
+          { text: "CI/CD com GitHub Actions", status: "applied" },
+          { text: "Linux", status: "applied" },
+          { text: "Segurança de aplicação: RLS, CSP, segredos em cofre", status: "applied" },
+          { text: "Computação em nuvem na AWS", status: "study" },
+          { text: "Infraestrutura como código: Terraform, Ansible", status: "study" },
+          { text: "Observabilidade, SRE e FinOps", status: "study" },
+          { text: "Platform Engineering (introdutório)", status: "study" },
+        ],
         evidenceLabel: "Aplicado em / em estudo",
-        evidence:
-          "CI/CD com GitHub Actions, hospedagem no GitHub Pages e na Vercel, Postgres gerenciado no Supabase. AWS, Terraform e Ansible: cursos e estudo em andamento.",
+        evidence: "Pipelines e hospedagem dos três projetos implementados; AWS, IaC, SRE e FinOps por meio de cursos.",
       },
       {
-        id: "business",
-        title: "Tecnologia e Negócios",
+        id: "people",
+        title: "People & Team Building",
         summary:
-          "Descoberta de requisitos, gestão de stakeholders, visão de produto, análise de negócios e comunicação técnica.",
-        keywords: ["Descoberta", "Stakeholders", "Produto", "Comunicação"],
+          "Mais de sete anos em recrutamento especializado em tecnologia me deram uma visão ampla sobre competências técnicas, maturidade profissional, composição de equipes e necessidades reais das organizações.",
+        items: [
+          { text: "Construção e composição de times (Team Building)" },
+          { text: "Avaliação técnica de talentos" },
+          { text: "Liderança e desenvolvimento de equipes" },
+          { text: "Gestão de stakeholders" },
+          { text: "Colaboração entre áreas" },
+          { text: "Comunicação técnica" },
+          { text: "Alinhamento entre pessoas, tecnologia e negócio" },
+        ],
         evidenceLabel: "Vem de",
         evidence:
-          "A cofundação de uma startup, a gestão de vendas, mais de sete anos traduzindo entre times de engenharia e o negócio, e a liderança de equipes de recrutamento.",
+          "Recrutamento de tecnologia, liderança de times de até 17 consultores de recrutamento, ensino de programação e cofundação de uma startup. Não é gestão de engenharia.",
       },
     ],
+    people: {
+      kicker: "Por que isso importa em soluções",
+      message:
+        "Compreender tecnologia é fundamental. Compreender as pessoas que desenvolvem, utilizam e sustentam essa tecnologia é igualmente importante.",
+      perspective:
+        "Ao olhar para uma solução, considero o problema técnico, o contexto de negócio, as pessoas envolvidas, as competências necessárias, a colaboração entre áreas — e se ela se sustenta no longo prazo.",
+    },
   },
   work: {
     label: "Projetos selecionados",
@@ -263,67 +291,44 @@ export const ptBR: Dictionary = {
   },
   beyond: {
     label: "Ensino e impacto social",
-    title: "Impacto que não aparece no balanço.",
+    title: "Explicar tecnologia e organizar pessoas em torno de um objetivo comum.",
     teaching: {
       label: "Ensino de programação",
       title: "Ensinando tecnologia, transformando pessoas.",
       body:
-        "Minha experiência com educação tecnológica começou em projetos sociais, ensinando programação a pessoas sem qualquer conhecimento prévio. Utilizando ferramentas como Scratch e linguagens como Python e Java, trabalhei na introdução à lógica de programação e ao pensamento computacional, tornando conceitos técnicos acessíveis e estimulando novas possibilidades profissionais e pessoais.",
+        "Durante alguns anos fui professor de programação em projetos sociais, ensinando pessoas sem conhecimento prévio — lógica, pensamento computacional, Scratch, Python e Java. O foco nunca foi só a linguagem: era tornar ideias técnicas compreensíveis para qualquer nível de conhecimento.",
       note: "Foi ali que aprendi a explicar tecnologia — muito antes de trabalhar com soluções.",
-      toolsLabel: "Ensinado com",
-      tools: ["Scratch", "Python", "Java"],
-      skillsLabel: "O que desenvolveu",
+      tools: ["Lógica", "Pensamento computacional", "Scratch", "Python", "Java"],
       skills: [
-        "Comunicar conceitos técnicos complexos em linguagem simples",
-        "Ensinar lógica e pensamento computacional",
+        "Explicar conceitos complexos em linguagem simples",
         "Adaptar a metodologia ao nível de cada aluno",
-        "Introduzir a programação e a resolução estruturada de problemas",
+        "Resolução estruturada de problemas",
         "Desenvolver pessoas e compartilhar conhecimento",
       ],
     },
-    leadership: {
+    association: {
       label: "Liderança e impacto social",
-      title: "Liderança além dos negócios.",
-      institutional: {
-        label: "Liderança institucional",
-        role: "Presidente",
-        organization: "Associação de Repúblicas da UNICAMP",
-        points: [
-          "Liderança de uma organização associativa",
-          "Articulação entre diferentes repúblicas e seus integrantes",
-          "Representação institucional",
-          "Organização e coordenação de iniciativas coletivas",
-        ],
-      },
-      impact: {
-        label: "Impacto social",
-        title: "Moradia para estudantes refugiados",
-        partner: "Em parceria com o CORI, órgão de relações internacionais da UNICAMP",
-        body:
-          "Durante minha atuação como presidente da Associação de Repúblicas da UNICAMP, participei da articulação de uma iniciativa em parceria com o CORI, voltada ao acolhimento de universitários refugiados vindos do Haiti. O projeto contribuiu para viabilizar moradia a diversos estudantes, demonstrando como organização, colaboração e articulação institucional podem produzir impacto real na vida das pessoas.",
-        points: [
-          "Articulação entre a associação e a universidade",
-          "Participação em uma iniciativa de acolhimento de estudantes refugiados haitianos",
-          "Contribuição para viabilizar moradia a universitários em situação de refúgio",
-          "Coordenação e mobilização de pessoas em torno de uma necessidade social concreta",
-        ],
-      },
+      role: "Presidente",
+      organization: "Associação de Repúblicas da UNICAMP",
+      body:
+        "Como presidente, liderei uma organização associativa, articulei diferentes repúblicas e representei a associação institucionalmente. Em parceria com o CORI, órgão de relações internacionais da UNICAMP, participei da articulação de uma iniciativa que ajudou a viabilizar moradia para diversos universitários refugiados vindos do Haiti.",
+      partner: "Em parceria com o CORI · UNICAMP",
+      points: ["Liderança institucional", "Articulação entre associação e universidade", "Responsabilidade coletiva", "Impacto social"],
     },
   },
   learning: {
-    label: "Aprendizado contínuo",
-    title: "Uma formação em engenharia que nunca parou.",
-    intro:
-      "Em paralelo ao trabalho, sigo estudando — de Linux e redes a SRE, FinOps e infraestrutura como código. Uma seleção dos cursos concluídos, organizada por área.",
+    label: "Formação complementar",
+    title: "Estudo contínuo, por área.",
+    intro: "Cursos livres concluídos na Alura, com o histórico completo disponível para consulta.",
     note: "Cursos livres concluídos na Alura entre 2017 e 2026 — não são certificações profissionais.",
     recordLink: "Consultar histórico completo",
-    introductory: "Introdutório",
-    trail: "Trilha",
+    introductory: "introdutório",
     courseOne: "1 curso",
     courseMany: "{n} cursos",
+    more: "+{n} cursos",
     areas: {
       devops: "DevOps e Cloud",
-      programming: "Programação e Desenvolvimento",
+      programming: "Programação",
       security: "Cibersegurança",
       business: "Negócios, Gestão e Produto",
       ai: "Inteligência Artificial",
@@ -388,7 +393,7 @@ export const ptBR: Dictionary = {
     {
       id: "condominium",
       name: "Plataforma de Gestão Condominial",
-      shortName: "Plataforma condominial",
+      shortName: "Gestão Condominial",
       category: "Plataforma operacional · SaaS multi-inquilino",
       type: "Projeto independente",
       tagline:
@@ -474,7 +479,7 @@ export const ptBR: Dictionary = {
     {
       id: "medical",
       name: "Site Profissional Médico e Plataforma de Conteúdo",
-      shortName: "Site médico",
+      shortName: "Plataforma Institucional Médica",
       category: "Produto digital · Integração de sistemas",
       type: "Projeto independente",
       tagline:
@@ -555,7 +560,7 @@ export const ptBR: Dictionary = {
     {
       id: "community",
       name: "Portal de Comunidade e Associação",
-      shortName: "Portal de comunidade",
+      shortName: "Portal da Comunidade",
       category: "Plataforma web · Controle de acesso",
       type: "Projeto independente",
       tagline:
@@ -635,7 +640,7 @@ export const ptBR: Dictionary = {
     {
       id: "integration-hub",
       name: "Hub de Integração de Negócios",
-      shortName: "Hub de integração",
+      shortName: "Business Integration Hub",
       category: "Conceito · Demonstrador",
       type: "Conceito / demonstrador",
       tagline:

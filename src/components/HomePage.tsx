@@ -1,6 +1,7 @@
 import type { Locale } from "@/content/types";
 import { getDictionary, homePath, otherLocale } from "@/content";
 import { homeJsonLd } from "@/lib/seo";
+import { buildMenu, sectionToMenuKey } from "@/lib/menu";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LocalePreference } from "@/components/layout/LocalePreference";
@@ -32,7 +33,7 @@ export function HomePage({ locale }: { locale: Locale }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd(dict)) }} />
       {locale === "pt-BR" ? <LocalePreference englishHref={homePath("en")} /> : null}
-      <Header dict={dict} locale={locale} alternateHref={alt} onHome />
+      <Header dict={dict} locale={locale} alternateHref={alt} onHome menu={buildMenu(dict, locale, true)} sectionKeys={sectionToMenuKey(dict)} />
       <main id="main">
         <Hero dict={dict} />
         {sections.map(({ key, C }) => (

@@ -7,7 +7,7 @@ export const en: Dictionary = {
   meta: {
     title: "Vinicius Sartori | Solutions Engineer & Systems Integration",
     description:
-      "Vinicius Campanha Sartori, Computer Engineer from UNICAMP. Solutions Engineer focused on systems integration, APIs, automation, cloud and digital solutions.",
+      "Vinicius Campanha Sartori — Computer Engineer (UNICAMP) and Solutions Engineer: systems integration, APIs, automation, cloud and team building.",
     keywords: [
       "Solutions Engineer",
       "Systems Integration",
@@ -36,11 +36,13 @@ export const en: Dictionary = {
   nav: {
     skip: "Skip to content",
     home: "Home",
-    about: "About",
+    projects: "Projects",
     capabilities: "Capabilities",
-    work: "Work",
     experience: "Experience",
+    about: "About",
     contact: "Contact",
+    otherExperience: "Other experience",
+    submenu: "Show sections of",
     menu: "Menu",
     close: "Close",
     language: "Language",
@@ -48,14 +50,14 @@ export const en: Dictionary = {
   },
   hero: {
     role: "Solutions Engineer",
-    roleSub: "Systems Integration · Cloud & Automation",
-    headline: "Connecting business challenges to technology solutions.",
+    roleSub: "Systems Integration · Solutions Architecture · Automation",
+    headline: "Connecting technology, business and people into solutions that work.",
     supporting:
-      "Computer Engineer combining technology, systems thinking and a business perspective to design and implement meaningful digital solutions.",
+      "Computer Engineer from UNICAMP. I design and integrate solutions with the technical problem, the business context and the people who will build and use them in view — a perspective shaped by 7+ years assessing technical talent and leading teams.",
     ctaPrimary: "Explore my work",
     ctaSecondary: "Let’s connect",
     availability: "Open to new opportunities",
-    availabilityDetail: "Solutions · Integration · Implementation",
+    availabilityDetail: "Solutions · Integration · Implementation · Consulting",
     facts: [
       "Computer Engineering — UNICAMP",
       "Co-founder — Raiz Universitária",
@@ -63,131 +65,130 @@ export const en: Dictionary = {
     ],
     diagramTitle: "System context diagram",
     diagramDescription:
-      "An architecture diagram connecting Business to Applications and Data, Applications to APIs, and APIs to Cloud, Automation and Infrastructure.",
+      "An architecture diagram connecting People and Business to Applications and Data, Applications to APIs, and APIs to Cloud, Automation and Infrastructure.",
   },
   about: {
     label: "About, education & leadership",
-    title: "Technology is more than code. It’s about understanding how everything connects.",
+    title: "Good solutions start with understanding the problem. Great ones also depend on the people who build them.",
     lead:
-      "My path didn’t run in a straight line through software — and that is exactly what shapes how I approach it.",
-    paragraphs: [
-      "I’m a Computer Engineer from UNICAMP, where I learned to see technology as a set of interdependent systems. I also co-founded Raiz Universitária — my first lesson in turning an idea into something people actually use.",
-      "My career then took me to the other side of technology: telecommunications, sales and more than seven years in specialized technology recruitment, leading teams of consultants. That is where I learned to translate between technical depth and business intent.",
-      "Today I build. Independent projects — a multi-tenant operations platform, a content-managed medical website, a community portal — are where I apply engineering, integration and product thinking end to end.",
-    ],
+      "My path hasn’t been linear — and that is the point. Engineering, business and people are not three separate careers in my story; they are the parts of one way of working.",
+    convergence: {
+      label: "How the pieces converge",
+      steps: [
+        { title: "Computer Engineering", body: "Systems thinking and a technical foundation." },
+        { title: "Entrepreneurship", body: "Turning an idea into something people use." },
+        { title: "Technology recruitment", body: "Seven-plus years reading technical skills, maturity and team needs." },
+        { title: "Team leadership", body: "Developing consultants and leading teams of up to 17." },
+        { title: "Teaching", body: "Making technical concepts accessible to beginners." },
+        { title: "Associations & social projects", body: "Coordinating people and institutions around a shared goal." },
+        { title: "Digital solutions", body: "Designing, integrating and shipping real applications." },
+      ],
+      closing:
+        "My move into solutions work is not a restart. It is where a technical education, business experience and an understanding of people finally meet.",
+    },
     education: {
-      label: "Education",
+      label: "Academic education",
       institution: "Universidade Estadual de Campinas",
       short: "UNICAMP",
       items: [
         { level: "Bachelor’s degree", title: "Computer Engineering", institution: "UNICAMP" },
         { level: "Postgraduate", title: "Computer Hardware Engineering" },
-        { level: "MBA", title: "People and Results Management" },
+        { level: "MBA", title: "People and Performance Management" },
       ],
+    },
+    entrepreneurship: {
+      label: "Entrepreneurship",
+      name: "Raiz Universitária",
+      role: "Co-founder",
+      body: "My first lesson in turning an idea into something people actually use — with limited resources and real deadlines.",
+      highlights: [
+        { value: "80", label: "events" },
+        { value: "5", label: "universities" },
+        { value: "10,000+", label: "students in the community" },
+        { value: "3rd", label: "place, Desafio UNICAMP de Inovação Tecnológica" },
+      ],
+    },
+    leadership: {
+      label: "Leadership",
+      body:
+        "At PageGroup and Share People Hub I led recruitment teams: developing and training consultants, managing client relationships and running team goals and indicators. These were recruitment teams — not engineering teams — and they taught me how people, skills and objectives fit together.",
+      stat: { value: "17", label: "recruitment consultants in the largest team I led", note: "Recruitment teams, not software engineering teams." },
     },
   },
   companies: {
     label: "Professional experience",
     title: "Where I learned how technology businesses actually work.",
     intro:
-      "Four companies shaped my perspective the most — an insurtech, an applied-AI company and two specialized recruitment firms, one of them a global group.",
-    relationshipLabel: "My role",
+      "Four companies shaped my perspective the most: an insurtech, an applied-AI company and two specialized recruitment firms.",
+    roleLabel: "Role",
+    responsibilitiesLabel: "Responsibilities",
+    skillsLabel: "Developed",
     featured: [
       {
         id: "pier",
         name: "Pier",
         sector: "Insurtech",
-        description:
-          "Brazil’s first digital insurer authorized by Susep — and the first insurtech in the country to become an insurance company.",
-        relationship: "In-house technology recruiter.",
+        description: "Brazil’s first digital insurer authorized by Susep.",
+        relationship: "In-house technology recruiter",
+        responsibilities: [
+          "Recruiting technical profiles",
+          "Aligning profiles with technical hiring managers",
+          "Technical and behavioral assessment",
+          "Talent attraction and employer branding",
+        ],
+        skills: ["Technical Talent Assessment", "Stakeholder Management"],
       },
       {
         id: "gobots",
         name: "GoBots",
         sector: "Applied AI · E-commerce",
-        description:
-          "A Brazilian AI company automating customer service and sales for retailers on marketplaces such as Mercado Livre, Amazon, Shopee and Magalu.",
-        relationship: "Sales Manager.",
+        description: "AI automation for retailers on marketplaces such as Mercado Livre, Amazon, Shopee and Magalu.",
+        relationship: "Sales Manager",
+        responsibilities: [
+          "Prospecting and managing the sales pipeline",
+          "Presenting an AI product to business clients",
+          "Uncovering client needs before proposing",
+        ],
+        skills: ["Business discovery", "Solution presentation"],
       },
       {
         id: "pagegroup",
         name: "PageGroup",
         brands: "Page Outsourcing · Michael Page",
         sector: "Specialized recruitment",
-        description:
-          "The group behind Michael Page, Page Executive, Page Personnel and Page Outsourcing — a FTSE 250 company operating in more than 30 countries.",
-        relationship: "Led a team of recruitment consultants.",
+        description: "A FTSE 250 recruitment group operating in more than 30 countries.",
+        relationship: "Led a team of recruitment consultants",
+        responsibilities: [
+          "Developing and training consultants",
+          "Technology recruitment for client companies",
+          "Client relationship management",
+          "Team goals and indicators",
+        ],
+        skills: ["Leadership & Team Development", "Client management"],
       },
       {
         id: "sharepeoplehub",
         name: "Share People Hub",
         brands: "formerly Share RH",
         sector: "HR solutions · Recruitment",
-        description:
-          "An HR solutions hub founded in 2015 in São Paulo, working in specialized and technology recruitment, executive search and RPO.",
-        relationship:
-          "Led several teams and coordinated end-to-end recruitment, selection and Education Recruiting projects.",
+        description: "An HR solutions hub founded in 2015 in São Paulo.",
+        relationship: "Led several teams and coordinated end-to-end projects",
+        responsibilities: [
+          "Recruitment, selection and Education Recruiting projects, end to end",
+          "Technology recruitment",
+          "Designing selection processes",
+          "Developing and training consultants",
+          "Client and stakeholder management",
+        ],
+        skills: ["Project coordination", "Process design", "Team Building"],
       },
     ],
-    othersTitle: "Also in my trajectory",
+    othersTitle: "Other experience",
     others: [
-      {
-        name: "Raiz Universitária",
-        area: "Entrepreneurship",
-        role: "Co-founder",
-        note: "80 events · 5 universities · 10,000+ students · 3rd place, Desafio UNICAMP de Inovação Tecnológica",
-      },
       { name: "Trópico Telecomunicações", area: "Technology & telecom" },
-      { name: "Independent projects", area: "Solutions engineering" },
+      { name: "Independent technology projects", area: "Solutions engineering — see Projects" },
     ],
     trademarkNote: "Company names and logos belong to their respective owners.",
-  },
-  teams: {
-    label: "Team building",
-    title: "Building teams that build solutions.",
-    statement:
-      "Building high-performing teams is not just about finding talented individuals. It is about understanding how technical skills, behavioral profiles, communication styles and complementary strengths come together to solve complex business challenges.",
-    dimensionsLabel: "Four dimensions",
-    dimensions: [
-      {
-        id: "technical",
-        title: "Technical Assessment",
-        body: "Understanding technical competencies, specializations and professional experience — reading a stack, a career path and a seniority level for what they actually mean.",
-      },
-      {
-        id: "composition",
-        title: "Team Composition",
-        body: "Identifying complementary profiles and combining different strengths, so the team covers what no single person can.",
-      },
-      {
-        id: "behavioral",
-        title: "Behavioral Intelligence",
-        body: "Understanding communication styles, collaboration, leadership and behavioral characteristics — how people will work together, not just what they know.",
-      },
-      {
-        id: "business",
-        title: "Business Alignment",
-        body: "Connecting people, capabilities and organizational objectives. The right team is defined by the problem the business needs solved.",
-      },
-    ],
-    stat: {
-      value: "17",
-      label: "recruitment consultants in the largest team I led",
-      note: "Recruitment teams — not software engineering teams.",
-    },
-    bridge: {
-      label: "People · Technology · Business",
-      quote: "I understand both sides of technology: the systems that need to work and the people who make them work.",
-      intro:
-        "Years in technology recruitment, team leadership and close contact with the business gave me daily practice in exactly what solutions work depends on:",
-      abilities: [
-        "Understanding business requirements.",
-        "Communicating with technical and non-technical stakeholders.",
-        "Identifying complementary competencies.",
-        "Understanding organizational and operational constraints.",
-        "Bridging business expectations and technical execution.",
-      ],
-    },
   },
   clients: {
     label: "Clients",
@@ -198,57 +199,84 @@ export const en: Dictionary = {
   },
   capabilities: {
     label: "Solutions engineering capabilities",
-    title: "Four areas where engineering meets the business.",
-    intro:
-      "Depth varies across them, and I’d rather show it than claim it — each area lists where the experience actually comes from.",
-    stack: {
-      title: "Tools by evidence",
-      applied: "Applied in projects",
-      study: "In study",
-      studyNote: "Coursework and lab practice — not professional experience.",
-    },
+    title: "Technology, business and people — four pillars of the same practice.",
+    intro: "Each pillar shows where the experience comes from. Cloud items are marked as applied in projects or in study.",
+    applied: "Applied",
+    study: "In study",
+    studyNote: "Courses and lab practice — not professional experience.",
     items: [
       {
         id: "architecture",
-        title: "Solutions Architecture",
-        summary:
-          "Understanding requirements, analyzing constraints, designing systems architecture and evaluating technology choices.",
-        keywords: ["Requirements", "Constraints", "Trade-offs", "Decision records"],
+        title: "Solutions Engineering & Architecture",
+        summary: "Understanding the problem first, then designing a solution the business can actually run.",
+        items: [
+          { text: "Requirements gathering and analysis" },
+          { text: "Solution design" },
+          { text: "Systems architecture" },
+          { text: "Feasibility analysis" },
+          { text: "Technical decisions driven by business goals" },
+        ],
         evidenceLabel: "Applied in",
-        evidence:
-          "A written technical plan with explicit, approved decisions before implementation — condominium operations platform.",
+        evidence: "A written technical plan with explicit decisions approved before implementation — condominium platform.",
       },
       {
         id: "integration",
-        title: "Systems Integration",
-        summary:
-          "REST APIs, webhooks, SaaS and system interoperability, business process automation and application communication.",
-        keywords: ["REST", "Webhooks", "Events", "Workflow automation"],
+        title: "Systems Integration & Automation",
+        summary: "Connecting applications, data and processes so they work as one system.",
+        items: [
+          { text: "REST APIs" },
+          { text: "Webhooks and event-driven triggers" },
+          { text: "Integration between systems and SaaS" },
+          { text: "Business process automation" },
+          { text: "Data modelling and data flow" },
+          { text: "Error handling and reliability: idempotency, locks, validation" },
+        ],
         evidenceLabel: "Applied in",
-        evidence:
-          "A database trigger that calls the GitHub API to rebuild and republish a static site when content changes — medical website.",
+        evidence: "A database trigger that calls the GitHub API to republish a site; idempotent, concurrency-safe stock operations.",
       },
       {
         id: "cloud",
         title: "Cloud & Infrastructure",
-        summary:
-          "Cloud computing, infrastructure automation, containers, infrastructure as code and cloud fundamentals.",
-        keywords: ["CI/CD", "Managed Postgres", "Static hosting", "IaC"],
+        summary: "Hosting, pipelines and security for what I build — with an honest line between practice and study.",
+        items: [
+          { text: "Managed platforms: Supabase, Vercel, GitHub Pages", status: "applied" },
+          { text: "CI/CD with GitHub Actions", status: "applied" },
+          { text: "Linux", status: "applied" },
+          { text: "Application security: RLS, CSP, secrets in a vault", status: "applied" },
+          { text: "Cloud computing on AWS", status: "study" },
+          { text: "Infrastructure as code: Terraform, Ansible", status: "study" },
+          { text: "Observability, SRE and FinOps", status: "study" },
+          { text: "Platform Engineering (introductory)", status: "study" },
+        ],
         evidenceLabel: "Applied in / studying",
-        evidence:
-          "CI/CD on GitHub Actions, hosting on GitHub Pages and Vercel, managed Postgres on Supabase. AWS, Terraform and Ansible: coursework and ongoing study.",
+        evidence: "Pipelines and hosting of the three implemented projects; AWS, IaC, SRE and FinOps through courses.",
       },
       {
-        id: "business",
-        title: "Technology & Business",
+        id: "people",
+        title: "People & Team Building",
         summary:
-          "Requirements discovery, stakeholder management, product thinking, business analysis and technical communication.",
-        keywords: ["Discovery", "Stakeholders", "Product", "Communication"],
+          "Seven-plus years in specialized technology recruitment gave me a wide view of technical skills, professional maturity, team composition and what organizations really need.",
+        items: [
+          { text: "Team Building & Team Composition" },
+          { text: "Technical Talent Assessment" },
+          { text: "Leadership & Team Development" },
+          { text: "Stakeholder Management" },
+          { text: "Cross-functional Collaboration" },
+          { text: "Technical Communication" },
+          { text: "Technology-Business-People Alignment" },
+        ],
         evidenceLabel: "Comes from",
         evidence:
-          "Co-founding a startup, managing sales, 7+ years translating between engineering teams and the business, and leading recruitment teams.",
+          "Technology recruitment, leading recruitment teams of up to 17 consultants, teaching programming and co-founding a startup. Not engineering management.",
       },
     ],
+    people: {
+      kicker: "Why it matters in solutions work",
+      message:
+        "Understanding technology is essential. Understanding the people who build, use and sustain that technology matters just as much.",
+      perspective:
+        "When I look at a solution I consider the technical problem, the business context, the people involved, the skills it requires, how different areas will collaborate — and whether it can be sustained over time.",
+    },
   },
   work: {
     label: "Selected projects",
@@ -263,67 +291,44 @@ export const en: Dictionary = {
   },
   beyond: {
     label: "Teaching & social impact",
-    title: "Impact that never shows up on a balance sheet.",
+    title: "Explaining technology and organizing people around a shared goal.",
     teaching: {
       label: "Teaching programming",
       title: "Teaching technology, empowering people.",
       body:
-        "My work in technology education began in social projects, teaching programming to people with no prior experience in computing. With Scratch, Python and Java, I introduced programming logic and computational thinking — making technical concepts accessible and opening up new personal and professional possibilities.",
+        "For a few years I taught programming in social projects to people with no prior experience — logic, computational thinking, Scratch, Python and Java. The point was never just the languages: it was making technical ideas understandable at every level.",
       note: "That is where I learned to explain technology — long before working with solutions.",
-      toolsLabel: "Taught with",
-      tools: ["Scratch", "Python", "Java"],
-      skillsLabel: "What it developed",
+      tools: ["Logic", "Computational thinking", "Scratch", "Python", "Java"],
       skills: [
-        "Explaining complex technical concepts in plain language",
-        "Teaching logic and computational thinking",
+        "Explaining complex concepts in plain language",
         "Adapting the method to each learner’s level",
-        "Introducing programming and structured problem solving",
+        "Structured problem solving",
         "Developing people and sharing knowledge",
       ],
     },
-    leadership: {
+    association: {
       label: "Leadership & social impact",
-      title: "Leadership beyond business.",
-      institutional: {
-        label: "Institutional leadership",
-        role: "President",
-        organization: "Associação de Repúblicas da UNICAMP — the association of UNICAMP’s student houses",
-        points: [
-          "Leading a member-based organization",
-          "Bringing different student houses and their members together",
-          "Representing the association institutionally",
-          "Organizing and coordinating collective initiatives",
-        ],
-      },
-      impact: {
-        label: "Social impact",
-        title: "Housing for refugee students",
-        partner: "In partnership with CORI, UNICAMP’s international relations office",
-        body:
-          "As president of the association, I helped coordinate an initiative with CORI to welcome refugee university students from Haiti. The project helped secure housing for a number of students — showing how organization, collaboration and institutional coordination can make a real difference in people’s lives.",
-        points: [
-          "Coordination between the association and the university",
-          "Part of an initiative to welcome Haitian refugee students",
-          "Helped make housing possible for students in a refugee situation",
-          "Mobilizing people around a concrete social need",
-        ],
-      },
+      role: "President",
+      organization: "Associação de Repúblicas da UNICAMP — the association of UNICAMP’s student houses",
+      body:
+        "As president, I led a member-based organization, brought different student houses together and represented them institutionally. With CORI, UNICAMP’s international relations office, I helped coordinate an initiative that secured housing for a number of refugee university students from Haiti.",
+      partner: "In partnership with CORI · UNICAMP",
+      points: ["Institutional leadership", "Coordination between the association and the university", "Collective responsibility", "Social impact"],
     },
   },
   learning: {
     label: "Continuous learning",
-    title: "An engineering education that never stopped.",
-    intro:
-      "Alongside work, I keep studying — from Linux and networks to SRE, FinOps and infrastructure as code. A selection of completed courses, grouped by area.",
+    title: "Still studying — by area.",
+    intro: "Completed free courses on Alura, with the full record available to check.",
     note: "Free online courses completed on Alura between 2017 and 2026 — not professional certifications.",
     recordLink: "View full learning record",
-    introductory: "Introductory",
-    trail: "Learning path",
+    introductory: "introductory",
     courseOne: "1 course",
     courseMany: "{n} courses",
+    more: "+{n} more",
     areas: {
       devops: "DevOps & Cloud",
-      programming: "Programming & Software Development",
+      programming: "Programming",
       security: "Cybersecurity",
       business: "Business, Management & Product",
       ai: "Artificial Intelligence",
@@ -388,7 +393,7 @@ export const en: Dictionary = {
     {
       id: "condominium",
       name: "Condominium Operations Platform",
-      shortName: "Condominium platform",
+      shortName: "Condominium Management",
       category: "Operations platform · Multi-tenant SaaS",
       type: "Independent project",
       tagline:
@@ -474,7 +479,7 @@ export const en: Dictionary = {
     {
       id: "medical",
       name: "Medical Professional Website & Content Platform",
-      shortName: "Medical website",
+      shortName: "Medical Platform",
       category: "Digital product · Systems integration",
       type: "Independent project",
       tagline:
@@ -555,7 +560,7 @@ export const en: Dictionary = {
     {
       id: "community",
       name: "Community & Association Portal",
-      shortName: "Community portal",
+      shortName: "Community Portal",
       category: "Web platform · Access control",
       type: "Independent project",
       tagline:
@@ -635,7 +640,7 @@ export const en: Dictionary = {
     {
       id: "integration-hub",
       name: "Business Integration Hub",
-      shortName: "Integration hub",
+      shortName: "Business Integration Hub",
       category: "Concept · Demonstrator",
       type: "Concept / demonstrator",
       tagline:

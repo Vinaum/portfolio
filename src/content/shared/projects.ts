@@ -244,7 +244,8 @@ export const heroDiagram: Diagram = {
   width: 600,
   height: 640,
   nodes: [
-    { id: "business", x: 190, y: 40, w: 220, h: 72, label: "BUSINESS", sub: t("metas · processos · pessoas", "goals · process · people"), tone: "default" },
+    { id: "people", x: 30, y: 40, w: 130, h: 72, label: "PEOPLE", sub: t("times · competências", "teams · skills"), tone: "accent" },
+    { id: "business", x: 190, y: 40, w: 220, h: 72, label: "BUSINESS", sub: t("metas · processos", "goals · process"), tone: "default" },
     { id: "applications", x: 30, y: 196, w: 180, h: 60, label: "APPLICATIONS", sub: "web · mobile" },
     { id: "data", x: 400, y: 196, w: 170, h: 60, label: "DATA", sub: "postgres · storage" },
     { id: "apis", x: 230, y: 312, w: 140, h: 72, label: "APIs", sub: t("contratos", "contracts"), tone: "primary" },
@@ -253,6 +254,8 @@ export const heroDiagram: Diagram = {
     { id: "infrastructure", x: 170, y: 556, w: 260, h: 60, label: "INFRASTRUCTURE", sub: t("computação · rede", "compute · network") },
   ],
   edges: [
+    { id: "h0", d: "M160 76 H190", flow: true },
+    { id: "h0b", d: "M95 112 V196", dashed: true, label: t("constroem", "build"), lx: 88, ly: 160, la: "end" },
     { id: "h1", d: "M250 112 V152 H120 V196", label: t("requisitos", "requirements"), lx: 128, ly: 145, la: "start", flow: true },
     { id: "h2", d: "M485 196 V152 H350 V112", label: "insight", lx: 478, ly: 145, la: "end", flow: true },
     { id: "h3", d: "M210 226 H300 V312", label: "REST / JSON", lx: 216, ly: 218, la: "start", flow: true },

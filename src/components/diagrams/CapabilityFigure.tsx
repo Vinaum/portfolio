@@ -113,31 +113,44 @@ function Cloud() {
   );
 }
 
-function Business() {
-  const left = ["GOAL", "COST", "RISK", "DEADLINE"];
-  const right = ["ARCHITECTURE", "EFFORT", "TRADE-OFF", "SCOPE"];
+function People() {
+  // Complementary profiles around a team, converging on a shared objective.
+  const hub = { x: 200, y: 140 };
+  const nodes = [
+    { x: 60, y: 92, l: "TECH" },
+    { x: 60, y: 200, l: "BUSINESS" },
+    { x: 340, y: 92, l: "SKILLS" },
+    { x: 340, y: 200, l: "BEHAVIOR" },
+  ];
   return (
     <>
-      <Label x={10} y={14} d={0}>BUSINESS</Label>
-      <Label x={390} y={14} anchor="end" d={0}>TECHNOLOGY</Label>
-      {left.map((l, i) => (
-        <Box key={l} x={10} y={28 + i * 50} w={96} h={30} label={l} d={i * 70} />
-      ))}
-      {right.map((r, i) => (
-        <Box key={r} x={284} y={28 + i * 50} w={106} h={30} label={r} d={i * 70 + 40} />
-      ))}
-      {left.map((_, i) => (
-        <path key={`l${i}`} {...L} d={`M106 ${43 + i * 50} H150 V118 H160`} stroke={line} fill="none" style={{ ["--d" as string]: 300 + i * 60, ["--len" as string]: 1 }} />
-      ))}
-      {right.map((_, i) => (
-        <path key={`r${i}`} {...L} d={`M240 118 H250 V${43 + i * 50} H284`} stroke={line} fill="none" style={{ ["--d" as string]: 500 + i * 60, ["--len" as string]: 1 }} />
-      ))}
-      <g className="dn" style={{ ["--d" as string]: 400 }}>
-        <rect x={160} y={100} width={80} height={36} fill="#146B4C" stroke={green} />
-        <text x={200} y={122} fill={paper} fontSize="9.5" fontFamily="var(--font-mono)" textAnchor="middle" letterSpacing="0.06em">
-          TRANSLATE
+      <g className="dn">
+        <rect x={140} y={10} width={120} height={30} fill="none" stroke={green} strokeDasharray="4 4" />
+        <text x={200} y={29} fill={paper} fontSize="9.5" fontFamily="var(--font-mono)" textAnchor="middle" letterSpacing="0.1em">
+          OBJECTIVE
         </text>
       </g>
+      <path {...L} d={`M${hub.x} ${hub.y - 18} V40`} stroke={green} fill="none" style={{ ["--d" as string]: 700, ["--len" as string]: 1 }} />
+      {nodes.map((n, i) => (
+        <path key={`e${i}`} {...L} d={`M${n.x} ${n.y} L${hub.x} ${hub.y}`} stroke={line} fill="none" style={{ ["--d" as string]: 200 + i * 90, ["--len" as string]: 1 }} />
+      ))}
+      <path {...L} d="M60 92 L60 200" stroke={green} strokeDasharray="3 4" fill="none" className="dn" />
+      <path {...L} d="M340 92 L340 200" stroke={green} strokeDasharray="3 4" fill="none" className="dn" />
+      {nodes.map((n, i) => (
+        <g key={n.l} className="dn" style={{ ["--d" as string]: i * 80 }}>
+          <rect x={n.x - 7} y={n.y - 7} width={14} height={14} fill="#146B4C" stroke={green} />
+          <text x={n.x} y={n.y + 24} fill={muted} fontSize="9.5" fontFamily="var(--font-mono)" textAnchor="middle" letterSpacing="0.08em">
+            {n.l}
+          </text>
+        </g>
+      ))}
+      <g className="dn" style={{ ["--d" as string]: 400 }}>
+        <rect x={hub.x - 40} y={hub.y - 18} width={80} height={36} fill="#1B2420" stroke={line} />
+        <text x={hub.x} y={hub.y + 4} fill={paper} fontSize="10" fontFamily="var(--font-mono)" textAnchor="middle" letterSpacing="0.14em">
+          TEAM
+        </text>
+      </g>
+      <Label x={200} y={236} anchor="middle" d={900}>{"complementary profiles · shared goal"}</Label>
     </>
   );
 }
@@ -146,7 +159,7 @@ const figures: Record<Capability["id"], () => React.JSX.Element> = {
   architecture: Architecture,
   integration: Integration,
   cloud: Cloud,
-  business: Business,
+  people: People,
 };
 
 export function CapabilityFigure({ id, title }: { id: Capability["id"]; title: string }) {
