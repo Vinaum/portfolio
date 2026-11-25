@@ -17,12 +17,15 @@ export const en: Dictionary = {
       "Technical Consultant",
       "Computer Engineer",
       "Automation",
+      "Team Building",
       "AWS",
       "Supabase",
       "Next.js",
     ],
   },
   ids: {
+    companies: "companies",
+    teams: "team-building",
     about: "about",
     capabilities: "capabilities",
     work: "work",
@@ -73,7 +76,7 @@ export const en: Dictionary = {
     paragraphs: [
       "I trained as a Computer Engineer at UNICAMP, where I learned to see technology as a set of interdependent systems: hardware, software and the constraints that hold them together. I went further with postgraduate studies in Computer Hardware Engineering, and later an MBA in People and Performance Management.",
       "I co-founded Raiz Universitária, a startup that ran 80 events across five universities and built a community of more than 10,000 students, and took third place at the Desafio UNICAMP de Inovação Tecnológica. It taught me what no course did: how to turn an idea into something people actually use, with limited resources and real deadlines.",
-      "Then came technology, telecommunications and business development — followed by more than seven years in specialized technology recruitment, including leading recruitment teams. That work kept me in constant conversation with engineers and hiring managers about stacks, architectures and what a team really needs. It’s where I learned to translate between technical depth and business intent.",
+      "Then came technology, telecommunications and business development — followed by more than seven years in specialized technology recruitment, including leading recruitment teams of up to 17 consultants. That work kept me in constant conversation with engineers and hiring managers about stacks, architectures and what a team really needs. It’s where I learned to translate between technical depth and business intent.",
       "Today I build. Independent projects — a multi-tenant operations platform, a content-managed medical website, a community portal — are where I apply engineering, integration and product thinking end to end: from requirements discovery to database security policies to deployment pipelines.",
     ],
     factsTitle: "At a glance",
@@ -85,6 +88,124 @@ export const en: Dictionary = {
       { k: "Recruitment", v: "7+ years in tech, incl. team leadership" },
       { k: "Now", v: "Independent technology projects" },
     ],
+  },
+  companies: {
+    label: "Companies & Experience",
+    code: "ENVIRONMENTS",
+    title: "Where I learned how technology businesses actually work.",
+    intro:
+      "Three environments shaped my perspective the most: a high-growth insurtech, an applied-AI company and one of the world’s best-known specialized recruitment groups.",
+    sectorLabel: "Sector",
+    contextLabel: "The company",
+    exposureLabel: "What the environment brought",
+    roleLabel: "Role",
+    featured: [
+      {
+        id: "pier",
+        name: "Pier",
+        sector: "Insurtech · Digital insurance",
+        descriptor: "High-growth technology inside a regulated industry.",
+        context:
+          "Founded in 2018, Pier is Brazil’s first digital insurer authorized by Susep — the first insurtech in the country to become an insurance company — with technology at the core of the product.",
+        exposure:
+          "Working inside a high-growth technology business, where pace, scale and technology-as-the-product shape every decision about people and operations.",
+      },
+      {
+        id: "gobots",
+        name: "GoBots",
+        sector: "Applied AI · E-commerce",
+        descriptor: "Artificial intelligence applied to real business problems.",
+        context:
+          "A Brazilian AI company building automation for e-commerce and marketplaces — customer service, sales and listings for retailers selling on platforms such as Mercado Livre, Amazon, Shopee and Magalu.",
+        exposure:
+          "An environment where AI is not a buzzword but a product that has to solve concrete problems for business customers.",
+      },
+      {
+        id: "pagegroup",
+        name: "PageGroup",
+        brands: "Page Outsourcing · Michael Page",
+        sector: "Specialized recruitment · Talent consulting",
+        descriptor: "A globally recognized standard in specialized recruitment.",
+        context:
+          "The group behind Michael Page, Page Executive, Page Personnel and Page Outsourcing — a FTSE 250 company operating in more than 30 countries.",
+        exposure:
+          "Method, consistency and market intelligence at global scale: a professional standard for how talent is assessed and how client relationships are run.",
+      },
+    ],
+    othersTitle: "Also in my trajectory",
+    others: [
+      { name: "Raiz Universitária", area: "Entrepreneurship", role: "Co-founder" },
+      { name: "Trópico Telecomunicações", area: "Technology & telecom" },
+      { name: "Share RH", area: "Technology recruitment" },
+      { name: "Share People Hub", area: "Technology recruitment" },
+      { name: "Independent projects", area: "Solutions engineering" },
+    ],
+    trademarkNote: "Company names and logos belong to their respective owners.",
+  },
+  teams: {
+    label: "Team building",
+    code: "PEOPLE SYSTEMS",
+    title: "Building teams that build solutions.",
+    statement:
+      "Building high-performing teams is not just about finding talented individuals. It is about understanding how technical skills, behavioral profiles, communication styles and complementary strengths come together to solve complex business challenges.",
+    dimensionsLabel: "Four dimensions",
+    dimensions: [
+      {
+        id: "technical",
+        title: "Technical Assessment",
+        body: "Understanding technical competencies, specializations and professional experience — reading a stack, a career path and a seniority level for what they actually mean.",
+        reading: "Each profile is read for what it can do.",
+      },
+      {
+        id: "composition",
+        title: "Team Composition",
+        body: "Identifying complementary profiles and combining different strengths, so the team covers what no single person can.",
+        reading: "Profiles are connected by how they complement each other.",
+      },
+      {
+        id: "behavioral",
+        title: "Behavioral Intelligence",
+        body: "Understanding communication styles, collaboration, leadership and behavioral characteristics — how people will work together, not just what they know.",
+        reading: "The same people, read for how they work.",
+      },
+      {
+        id: "business",
+        title: "Business Alignment",
+        body: "Connecting people, capabilities and organizational objectives. The right team is defined by the problem the business needs solved.",
+        reading: "Everything converges on the business objective.",
+      },
+    ],
+    figure: "FIG. — TEAM COMPOSITION MODEL",
+    figureCaption: "Illustrative model: one hypothetical team, read through each of the four dimensions.",
+    outcome: "BUSINESS OBJECTIVE",
+    team: "TEAM",
+    profiles: [
+      { tech: "APIs · Integration", style: "Analytical" },
+      { tech: "Cloud · Infra", style: "Steady" },
+      { tech: "Data", style: "Detail-oriented" },
+      { tech: "Product", style: "Communicator" },
+      { tech: "Front-end", style: "Driver" },
+    ],
+    stat: {
+      value: "17",
+      label: "recruitment consultants in the largest team I led",
+      note: "Recruitment teams — not software engineering teams.",
+    },
+    bridge: {
+      label: "People · Technology · Business",
+      quote: "I understand both sides of technology: the systems that need to work and the people who make them work.",
+      intro:
+        "Years in technology recruitment, team leadership and close contact with the business gave me daily practice in exactly what solutions work depends on:",
+      abilities: [
+        "Understanding business requirements.",
+        "Communicating with technical and non-technical stakeholders.",
+        "Identifying complementary competencies.",
+        "Understanding organizational and operational constraints.",
+        "Bridging business expectations and technical execution.",
+      ],
+      systems: "Systems",
+      people: "People",
+    },
   },
   capabilities: {
     label: "Capabilities",

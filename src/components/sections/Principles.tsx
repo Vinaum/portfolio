@@ -6,7 +6,7 @@ export function Principles({ dict }: { dict: Dictionary }) {
   return (
     <section id={ids.principles} aria-labelledby="principles-title" className="relative border-t border-line bg-graphite/40 py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index="06" label={p.label} code={p.code} title={p.title} titleId="principles-title" />
+        <SectionHeader index="08" label={p.label} code={p.code} title={p.title} titleId="principles-title" />
         <ol className="mt-20 border-t border-line lg:mt-28">
           {p.items.map((item, i) => (
             <li key={item.title} className="principle grid-12 gap-y-6 border-b border-line py-12 lg:py-16" data-reveal>

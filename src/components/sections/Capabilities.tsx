@@ -7,7 +7,7 @@ export function Capabilities({ dict }: { dict: Dictionary }) {
   return (
     <section id={ids.capabilities} aria-labelledby="capabilities-title" className="relative border-t border-line bg-graphite/40 py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index="02" label={c.label} code={c.code} title={c.title} titleId="capabilities-title">
+        <SectionHeader index="03" label={c.label} code={c.code} title={c.title} titleId="capabilities-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {c.intro}
           </p>
@@ -41,7 +41,7 @@ export function Capabilities({ dict }: { dict: Dictionary }) {
                   <CapabilityFigure id={item.id} title={item.title} />
                 </div>
                 <figcaption className="t-mono-sm mt-3 flex justify-between text-muted">
-                  <span>FIG. 02.{i + 1}</span>
+                  <span>FIG. 03.{i + 1}</span>
                   <span>{item.title}</span>
                 </figcaption>
               </figure>

@@ -126,6 +126,29 @@ export interface Chapter {
   contributions: string[];
 }
 
+export type CompanyId = "pier" | "gobots" | "pagegroup";
+
+export interface FeaturedCompany {
+  id: CompanyId;
+  name: string;
+  /** Group brands the experience happened under, when different from the name. */
+  brands?: string;
+  sector: string;
+  descriptor: string;
+  context: string;
+  exposure: string;
+  /** Optional — fill only with confirmed information. */
+  role?: string;
+  period?: string;
+}
+
+export interface TeamDimension {
+  id: "technical" | "composition" | "behavioral" | "business";
+  title: string;
+  body: string;
+  reading: string;
+}
+
 export interface Dictionary {
   locale: Locale;
   htmlLang: string;
@@ -137,6 +160,8 @@ export interface Dictionary {
   };
   ids: {
     about: string;
+    companies: string;
+    teams: string;
     capabilities: string;
     work: string;
     technology: string;
@@ -179,6 +204,42 @@ export interface Dictionary {
     paragraphs: string[];
     factsTitle: string;
     facts: { k: string; v: string }[];
+  };
+  companies: {
+    label: string;
+    code: string;
+    title: string;
+    intro: string;
+    sectorLabel: string;
+    contextLabel: string;
+    exposureLabel: string;
+    roleLabel: string;
+    featured: FeaturedCompany[];
+    othersTitle: string;
+    others: { name: string; area: string; role?: string }[];
+    trademarkNote: string;
+  };
+  teams: {
+    label: string;
+    code: string;
+    title: string;
+    statement: string;
+    dimensionsLabel: string;
+    dimensions: TeamDimension[];
+    figure: string;
+    figureCaption: string;
+    outcome: string;
+    team: string;
+    profiles: { tech: string; style: string }[];
+    stat: { value: string; label: string; note: string };
+    bridge: {
+      label: string;
+      quote: string;
+      intro: string;
+      abilities: string[];
+      systems: string;
+      people: string;
+    };
   };
   capabilities: {
     label: string;

@@ -18,7 +18,7 @@ export function Technology({ dict }: { dict: Dictionary }) {
   return (
     <section id={ids.technology} aria-labelledby="technology-title" className="relative border-t border-line bg-graphite/40 py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index="04" label={t.label} code={t.code} title={t.title} titleId="technology-title">
+        <SectionHeader index="06" label={t.label} code={t.code} title={t.title} titleId="technology-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {t.intro}
           </p>

@@ -7,6 +7,8 @@ import { LocalePreference } from "@/components/layout/LocalePreference";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Capabilities } from "@/components/sections/Capabilities";
+import { Companies } from "@/components/sections/Companies";
+import { TeamBuilding } from "@/components/sections/TeamBuilding";
 import { Work } from "@/components/sections/Work";
 import { Technology } from "@/components/sections/Technology";
 import { Journey } from "@/components/sections/Journey";
@@ -24,7 +26,9 @@ export function HomePage({ locale }: { locale: Locale }) {
       <main id="main">
         <Hero dict={dict} />
         <About dict={dict} />
+        <Companies dict={dict} index="02" />
         <Capabilities dict={dict} />
+        <TeamBuilding dict={dict} index="04" />
         <Work dict={dict} />
         <Technology dict={dict} />
         <Journey dict={dict} />

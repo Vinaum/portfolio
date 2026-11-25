@@ -47,6 +47,10 @@ src/content/
 - **Technology evidence:** each item is marked `applied` or `study` in `technology.groups`. Change the status as your experience changes.
 - **Career timeline:** `journey.chapters`. Each organization accepts an optional `role`. Dates are deliberately absent; add them to `period` once confirmed.
 
+## Company logos
+
+Drop official files into `public/logos/` as `pier.svg`, `gobots.svg` and `pagegroup.svg` (PNG or WebP also work) and rebuild. They are detected at build time and rendered in monochrome off-white to match the palette; switch `logoTreatment` to `"original"` in `src/components/sections/Companies.tsx` to keep brand colours. Without a file, the company name is set as a typographic wordmark. Optional `role` and `period` fields per company in `companies.featured` appear only when filled.
+
 ## Deploying to GitHub Pages
 
 Build with `npm run build` and publish `out/` (for example with `actions/upload-pages-artifact` + `actions/deploy-pages`). Add an empty `out/.nojekyll` so `_next/` is served.

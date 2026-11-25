@@ -26,7 +26,7 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
     { id: ids.about, label: nav.about },
     { id: ids.capabilities, label: nav.capabilities },
     { id: ids.work, label: nav.work },
-    { id: ids.experience, label: nav.experience },
+    { id: ids.companies, label: nav.experience },
     { id: ids.contact, label: nav.contact },
   ];
 
@@ -42,12 +42,13 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
   // Active section indicator.
   useEffect(() => {
     if (!onHome) return;
-    const sections = [ids.about, ids.capabilities, ids.work, ids.technology, ids.experience, ids.principles, ids.contact]
+    const sections = [ids.about, ids.companies, ids.capabilities, ids.teams, ids.work, ids.technology, ids.experience, ids.principles, ids.contact]
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
     const map: Record<string, string> = {
+      [ids.teams]: ids.capabilities,
       [ids.technology]: ids.work,
-      [ids.principles]: ids.experience,
+      [ids.experience]: ids.companies,
     };
     const io = new IntersectionObserver(
       (entries) => {

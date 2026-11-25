@@ -29,7 +29,7 @@ export function Journey({ dict }: { dict: Dictionary }) {
   return (
     <section id={ids.experience} aria-labelledby="journey-title" className="relative border-t border-line py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index="05" label={j.label} code={j.code} title={j.title} titleId="journey-title">
+        <SectionHeader index="07" label={j.label} code={j.code} title={j.title} titleId="journey-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {j.intro}
           </p>

@@ -17,12 +17,15 @@ export const ptBR: Dictionary = {
       "Consultor técnico",
       "Engenheiro de Computação",
       "Automação",
+      "Formação de times",
       "AWS",
       "Supabase",
       "Next.js",
     ],
   },
   ids: {
+    companies: "empresas",
+    teams: "formacao-de-times",
     about: "sobre",
     capabilities: "competencias",
     work: "projetos",
@@ -73,7 +76,7 @@ export const ptBR: Dictionary = {
     paragraphs: [
       "Sou formado em Engenharia de Computação pela UNICAMP, onde aprendi a enxergar a tecnologia como um conjunto de sistemas interdependentes: hardware, software e as restrições que os mantêm unidos. Aprofundei esse olhar com uma pós-graduação em Engenharia de Hardware e, mais tarde, um MBA em Gestão de Pessoas e Performance.",
       "Fui cofundador da Raiz Universitária, uma startup que realizou 80 eventos em cinco universidades, formou uma comunidade de mais de 10 mil estudantes e conquistou o terceiro lugar no Desafio UNICAMP de Inovação Tecnológica. Ali aprendi o que nenhum curso ensinou: transformar uma ideia em algo que as pessoas realmente usam, com recursos limitados e prazos reais.",
-      "Depois vieram tecnologia, telecomunicações e desenvolvimento de negócios — e mais de sete anos em recrutamento especializado em tecnologia, incluindo a liderança de equipes de recrutamento. Esse trabalho me colocou em conversa constante com engenheiros e gestores de contratação sobre stacks, arquiteturas e o que um time realmente precisa. Foi onde aprendi a traduzir entre profundidade técnica e intenção de negócio.",
+      "Depois vieram tecnologia, telecomunicações e desenvolvimento de negócios — e mais de sete anos em recrutamento especializado em tecnologia, incluindo a liderança de equipes de até 17 consultores de recrutamento. Esse trabalho me colocou em conversa constante com engenheiros e gestores de contratação sobre stacks, arquiteturas e o que um time realmente precisa. Foi onde aprendi a traduzir entre profundidade técnica e intenção de negócio.",
       "Hoje eu construo. Projetos independentes — uma plataforma operacional multi-inquilino, um site médico com conteúdo gerenciável, um portal de comunidade — são onde aplico engenharia, integração e visão de produto de ponta a ponta: da descoberta de requisitos às políticas de segurança do banco e aos pipelines de publicação.",
     ],
     factsTitle: "Em resumo",
@@ -85,6 +88,124 @@ export const ptBR: Dictionary = {
       { k: "Recrutamento", v: "7+ anos em tecnologia, com liderança de equipe" },
       { k: "Agora", v: "Projetos independentes de tecnologia" },
     ],
+  },
+  companies: {
+    label: "Empresas e Experiência",
+    code: "AMBIENTES",
+    title: "Onde aprendi como empresas de tecnologia realmente funcionam.",
+    intro:
+      "Três ambientes moldaram mais a minha visão: uma insurtech de alto crescimento, uma empresa de IA aplicada e um dos grupos de recrutamento especializado mais conhecidos do mundo.",
+    sectorLabel: "Setor",
+    contextLabel: "A empresa",
+    exposureLabel: "O que o ambiente trouxe",
+    roleLabel: "Função",
+    featured: [
+      {
+        id: "pier",
+        name: "Pier",
+        sector: "Insurtech · Seguro digital",
+        descriptor: "Tecnologia de alto crescimento dentro de um setor regulado.",
+        context:
+          "Fundada em 2018, a Pier é a primeira seguradora digital do Brasil autorizada pela Susep — a primeira insurtech do país a se tornar seguradora —, com a tecnologia no centro do produto.",
+        exposure:
+          "Trabalhar dentro de uma empresa de tecnologia em alto crescimento, onde ritmo, escala e a tecnologia como produto moldam cada decisão sobre pessoas e operação.",
+      },
+      {
+        id: "gobots",
+        name: "GoBots",
+        sector: "IA aplicada · E-commerce",
+        descriptor: "Inteligência artificial aplicada a problemas reais de negócio.",
+        context:
+          "Uma empresa brasileira de IA que cria automações para e-commerce e marketplaces — atendimento, vendas e anúncios para lojistas que vendem em plataformas como Mercado Livre, Amazon, Shopee e Magalu.",
+        exposure:
+          "Um ambiente em que IA não é palavra da moda, e sim um produto que precisa resolver problemas concretos de clientes empresariais.",
+      },
+      {
+        id: "pagegroup",
+        name: "PageGroup",
+        brands: "Page Outsourcing · Michael Page",
+        sector: "Recrutamento especializado · Consultoria de talentos",
+        descriptor: "Uma referência global em recrutamento especializado.",
+        context:
+          "O grupo por trás de Michael Page, Page Executive, Page Personnel e Page Outsourcing — empresa do índice FTSE 250, com operações em mais de 30 países.",
+        exposure:
+          "Método, consistência e inteligência de mercado em escala global: um padrão profissional de como avaliar talentos e conduzir a relação com clientes.",
+      },
+    ],
+    othersTitle: "Também na minha trajetória",
+    others: [
+      { name: "Raiz Universitária", area: "Empreendedorismo", role: "Cofundador" },
+      { name: "Trópico Telecomunicações", area: "Tecnologia e telecom" },
+      { name: "Share RH", area: "Recrutamento de tecnologia" },
+      { name: "Share People Hub", area: "Recrutamento de tecnologia" },
+      { name: "Projetos independentes", area: "Engenharia de soluções" },
+    ],
+    trademarkNote: "Nomes e logotipos pertencem às respectivas empresas.",
+  },
+  teams: {
+    label: "Formação de times",
+    code: "SISTEMAS DE PESSOAS",
+    title: "Construindo times que constroem soluções.",
+    statement:
+      "Formar times de alta performance não é apenas encontrar pessoas talentosas. É entender como competências técnicas, perfis comportamentais, estilos de comunicação e forças complementares se combinam para resolver desafios complexos de negócio.",
+    dimensionsLabel: "Quatro dimensões",
+    dimensions: [
+      {
+        id: "technical",
+        title: "Avaliação Técnica",
+        body: "Entender competências técnicas, especializações e experiência profissional — ler uma stack, uma trajetória e um nível de senioridade pelo que realmente significam.",
+        reading: "Cada perfil é lido pelo que sabe fazer.",
+      },
+      {
+        id: "composition",
+        title: "Composição de Times",
+        body: "Identificar perfis complementares e combinar forças diferentes, para que o time cubra o que nenhuma pessoa cobre sozinha.",
+        reading: "Os perfis se conectam pela forma como se complementam.",
+      },
+      {
+        id: "behavioral",
+        title: "Inteligência Comportamental",
+        body: "Entender estilos de comunicação, colaboração, liderança e características comportamentais — como as pessoas vão trabalhar juntas, não só o que sabem.",
+        reading: "As mesmas pessoas, lidas pela forma como trabalham.",
+      },
+      {
+        id: "business",
+        title: "Alinhamento ao Negócio",
+        body: "Conectar pessoas, capacidades e objetivos da organização. O time certo é definido pelo problema que o negócio precisa resolver.",
+        reading: "Tudo converge para o objetivo de negócio.",
+      },
+    ],
+    figure: "FIG. — MODELO DE COMPOSIÇÃO DE TIME",
+    figureCaption: "Modelo ilustrativo: um time hipotético, lido por cada uma das quatro dimensões.",
+    outcome: "OBJETIVO DE NEGÓCIO",
+    team: "TIME",
+    profiles: [
+      { tech: "APIs · Integração", style: "Analítico" },
+      { tech: "Cloud · Infra", style: "Estável" },
+      { tech: "Dados", style: "Detalhista" },
+      { tech: "Produto", style: "Comunicador" },
+      { tech: "Front-end", style: "Executor" },
+    ],
+    stat: {
+      value: "17",
+      label: "consultores de recrutamento no maior time que liderei",
+      note: "Times de recrutamento — não times de engenharia de software.",
+    },
+    bridge: {
+      label: "Pessoas · Tecnologia · Negócio",
+      quote: "Entendo os dois lados da tecnologia: os sistemas que precisam funcionar e as pessoas que os fazem funcionar.",
+      intro:
+        "Os anos em recrutamento de tecnologia, liderança de times e contato próximo com o negócio me deram prática diária exatamente no que o trabalho com soluções exige:",
+      abilities: [
+        "Entender requisitos de negócio.",
+        "Comunicar-me com stakeholders técnicos e não técnicos.",
+        "Identificar competências complementares.",
+        "Entender restrições organizacionais e operacionais.",
+        "Fazer a ponte entre as expectativas do negócio e a execução técnica.",
+      ],
+      systems: "Sistemas",
+      people: "Pessoas",
+    },
   },
   capabilities: {
     label: "Competências",

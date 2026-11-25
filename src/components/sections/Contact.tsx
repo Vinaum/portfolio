@@ -13,7 +13,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
     <section id={ids.contact} aria-labelledby="contact-title" className="relative overflow-hidden border-t border-line pb-20 pt-28 lg:pt-40">
       <div className="container-x">
         <div className="t-mono flex items-center gap-4 text-muted" data-reveal="fade">
-          <span className="text-accent">07</span>
+          <span className="text-accent">09</span>
           <span className="text-paper">{c.label}</span>
           <span aria-hidden="true" className="hidden sm:inline">
             /
