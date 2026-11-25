@@ -13,8 +13,9 @@ import { site } from "@/content";
 export type LogoTreatment = "silhouette" | "invert" | "original";
 
 /** Optional per-company override. Leave empty to let the build decide from the file. */
-export const logoOverrides: Partial<Record<CompanyId, LogoTreatment>> = {};
-
+export const logoOverrides: Partial<Record<CompanyId, LogoTreatment>> = {
+  pier: "original",   // ou "silhouette" / "invert"
+};
 export interface Logo {
   src: string;
   treatment: LogoTreatment;
