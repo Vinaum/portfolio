@@ -11,7 +11,7 @@ Next.js 16 (App Router, `output: "export"`) · React 19 · TypeScript · Tailwin
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Development server |
-| `npm run build` | Static export to `out/` |
+| `npm run build` | Prepares logos, then static export to `out/` |
 | `npm run typecheck` / `npm run lint` / `npm test` | Types, ESLint, Vitest (content and translation integrity) |
 | `npm run check:links` | Checks every internal link and `#anchor` in `out/` |
 | `npm run check` | All of the above, in order |
@@ -49,7 +49,11 @@ src/content/
 
 ## Company logos
 
-Drop official files into `public/logos/` named `pier`, `gobots` and `pagegroup` (`.svg`, `.png`, `.webp` or `.jpg`) and rebuild. The build reads each file's header: transparent logos become an off-white silhouette; logos on an opaque background have the background removed and the artwork turned light. Override per company in `logoOverrides` (`src/lib/logos.ts`). Without a file, the company name is set as a typographic wordmark. Optional `role` and `period` fields per company in `companies.featured` appear only when filled.
+Drop official files into `public/logos/` (`pier`, `gobots`, `pagegroup`, `sharepeoplehub`, `unicamp` — `.svg`, `.png`, `.webp` or `.jpg`). Before every dev/build run, `scripts/prepare-logos.mjs` trims empty margins and measures each logo, and the site sizes them by ink area so they read at the same optical size. See `public/logos/README.md`.
+
+## Learning record
+
+Courses in the Continuous learning section come from the public Alura record and live in `src/content/shared/learning.ts` (real titles, completed items only).
 
 ## Deploying to GitHub Pages
 

@@ -3,52 +3,23 @@ import { SectionHeader } from "@/components/ui/primitives";
 import { LogoMark } from "@/components/ui/LogoMark";
 import { findLogo } from "@/lib/logos";
 
+/** About + Education: the personal narrative beside the academic foundation. */
 export function About({ dict }: { dict: Dictionary }) {
   const { about, ids } = dict;
-  const unicamp = findLogo("unicamp");
   const edu = about.education;
+  const unicamp = findLogo("unicamp");
+
   return (
-    <section id={ids.about} aria-labelledby="about-title" className="relative py-28 lg:py-40">
+    <section id={ids.about} aria-labelledby="about-title" className="relative py-32 lg:py-44">
       <div className="container-x">
         <SectionHeader label={about.label} title={about.title} titleId="about-title" />
 
-        <div className="grid-12 mt-16 gap-y-14 lg:mt-24">
-          <aside className="col-span-12 lg:col-span-4" aria-label={about.factsTitle}>
-            <div className="lg:sticky lg:top-[calc(var(--header-h)+2rem)]" data-reveal>
-              <div className="company group relative mb-12 border border-line bg-obsidian/60 p-7">
-                <span className="company-rule absolute inset-x-0 top-[-1px] h-px bg-accent" aria-hidden="true" />
-                <p className="t-mono-sm text-accent">{edu.label}</p>
-                <div className="mt-6 flex min-h-[4.5rem] items-end">
-                  {unicamp ? (
-                    <LogoMark logo={unicamp} alt={`${edu.short} — ${edu.institution}`} height={4.6} />
-                  ) : (
-                    <span className="company-wordmark font-display text-[3.4rem] font-medium leading-[0.85] tracking-[-0.045em]">
-                      {edu.short}
-                    </span>
-                  )}
-                </div>
-                <p className="mt-6 border-t border-line pt-5 font-display text-[1.35rem] leading-tight tracking-[-0.02em] text-paper">
-                  {edu.degree}
-                </p>
-                <p className="t-mono-sm mt-2 normal-case tracking-[0.03em] text-muted">{edu.institution}</p>
-              </div>
-              <p className="t-mono text-accent">{about.factsTitle}</p>
-              <dl className="mt-5 border-t border-line">
-                {about.facts.map((f) => (
-                  <div key={f.k} className="grid grid-cols-[8.5rem_1fr] gap-4 border-b border-line py-4">
-                    <dt className="t-mono pt-[3px] text-muted">{f.k}</dt>
-                    <dd className="text-[0.95rem] leading-snug text-paper">{f.v}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </aside>
-
-          <div className="col-span-12 lg:col-span-7 lg:col-start-6">
+        <div className="grid-12 mt-20 gap-y-20 lg:mt-28">
+          <div className="col-span-12 lg:col-span-6">
             <p className="font-display text-[clamp(1.5rem,2.5vw,2.25rem)] leading-[1.2] tracking-[-0.025em] text-paper" data-reveal>
               {about.lead}
             </p>
-            <div className="mt-12 flex flex-col gap-8">
+            <div className="mt-12 flex flex-col gap-7">
               {about.paragraphs.map((p, i) => (
                 <p key={i} className="t-body" data-reveal>
                   {p}
@@ -56,6 +27,33 @@ export function About({ dict }: { dict: Dictionary }) {
               ))}
             </div>
           </div>
+
+          <aside className="col-span-12 lg:col-span-5 lg:col-start-8" aria-labelledby="education-title" data-reveal>
+            <h3 id="education-title" className="t-mono text-accent">
+              {edu.label}
+            </h3>
+            <div className="mt-10 flex items-end gap-6">
+              {unicamp ? (
+                <LogoMark logo={unicamp} alt={`${edu.short} — ${edu.institution}`} height={5.2} />
+              ) : (
+                <span className="font-display text-[4rem] font-medium leading-[0.85] tracking-[-0.045em] text-paper">
+                  {edu.short}
+                </span>
+              )}
+              <p className="t-mono-sm pb-1 normal-case tracking-[0.03em] text-muted">{edu.institution}</p>
+            </div>
+            <dl className="mt-12">
+              {edu.items.map((item) => (
+                <div key={item.title} className="grid grid-cols-[8.5rem_1fr] items-baseline gap-4 border-t border-line/70 py-5">
+                  <dt className="t-mono-sm text-muted">{item.level}</dt>
+                  <dd className="font-display text-[1.3rem] leading-tight tracking-[-0.02em] text-paper">
+                    {item.title}
+                    {item.institution ? <span className="text-paper/50"> — {item.institution}</span> : null}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
         </div>
       </div>
     </section>

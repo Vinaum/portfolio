@@ -56,7 +56,7 @@ export function ProjectPlate({
         </div>
 
         <figure className={`col-span-12 lg:col-span-7 ${flip ? "lg:order-1" : "lg:col-start-6"}`}>
-          <div className="plate-figure overflow-hidden border border-line bg-obsidian/80 p-4 sm:p-6">
+          <div className="plate-figure overflow-hidden">
             <Diagram
               data={project.architecture}
               locale={locale}

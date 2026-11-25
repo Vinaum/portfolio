@@ -8,7 +8,7 @@ export function Clients({ dict }: { dict: Dictionary }) {
   const { clients: c, ids } = dict;
   if (c.items.length === 0) return null;
   return (
-    <section id={ids.clients} aria-labelledby="clients-title" className="relative border-t border-line py-28 lg:py-40">
+    <section id={ids.clients} aria-labelledby="clients-title" className="relative border-t border-line py-32 lg:py-44">
       <div className="container-x">
         <SectionHeader label={c.label} title={c.title} titleId="clients-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>

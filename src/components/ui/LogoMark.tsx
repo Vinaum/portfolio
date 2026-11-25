@@ -24,6 +24,8 @@ export function LogoMark({
       <img
         src={logo.src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         data-treatment={logo.treatment}
         className={`company-logo w-auto max-w-full object-contain ${align === "center" ? "object-center" : "object-left"}`}
         style={{ height: `${(height * logo.scale).toFixed(2)}rem` }}

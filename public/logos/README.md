@@ -1,14 +1,17 @@
-Place official company logos here, named by company id:
+Official logos, named by id (any of .svg, .png, .webp, .jpg):
 
-- `pier.webp` / `pier.png` / `pier.svg`
-- `gobots.webp` / `gobots.png` / `gobots.svg`
-- `pagegroup.webp` / `pagegroup.png` / `pagegroup.svg`
+- `pier`, `gobots`, `pagegroup`, `sharepeoplehub` — featured companies
+- `unicamp` — education
 
-Detected at build time. The build reads each file's header:
+`npm run dev` and `npm run build` first run `scripts/prepare-logos.mjs`, which trims
+empty margins (transparent or flat background), measures each logo and writes the
+trimmed copies to `public/logos/_/` plus `src/content/generated/logos.json`.
+The site then sizes every logo by its *ink area*, so wide/heavy and compact/light
+logos look equally large without being distorted. Without a file, the name is set
+as a typographic wordmark.
 
-- transparent background → rendered as an off-white silhouette;
-- opaque background (e.g. logo on white) → background removed, artwork turned light.
+Fine-tuning (optional) in `src/lib/logos.ts`:
+- `logoScale` — per-logo size multiplier (1 = automatic size)
+- `logoOverrides` — `"silhouette"`, `"tonal"`, `"invert"` or `"original"`
 
-To force a treatment for one company, edit `logoOverrides` in `src/lib/logos.ts`
-(`"silhouette"`, `"invert"` or `"original"`).
-Without a file, the company name is set as a typographic wordmark.
+`*-app-icon.*` files are ignored.

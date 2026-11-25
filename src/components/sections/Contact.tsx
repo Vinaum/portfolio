@@ -10,7 +10,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
     { label: "GitHub", cta: c.github, value: `/${site.githubHandle}`, href: site.github, external: true },
   ];
   return (
-    <section id={ids.contact} aria-labelledby="contact-title" className="relative overflow-hidden border-t border-line pb-20 pt-28 lg:pt-40">
+    <section id={ids.contact} aria-labelledby="contact-title" className="relative overflow-hidden border-t border-line pb-24 pt-32 lg:pt-44">
       <div className="container-x">
         <p className="t-mono text-accent" data-reveal="fade">
           {c.label}

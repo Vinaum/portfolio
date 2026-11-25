@@ -125,7 +125,7 @@ export interface Chapter {
   contributions: string[];
 }
 
-export type CompanyId = "pier" | "gobots" | "pagegroup";
+export type CompanyId = "pier" | "gobots" | "pagegroup" | "sharepeoplehub";
 
 export interface FeaturedCompany {
   id: CompanyId;
@@ -133,11 +133,11 @@ export interface FeaturedCompany {
   /** Group brands the experience happened under, when different from the name. */
   brands?: string;
   sector: string;
-  descriptor: string;
-  context: string;
-  exposure: string;
+  /** What the company is — verifiable facts only. */
+  description: string;
+  /** Your actual relationship with it, as confirmed by you. */
+  relationship: string;
   /** Optional — fill only with confirmed information. */
-  role?: string;
   period?: string;
 }
 
@@ -159,16 +159,16 @@ export interface Dictionary {
   };
   ids: {
     about: string;
-    clients: string;
     companies: string;
-    teams: string;
     capabilities: string;
     work: string;
-    technology: string;
-    experience: string;
-    principles: string;
+    clients: string;
+    teams: string;
+    beyond: string;
+    learning: string;
     contact: string;
   };
+
   nav: {
     skip: string;
     home: string;
@@ -200,10 +200,14 @@ export interface Dictionary {
     title: string;
     lead: string;
     paragraphs: string[];
-    factsTitle: string;
-    facts: { k: string; v: string }[];
-    education: { label: string; degree: string; institution: string; short: string };
+    education: {
+      label: string;
+      institution: string;
+      short: string;
+      items: { level: string; title: string; institution?: string }[];
+    };
   };
+
   clients: {
     label: string;
     title: string;
@@ -220,15 +224,13 @@ export interface Dictionary {
     label: string;
     title: string;
     intro: string;
-    sectorLabel: string;
-    contextLabel: string;
-    exposureLabel: string;
-    roleLabel: string;
+    relationshipLabel: string;
     featured: FeaturedCompany[];
     othersTitle: string;
-    others: { name: string; area: string; role?: string }[];
+    others: { name: string; area: string; role?: string; note?: string }[];
     trademarkNote: string;
   };
+
   teams: {
     label: string;
     title: string;
@@ -265,27 +267,41 @@ export interface Dictionary {
     concept: string;
     built: string;
   };
-  technology: {
+
+
+
+  beyond: {
+    label: string;
+    title: string;
+    teaching: {
+      label: string;
+      title: string;
+      body: string;
+      note: string;
+      toolsLabel: string;
+      tools: string[];
+      skillsLabel: string;
+      skills: string[];
+    };
+    leadership: {
+      label: string;
+      title: string;
+      institutional: { label: string; role: string; organization: string; points: string[] };
+      impact: { label: string; title: string; partner: string; body: string; points: string[] };
+    };
+  };
+  learning: {
     label: string;
     title: string;
     intro: string;
-    applied: string;
-    study: string;
-    all: string;
-    filterLabel: string;
-    groups: TechGroup[];
-  };
-  journey: {
-    label: string;
-    title: string;
-    intro: string;
-    contributionsLabel: string;
-    chapters: Chapter[];
-  };
-  principles: {
-    label: string;
-    title: string;
-    items: { title: string; body: string }[];
+    note: string;
+    recordLink: string;
+    introductory: string;
+    trail: string;
+    /** "{n}" is replaced by the number of courses. */
+    courseOne: string;
+    courseMany: string;
+    areas: Record<"devops" | "programming" | "security" | "business" | "ai" | "frontend", string>;
   };
   contact: {
     label: string;

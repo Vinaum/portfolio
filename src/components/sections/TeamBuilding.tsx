@@ -80,7 +80,7 @@ export function TeamBuilding({ dict }: { dict: Dictionary }) {
   };
 
   return (
-    <section id={ids.teams} aria-labelledby="teams-title" className="relative border-t border-line bg-graphite/40 py-28 lg:py-40">
+    <section id={ids.teams} aria-labelledby="teams-title" className="relative border-t border-line bg-graphite/40 py-32 lg:py-44">
       <div className="container-x">
         <SectionHeader label={t.label} title={t.title} titleId="teams-title">
           <p className="t-lead col-span-12 text-paper/75 lg:col-span-7" data-reveal>
@@ -132,7 +132,7 @@ export function TeamBuilding({ dict }: { dict: Dictionary }) {
             className="col-span-12 lg:col-span-7 lg:col-start-6"
             data-reveal
           >
-            <div className="border border-line bg-obsidian/80 p-4 sm:p-8">
+            <div>
               <TeamDiagram dict={dict} dim={current.id} />
               <p className="mt-4 border-t border-line pt-4 font-display text-[1.15rem] tracking-[-0.015em] text-paper" aria-live="polite">
                 {current.title} — <span className="text-paper/70">{current.reading}</span>

@@ -1,0 +1,30 @@
+{
+  "gobots": {
+    "file": "_/gobots.webp",
+    "w": 343,
+    "h": 160,
+    "alpha": true,
+    "coverage": 0.347
+  },
+  "pagegroup": {
+    "file": "_/pagegroup.webp",
+    "w": 646,
+    "h": 138,
+    "alpha": true,
+    "coverage": 0.293
+  },
+  "pier": {
+    "file": "_/pier.png",
+    "w": 365,
+    "h": 97,
+    "alpha": true,
+    "coverage": 0.431
+  },
+  "unicamp": {
+    "file": "_/unicamp.webp",
+    "w": 754,
+    "h": 800,
+    "alpha": true,
+    "coverage": 0.432
+  }
+}

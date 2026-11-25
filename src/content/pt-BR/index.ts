@@ -7,7 +7,7 @@ export const ptBR: Dictionary = {
   meta: {
     title: "Vinicius Campanha Sartori — Solutions Engineer · Integração de Sistemas, Cloud e Automação",
     description:
-      "Engenheiro de Computação (UNICAMP) atuando em desenho de soluções, integração de sistemas, cloud e automação — com visão de negócios e de pessoas construída no empreendedorismo e em anos de recrutamento de tecnologia.",
+      "Engenheiro de Computação (UNICAMP) atuando em desenho de soluções, integração de sistemas, cloud e automação — com visão de negócios e de pessoas construída no empreendedorismo, em vendas, no recrutamento de tecnologia e no ensino de programação.",
     keywords: [
       "Solutions Engineer",
       "Integração de sistemas",
@@ -24,15 +24,14 @@ export const ptBR: Dictionary = {
     ],
   },
   ids: {
-    clients: "clientes",
-    companies: "empresas",
-    teams: "formacao-de-times",
     about: "sobre",
+    companies: "experiencia",
     capabilities: "competencias",
     work: "projetos",
-    technology: "tecnologia",
-    experience: "trajetoria",
-    principles: "como-penso",
+    clients: "clientes",
+    teams: "formacao-de-times",
+    beyond: "alem-dos-negocios",
+    learning: "aprendizado",
     contact: "contato",
   },
   nav: {
@@ -41,7 +40,7 @@ export const ptBR: Dictionary = {
     about: "Sobre",
     capabilities: "Competências",
     work: "Projetos",
-    experience: "Trajetória",
+    experience: "Experiência",
     contact: "Contato",
     menu: "Menu",
     close: "Fechar",
@@ -73,75 +72,73 @@ export const ptBR: Dictionary = {
     lead:
       "Meu caminho não foi uma linha reta dentro do software — e é exatamente isso que define como eu trabalho com ele.",
     paragraphs: [
-      "Sou formado em Engenharia de Computação pela UNICAMP, onde aprendi a enxergar a tecnologia como um conjunto de sistemas interdependentes: hardware, software e as restrições que os mantêm unidos. Aprofundei esse olhar com uma pós-graduação em Engenharia de Hardware e, mais tarde, um MBA em Gestão de Pessoas e Performance.",
-      "Fui cofundador da Raiz Universitária, uma startup que realizou 80 eventos em cinco universidades, formou uma comunidade de mais de 10 mil estudantes e conquistou o terceiro lugar no Desafio UNICAMP de Inovação Tecnológica. Ali aprendi o que nenhum curso ensinou: transformar uma ideia em algo que as pessoas realmente usam, com recursos limitados e prazos reais.",
-      "Depois vieram tecnologia, telecomunicações e desenvolvimento de negócios — e mais de sete anos em recrutamento especializado em tecnologia, incluindo a liderança de equipes de até 17 consultores de recrutamento. Esse trabalho me colocou em conversa constante com engenheiros e gestores de contratação sobre stacks, arquiteturas e o que um time realmente precisa. Foi onde aprendi a traduzir entre profundidade técnica e intenção de negócio.",
-      "Hoje eu construo. Projetos independentes — uma plataforma operacional multi-inquilino, um site médico com conteúdo gerenciável, um portal de comunidade — são onde aplico engenharia, integração e visão de produto de ponta a ponta: da descoberta de requisitos às políticas de segurança do banco e aos pipelines de publicação.",
+      "Sou engenheiro de computação pela UNICAMP, onde aprendi a enxergar a tecnologia como um conjunto de sistemas interdependentes. Também fui cofundador da Raiz Universitária — minha primeira lição sobre transformar uma ideia em algo que as pessoas realmente usam.",
+      "Depois, a carreira me levou ao outro lado da tecnologia: telecomunicações, vendas e mais de sete anos em recrutamento especializado, liderando times de consultores. Foi onde aprendi a traduzir entre profundidade técnica e intenção de negócio.",
+      "Hoje eu construo. Projetos independentes — uma plataforma operacional multi-inquilino, um site médico com conteúdo gerenciável, um portal de comunidade — são onde aplico engenharia, integração e visão de produto de ponta a ponta.",
     ],
     education: {
       label: "Formação",
-      degree: "Engenharia de Computação",
       institution: "Universidade Estadual de Campinas",
       short: "UNICAMP",
+      items: [
+        { level: "Graduação", title: "Engenharia de Computação", institution: "UNICAMP" },
+        { level: "Pós-graduação", title: "Engenharia de Hardware" },
+        { level: "MBA", title: "Gestão de Pessoas e Resultados" },
+      ],
     },
-    factsTitle: "Em resumo",
-    facts: [
-      { k: "Graduação", v: "Engenharia de Computação — UNICAMP" },
-      { k: "Pós-graduação", v: "Engenharia de Hardware" },
-      { k: "MBA", v: "Gestão de Pessoas e Performance" },
-      { k: "Empreendedorismo", v: "Cofundador, Raiz Universitária" },
-      { k: "Recrutamento", v: "7+ anos em tecnologia, com liderança de equipe" },
-      { k: "Agora", v: "Projetos independentes de tecnologia" },
-    ],
   },
   companies: {
-    label: "Empresas e Experiência",
+    label: "Experiência",
     title: "Onde aprendi como empresas de tecnologia realmente funcionam.",
     intro:
-      "Três ambientes moldaram mais a minha visão: uma insurtech de alto crescimento, uma empresa de IA aplicada e um dos grupos de recrutamento especializado mais conhecidos do mundo.",
-    sectorLabel: "Setor",
-    contextLabel: "A empresa",
-    exposureLabel: "O que o ambiente trouxe",
-    roleLabel: "Função",
+      "Quatro empresas moldaram mais a minha visão — uma insurtech, uma empresa de IA aplicada e duas consultorias de recrutamento especializado, uma delas um grupo global.",
+    relationshipLabel: "Minha atuação",
     featured: [
       {
         id: "pier",
         name: "Pier",
-        sector: "Insurtech · Seguro digital",
-        descriptor: "Tecnologia de alto crescimento dentro de um setor regulado.",
-        context:
-          "Fundada em 2018, a Pier é a primeira seguradora digital do Brasil autorizada pela Susep — a primeira insurtech do país a se tornar seguradora —, com a tecnologia no centro do produto.",
-        exposure:
-          "Trabalhar dentro de uma empresa de tecnologia em alto crescimento, onde ritmo, escala e a tecnologia como produto moldam cada decisão sobre pessoas e operação.",
+        sector: "Insurtech",
+        description:
+          "A primeira seguradora digital do Brasil autorizada pela Susep — e a primeira insurtech do país a se tornar seguradora.",
+        relationship: "Recrutador de tecnologia no time interno.",
       },
       {
         id: "gobots",
         name: "GoBots",
         sector: "IA aplicada · E-commerce",
-        descriptor: "Inteligência artificial aplicada a problemas reais de negócio.",
-        context:
-          "Uma empresa brasileira de IA que cria automações para e-commerce e marketplaces — atendimento, vendas e anúncios para lojistas que vendem em plataformas como Mercado Livre, Amazon, Shopee e Magalu.",
-        exposure:
-          "Um ambiente em que IA não é palavra da moda, e sim um produto que precisa resolver problemas concretos de clientes empresariais.",
+        description:
+          "Empresa brasileira de IA que automatiza atendimento e vendas de lojistas em marketplaces como Mercado Livre, Amazon, Shopee e Magalu.",
+        relationship: "Gerente de Vendas.",
       },
       {
         id: "pagegroup",
         name: "PageGroup",
         brands: "Page Outsourcing · Michael Page",
-        sector: "Recrutamento especializado · Consultoria de talentos",
-        descriptor: "Uma referência global em recrutamento especializado.",
-        context:
+        sector: "Recrutamento especializado",
+        description:
           "O grupo por trás de Michael Page, Page Executive, Page Personnel e Page Outsourcing — empresa do índice FTSE 250, com operações em mais de 30 países.",
-        exposure:
-          "Método, consistência e inteligência de mercado em escala global: um padrão profissional de como avaliar talentos e conduzir a relação com clientes.",
+        relationship: "Liderança de um time de consultores de recrutamento.",
+      },
+      {
+        id: "sharepeoplehub",
+        name: "Share People Hub",
+        brands: "antiga Share RH",
+        sector: "Soluções em RH · Recrutamento",
+        description:
+          "Hub de soluções em RH fundado em 2015 em São Paulo, com recrutamento especializado e de tecnologia, executive search e RPO.",
+        relationship:
+          "Liderança de diversas equipes e coordenação de projetos completos de recrutamento, seleção e Education Recruiting.",
       },
     ],
     othersTitle: "Também na minha trajetória",
     others: [
-      { name: "Raiz Universitária", area: "Empreendedorismo", role: "Cofundador" },
+      {
+        name: "Raiz Universitária",
+        area: "Empreendedorismo",
+        role: "Cofundador",
+        note: "80 eventos · 5 universidades · 10 mil+ estudantes · 3º lugar no Desafio UNICAMP de Inovação Tecnológica",
+      },
       { name: "Trópico Telecomunicações", area: "Tecnologia e telecom" },
-      { name: "Share RH", area: "Recrutamento de tecnologia" },
-      { name: "Share People Hub", area: "Recrutamento de tecnologia" },
       { name: "Projetos independentes", area: "Engenharia de soluções" },
     ],
     trademarkNote: "Nomes e logotipos pertencem às respectivas empresas.",
@@ -250,7 +247,7 @@ export const ptBR: Dictionary = {
         keywords: ["CI/CD", "Postgres gerenciado", "Hospedagem estática", "IaC"],
         evidenceLabel: "Aplicado em / em estudo",
         evidence:
-          "CI/CD com GitHub Actions, hospedagem no GitHub Pages e na Vercel, Postgres gerenciado no Supabase. AWS, Terraform e Ansible: em estudo.",
+          "CI/CD com GitHub Actions, hospedagem no GitHub Pages e na Vercel, Postgres gerenciado no Supabase. AWS, Terraform e Ansible: cursos e estudo em andamento.",
       },
       {
         id: "business",
@@ -260,7 +257,7 @@ export const ptBR: Dictionary = {
         keywords: ["Descoberta", "Stakeholders", "Produto", "Comunicação"],
         evidenceLabel: "Vem de",
         evidence:
-          "A cofundação de uma startup, mais de sete anos traduzindo entre times de engenharia e o negócio, e a liderança de equipes de recrutamento.",
+          "A cofundação de uma startup, a gestão de vendas, mais de sete anos traduzindo entre times de engenharia e o negócio, e a liderança de equipes de recrutamento.",
       },
     ],
   },
@@ -275,157 +272,74 @@ export const ptBR: Dictionary = {
     concept: "Conceito",
     built: "Construído",
   },
-  technology: {
-    label: "Tecnologia",
-    title: "Um mapa de ferramentas — e de como eu as conheço.",
-    intro:
-      "Sem barras de porcentagem. Cada ferramenta é marcada pela evidência por trás dela: aplicada nos projetos acima, ou em estudo e prática de laboratório.",
-    applied: "Aplicado em projetos",
-    study: "Estudo e laboratório",
-    all: "Todas",
-    filterLabel: "Filtrar por evidência",
-    groups: [
-      {
-        id: "cloud",
-        title: "Cloud e hospedagem",
-        items: [
-          { name: "AWS", status: "study" },
-          { name: "GitHub Pages", status: "applied", evidence: "Site médico, plataforma condominial" },
-          { name: "Vercel", status: "applied", evidence: "Portal de comunidade" },
+  beyond: {
+    label: "Além dos negócios",
+    title: "Impacto que não aparece no balanço.",
+    teaching: {
+      label: "Ensino e impacto social",
+      title: "Ensinando tecnologia, transformando pessoas.",
+      body:
+        "Minha experiência com educação tecnológica começou em projetos sociais, ensinando programação a pessoas sem qualquer conhecimento prévio. Utilizando ferramentas como Scratch e linguagens como Python e Java, trabalhei na introdução à lógica de programação e ao pensamento computacional, tornando conceitos técnicos acessíveis e estimulando novas possibilidades profissionais e pessoais.",
+      note: "Foi ali que aprendi a explicar tecnologia — muito antes de trabalhar com soluções.",
+      toolsLabel: "Ensinado com",
+      tools: ["Scratch", "Python", "Java"],
+      skillsLabel: "O que desenvolveu",
+      skills: [
+        "Comunicar conceitos técnicos complexos em linguagem simples",
+        "Ensinar lógica e pensamento computacional",
+        "Adaptar a metodologia ao nível de cada aluno",
+        "Introduzir a programação e a resolução estruturada de problemas",
+        "Desenvolver pessoas e compartilhar conhecimento",
+      ],
+    },
+    leadership: {
+      label: "Liderança e impacto social",
+      title: "Liderança além dos negócios.",
+      institutional: {
+        label: "Liderança institucional",
+        role: "Presidente",
+        organization: "Associação de Repúblicas da UNICAMP",
+        points: [
+          "Liderança de uma organização associativa",
+          "Articulação entre diferentes repúblicas e seus integrantes",
+          "Representação institucional",
+          "Organização e coordenação de iniciativas coletivas",
         ],
       },
-      {
-        id: "infra",
-        title: "Infraestrutura e automação",
-        items: [
-          { name: "CI/CD · GitHub Actions", status: "applied", evidence: "Pipelines de teste e publicação" },
-          { name: "Linux", status: "applied", evidence: "Ambiente do dia a dia" },
-          { name: "Docker", status: "applied", evidence: "Supabase local para testes de banco" },
-          { name: "Terraform", status: "study" },
-          { name: "Ansible", status: "study" },
+      impact: {
+        label: "Impacto social",
+        title: "Moradia para estudantes refugiados",
+        partner: "Em parceria com o CORI, órgão de relações internacionais da UNICAMP",
+        body:
+          "Durante minha atuação como presidente da Associação de Repúblicas da UNICAMP, participei da articulação de uma iniciativa em parceria com o CORI, voltada ao acolhimento de universitários refugiados vindos do Haiti. O projeto contribuiu para viabilizar moradia a diversos estudantes, demonstrando como organização, colaboração e articulação institucional podem produzir impacto real na vida das pessoas.",
+        points: [
+          "Articulação entre a associação e a universidade",
+          "Participação em uma iniciativa de acolhimento de estudantes refugiados haitianos",
+          "Contribuição para viabilizar moradia a universitários em situação de refúgio",
+          "Coordenação e mobilização de pessoas em torno de uma necessidade social concreta",
         ],
       },
-      {
-        id: "integration",
-        title: "Integração e desenvolvimento",
-        items: [
-          { name: "REST APIs", status: "applied", evidence: "PostgREST / RPC, API REST do GitHub" },
-          { name: "Webhooks e eventos", status: "applied", evidence: "workflow_dispatch a partir de um gatilho no banco" },
-          { name: "JavaScript / TypeScript", status: "applied", evidence: "Todos os projetos" },
-          { name: "Next.js · React", status: "applied", evidence: "Site médico, portal de comunidade" },
-          { name: "Node.js", status: "applied", evidence: "Scripts de build e verificação" },
-          { name: "Python", status: "applied", evidence: "Ferramentas de teste, auditoria de segurança" },
-        ],
-      },
-      {
-        id: "data",
-        title: "Dados e backend",
-        items: [
-          { name: "PostgreSQL", status: "applied", evidence: "Esquemas, views, funções, RLS" },
-          { name: "Supabase", status: "applied", evidence: "Auth, Storage, Vault, pg_net" },
-        ],
-      },
-      {
-        id: "quality",
-        title: "Qualidade",
-        items: [
-          { name: "Playwright", status: "applied", evidence: "Testes de navegador" },
-          { name: "Vitest", status: "applied", evidence: "Testes de unidade" },
-          { name: "pgTAP", status: "applied", evidence: "Testes de acesso negado (RLS)" },
-        ],
-      },
-      {
-        id: "observability",
-        title: "Observabilidade",
-        items: [
-          { name: "Prometheus", status: "study" },
-          { name: "Grafana", status: "study" },
-        ],
-      },
-    ],
+    },
   },
-  journey: {
-    label: "Trajetória",
-    title: "Um percurso entre engenharia, negócios e pessoas.",
+  learning: {
+    label: "Aprendizado contínuo",
+    title: "Uma formação em engenharia que nunca parou.",
     intro:
-      "Não foi uma linha reta — são quatro capítulos, e cada um acrescentou uma camada à forma como entendo projetos de tecnologia.",
-    contributionsLabel: "O que acrescentou",
-    chapters: [
-      {
-        id: "entrepreneurship",
-        title: "Empreendedorismo",
-        period: "Raiz Universitária",
-        organizations: [{ name: "Raiz Universitária", role: "Cofundador" }],
-        body:
-          "Cofundar uma startup significou fazer um pouco de tudo — produto, operação, eventos, pessoas — e aprender a entregar com recursos limitados.",
-        highlights: [
-          { value: "80", label: "eventos" },
-          { value: "5", label: "universidades" },
-          { value: "10 mil+", label: "estudantes na comunidade" },
-          { value: "3º", label: "lugar — Desafio UNICAMP de Inovação Tecnológica" },
-        ],
-        contributions: ["Execução com restrições", "Transformar ideia em adoção", "Liderança de time fundador"],
-      },
-      {
-        id: "telecom",
-        title: "Tecnologia, telecom e negócios",
-        period: "Trópico Telecomunicações",
-        organizations: [{ name: "Trópico Telecomunicações" }],
-        body:
-          "Experiência em tecnologia, telecomunicações e desenvolvimento de negócios: ver de perto como produtos de infraestrutura encontram decisões comerciais.",
-        contributions: ["Entendimento de negócio", "Contexto de infraestrutura", "Desenvolvimento de negócios"],
-      },
-      {
-        id: "recruitment",
-        title: "Recrutamento de tecnologia e liderança",
-        period: "7+ anos",
-        organizations: [
-          { name: "GoBots" },
-          { name: "Share RH" },
-          { name: "Pier Digital" },
-          { name: "Page Outsourcing / Michael Page" },
-          { name: "Share People Hub" },
-        ],
-        body:
-          "Mais de sete anos em recrutamento especializado em tecnologia, incluindo a liderança de equipes de recrutamento. Não é engenharia de software — mas exige letramento técnico: entender stacks, arquiteturas e senioridade o suficiente para avaliar aderência, e traduzir entre o que os times de engenharia precisam e o que o negócio pode oferecer.",
-        contributions: ["Comunicação técnica", "Gestão de stakeholders", "Descoberta de requisitos", "Liderança de equipe"],
-      },
-      {
-        id: "independent",
-        title: "Projetos independentes de tecnologia",
-        period: "Agora",
-        organizations: [{ name: "Projetos independentes" }],
-        body:
-          "Desenhar e construir aplicações reais de ponta a ponta — requisitos, modelagem de dados, políticas de segurança, integrações, testes e publicação.",
-        contributions: ["Integração de sistemas", "Cloud e CI/CD", "Visão de produto"],
-      },
-    ],
-  },
-  principles: {
-    label: "Como penso",
-    title: "Quatro princípios que guiam meu trabalho.",
-    items: [
-      {
-        title: "Entender antes de construir.",
-        body:
-          "Muitos projetos fracassam resolvendo muito bem o problema errado. Começo pelas pessoas, pelo processo e pelas restrições — e só depois pela stack.",
-      },
-      {
-        title: "Arquitetura antes da implementação.",
-        body:
-          "Um plano curto com decisões explícitas custa menos do que reescrever. Registro o que decidimos, por quê, e o que nos faria mudar de ideia.",
-      },
-      {
-        title: "Tecnologia alinhada ao negócio.",
-        body:
-          "Toda escolha técnica tem um custo, um risco e um responsável. A solução certa é a que o negócio consegue sustentar — não a mais impressionante.",
-      },
-      {
-        title: "Pessoas fazem as soluções acontecerem.",
-        body:
-          "Os anos em recrutamento me ensinaram que sistemas são construídos, operados e usados por pessoas. Comunicação clara faz parte da arquitetura.",
-      },
-    ],
+      "Em paralelo ao trabalho, sigo estudando — de Linux e redes a SRE, FinOps e infraestrutura como código. Uma seleção dos cursos concluídos, organizada por área.",
+    note: "Cursos livres concluídos na Alura entre 2017 e 2026 — não são certificações profissionais.",
+    recordLink: "Consultar histórico completo",
+    introductory: "Introdutório",
+    trail: "Trilha",
+    courseOne: "1 curso",
+    courseMany: "{n} cursos",
+    areas: {
+      devops: "DevOps e Cloud",
+      programming: "Programação e Desenvolvimento",
+      security: "Cibersegurança",
+      business: "Negócios, Gestão e Produto",
+      ai: "Inteligência Artificial",
+      frontend: "Front-end",
+    },
   },
   contact: {
     label: "Contato",

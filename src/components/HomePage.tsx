@@ -10,10 +10,9 @@ import { Capabilities } from "@/components/sections/Capabilities";
 import { Companies } from "@/components/sections/Companies";
 import { TeamBuilding } from "@/components/sections/TeamBuilding";
 import { Clients } from "@/components/sections/Clients";
+import { Beyond } from "@/components/sections/Beyond";
+import { Learning } from "@/components/sections/Learning";
 import { Work } from "@/components/sections/Work";
-import { Technology } from "@/components/sections/Technology";
-import { Journey } from "@/components/sections/Journey";
-import { Principles } from "@/components/sections/Principles";
 import { Contact } from "@/components/sections/Contact";
 
 export function HomePage({ locale }: { locale: Locale }) {
@@ -24,12 +23,11 @@ export function HomePage({ locale }: { locale: Locale }) {
     { key: "about", C: About },
     { key: "companies", C: Companies },
     { key: "capabilities", C: Capabilities },
-    { key: "teams", C: TeamBuilding },
     { key: "work", C: Work },
     { key: "clients", C: Clients, show: dict.clients.items.length > 0 },
-    { key: "technology", C: Technology },
-    { key: "experience", C: Journey },
-    { key: "principles", C: Principles },
+    { key: "teams", C: TeamBuilding },
+    { key: "beyond", C: Beyond },
+    { key: "learning", C: Learning },
     { key: "contact", C: Contact },
   ].filter((s) => s.show !== false);
   return (

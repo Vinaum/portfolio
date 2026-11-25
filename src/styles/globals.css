@@ -666,67 +666,6 @@
 }
 
 /* ============================================================
-   TECHNOLOGY MAP
-   ============================================================ */
-.tech-item {
-  transition:
-    opacity 400ms,
-    color 300ms;
-}
-.tech-map[data-filter="applied"] .tech-item[data-status="study"],
-.tech-map[data-filter="study"] .tech-item[data-status="applied"] {
-  opacity: 0.22;
-}
-.marker {
-  width: 9px;
-  height: 9px;
-  flex: none;
-  border: 1px solid var(--color-accent);
-}
-.marker[data-status="applied"] {
-  background: var(--color-accent);
-}
-.marker[data-status="study"] {
-  background: transparent;
-  border-color: var(--color-muted);
-}
-
-/* ============================================================
-   JOURNEY
-   ============================================================ */
-.journey-rail-progress {
-  transform-origin: top;
-  transform: scaleY(var(--p, 0));
-  transition: transform 300ms linear;
-}
-.chapter-link {
-  color: var(--color-muted);
-  transition: color 300ms;
-}
-.chapter-link[aria-current="step"] {
-  color: var(--color-paper);
-}
-.chapter-link[aria-current="step"] .chapter-index {
-  color: var(--color-accent);
-}
-
-/* ============================================================
-   PRINCIPLES
-   ============================================================ */
-.principle {
-  transition: color 500ms;
-}
-.principle .principle-title {
-  transition:
-    color 500ms var(--ease-out-expo),
-    -webkit-text-stroke-color 500ms;
-}
-.principle:hover .principle-title {
-  color: var(--color-paper);
-  -webkit-text-stroke-color: transparent;
-}
-
-/* ============================================================
    MISC
    ============================================================ */
 .skip-link {
@@ -781,21 +720,6 @@
   }
 }
 
-/* Principles: outlined type fills in as each statement enters. */
-@media (prefers-reduced-motion: no-preference) {
-  .js .principle .principle-title {
-    color: transparent;
-    -webkit-text-stroke: 1px rgb(232 234 229 / 0.5);
-    transition:
-      color 1200ms var(--ease-out-expo) 250ms,
-      -webkit-text-stroke-color 1200ms var(--ease-out-expo) 250ms;
-  }
-  .js .principle.is-in .principle-title {
-    color: var(--color-paper);
-    -webkit-text-stroke-color: transparent;
-  }
-}
-
 }
 
 /* ============================================================
@@ -835,7 +759,7 @@
 }
 /* Multi-tone transparent artwork → greyscale, lifted, internal detail kept. */
 .company-logo[data-treatment="tonal"] {
-  filter: grayscale(1) brightness(1.75) contrast(1.05);
+  filter: grayscale(1) brightness(2.1) contrast(1.1);
 }
 /* Opaque background (usually white) → background drops out, artwork turns light. */
 .company-logo[data-treatment="invert"] {

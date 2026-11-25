@@ -7,7 +7,7 @@ export const en: Dictionary = {
   meta: {
     title: "Vinicius Campanha Sartori — Solutions Engineer · Systems Integration, Cloud & Automation",
     description:
-      "Computer Engineer (UNICAMP) working across solutions design, systems integration, cloud and automation — with a business and people perspective shaped by entrepreneurship and years in technology recruitment.",
+      "Computer Engineer (UNICAMP) working across solutions design, systems integration, cloud and automation — with a business and people perspective shaped by entrepreneurship, sales, technology recruitment and teaching programming.",
     keywords: [
       "Solutions Engineer",
       "Systems Integration",
@@ -24,15 +24,14 @@ export const en: Dictionary = {
     ],
   },
   ids: {
-    clients: "clients",
-    companies: "companies",
-    teams: "team-building",
     about: "about",
+    companies: "experience",
     capabilities: "capabilities",
     work: "work",
-    technology: "technology",
-    experience: "experience",
-    principles: "principles",
+    clients: "clients",
+    teams: "team-building",
+    beyond: "beyond-business",
+    learning: "learning",
     contact: "contact",
   },
   nav: {
@@ -73,75 +72,73 @@ export const en: Dictionary = {
     lead:
       "My path didn’t run in a straight line through software — and that is exactly what shapes how I approach it.",
     paragraphs: [
-      "I trained as a Computer Engineer at UNICAMP, where I learned to see technology as a set of interdependent systems: hardware, software and the constraints that hold them together. I went further with postgraduate studies in Computer Hardware Engineering, and later an MBA in People and Performance Management.",
-      "I co-founded Raiz Universitária, a startup that ran 80 events across five universities and built a community of more than 10,000 students, and took third place at the Desafio UNICAMP de Inovação Tecnológica. It taught me what no course did: how to turn an idea into something people actually use, with limited resources and real deadlines.",
-      "Then came technology, telecommunications and business development — followed by more than seven years in specialized technology recruitment, including leading recruitment teams of up to 17 consultants. That work kept me in constant conversation with engineers and hiring managers about stacks, architectures and what a team really needs. It’s where I learned to translate between technical depth and business intent.",
-      "Today I build. Independent projects — a multi-tenant operations platform, a content-managed medical website, a community portal — are where I apply engineering, integration and product thinking end to end: from requirements discovery to database security policies to deployment pipelines.",
+      "I’m a Computer Engineer from UNICAMP, where I learned to see technology as a set of interdependent systems. I also co-founded Raiz Universitária — my first lesson in turning an idea into something people actually use.",
+      "My career then took me to the other side of technology: telecommunications, sales and more than seven years in specialized technology recruitment, leading teams of consultants. That is where I learned to translate between technical depth and business intent.",
+      "Today I build. Independent projects — a multi-tenant operations platform, a content-managed medical website, a community portal — are where I apply engineering, integration and product thinking end to end.",
     ],
     education: {
       label: "Education",
-      degree: "Computer Engineering",
       institution: "Universidade Estadual de Campinas",
       short: "UNICAMP",
+      items: [
+        { level: "Bachelor’s degree", title: "Computer Engineering", institution: "UNICAMP" },
+        { level: "Postgraduate", title: "Computer Hardware Engineering" },
+        { level: "MBA", title: "People and Results Management" },
+      ],
     },
-    factsTitle: "At a glance",
-    facts: [
-      { k: "Degree", v: "Computer Engineering — UNICAMP" },
-      { k: "Postgraduate", v: "Computer Hardware Engineering" },
-      { k: "MBA", v: "People and Performance Management" },
-      { k: "Entrepreneurship", v: "Co-founder, Raiz Universitária" },
-      { k: "Recruitment", v: "7+ years in tech, incl. team leadership" },
-      { k: "Now", v: "Independent technology projects" },
-    ],
   },
   companies: {
-    label: "Companies & Experience",
+    label: "Experience",
     title: "Where I learned how technology businesses actually work.",
     intro:
-      "Three environments shaped my perspective the most: a high-growth insurtech, an applied-AI company and one of the world’s best-known specialized recruitment groups.",
-    sectorLabel: "Sector",
-    contextLabel: "The company",
-    exposureLabel: "What the environment brought",
-    roleLabel: "Role",
+      "Four companies shaped my perspective the most — an insurtech, an applied-AI company and two specialized recruitment firms, one of them a global group.",
+    relationshipLabel: "My role",
     featured: [
       {
         id: "pier",
         name: "Pier",
-        sector: "Insurtech · Digital insurance",
-        descriptor: "High-growth technology inside a regulated industry.",
-        context:
-          "Founded in 2018, Pier is Brazil’s first digital insurer authorized by Susep — the first insurtech in the country to become an insurance company — with technology at the core of the product.",
-        exposure:
-          "Working inside a high-growth technology business, where pace, scale and technology-as-the-product shape every decision about people and operations.",
+        sector: "Insurtech",
+        description:
+          "Brazil’s first digital insurer authorized by Susep — and the first insurtech in the country to become an insurance company.",
+        relationship: "In-house technology recruiter.",
       },
       {
         id: "gobots",
         name: "GoBots",
         sector: "Applied AI · E-commerce",
-        descriptor: "Artificial intelligence applied to real business problems.",
-        context:
-          "A Brazilian AI company building automation for e-commerce and marketplaces — customer service, sales and listings for retailers selling on platforms such as Mercado Livre, Amazon, Shopee and Magalu.",
-        exposure:
-          "An environment where AI is not a buzzword but a product that has to solve concrete problems for business customers.",
+        description:
+          "A Brazilian AI company automating customer service and sales for retailers on marketplaces such as Mercado Livre, Amazon, Shopee and Magalu.",
+        relationship: "Sales Manager.",
       },
       {
         id: "pagegroup",
         name: "PageGroup",
         brands: "Page Outsourcing · Michael Page",
-        sector: "Specialized recruitment · Talent consulting",
-        descriptor: "A globally recognized standard in specialized recruitment.",
-        context:
+        sector: "Specialized recruitment",
+        description:
           "The group behind Michael Page, Page Executive, Page Personnel and Page Outsourcing — a FTSE 250 company operating in more than 30 countries.",
-        exposure:
-          "Method, consistency and market intelligence at global scale: a professional standard for how talent is assessed and how client relationships are run.",
+        relationship: "Led a team of recruitment consultants.",
+      },
+      {
+        id: "sharepeoplehub",
+        name: "Share People Hub",
+        brands: "formerly Share RH",
+        sector: "HR solutions · Recruitment",
+        description:
+          "An HR solutions hub founded in 2015 in São Paulo, working in specialized and technology recruitment, executive search and RPO.",
+        relationship:
+          "Led several teams and coordinated end-to-end recruitment, selection and Education Recruiting projects.",
       },
     ],
     othersTitle: "Also in my trajectory",
     others: [
-      { name: "Raiz Universitária", area: "Entrepreneurship", role: "Co-founder" },
+      {
+        name: "Raiz Universitária",
+        area: "Entrepreneurship",
+        role: "Co-founder",
+        note: "80 events · 5 universities · 10,000+ students · 3rd place, Desafio UNICAMP de Inovação Tecnológica",
+      },
       { name: "Trópico Telecomunicações", area: "Technology & telecom" },
-      { name: "Share RH", area: "Technology recruitment" },
-      { name: "Share People Hub", area: "Technology recruitment" },
       { name: "Independent projects", area: "Solutions engineering" },
     ],
     trademarkNote: "Company names and logos belong to their respective owners.",
@@ -250,7 +247,7 @@ export const en: Dictionary = {
         keywords: ["CI/CD", "Managed Postgres", "Static hosting", "IaC"],
         evidenceLabel: "Applied in / studying",
         evidence:
-          "CI/CD on GitHub Actions, hosting on GitHub Pages and Vercel, managed Postgres on Supabase. AWS, Terraform and Ansible: ongoing study.",
+          "CI/CD on GitHub Actions, hosting on GitHub Pages and Vercel, managed Postgres on Supabase. AWS, Terraform and Ansible: coursework and ongoing study.",
       },
       {
         id: "business",
@@ -260,7 +257,7 @@ export const en: Dictionary = {
         keywords: ["Discovery", "Stakeholders", "Product", "Communication"],
         evidenceLabel: "Comes from",
         evidence:
-          "Co-founding a startup, 7+ years translating between engineering teams and the business, and leading recruitment teams.",
+          "Co-founding a startup, managing sales, 7+ years translating between engineering teams and the business, and leading recruitment teams.",
       },
     ],
   },
@@ -275,157 +272,74 @@ export const en: Dictionary = {
     concept: "Concept",
     built: "Built",
   },
-  technology: {
-    label: "Technology",
-    title: "A map of tools — and how I know them.",
-    intro:
-      "No percentage bars. Each tool is marked by the evidence behind it: applied in the projects above, or currently in study and lab practice.",
-    applied: "Applied in projects",
-    study: "Study & labs",
-    all: "All",
-    filterLabel: "Filter by evidence",
-    groups: [
-      {
-        id: "cloud",
-        title: "Cloud & hosting",
-        items: [
-          { name: "AWS", status: "study" },
-          { name: "GitHub Pages", status: "applied", evidence: "Medical website, condominium platform" },
-          { name: "Vercel", status: "applied", evidence: "Community portal" },
+  beyond: {
+    label: "Beyond business",
+    title: "Impact that never shows up on a balance sheet.",
+    teaching: {
+      label: "Teaching & social impact",
+      title: "Teaching technology, empowering people.",
+      body:
+        "My work in technology education began in social projects, teaching programming to people with no prior experience in computing. With Scratch, Python and Java, I introduced programming logic and computational thinking — making technical concepts accessible and opening up new personal and professional possibilities.",
+      note: "That is where I learned to explain technology — long before working with solutions.",
+      toolsLabel: "Taught with",
+      tools: ["Scratch", "Python", "Java"],
+      skillsLabel: "What it developed",
+      skills: [
+        "Explaining complex technical concepts in plain language",
+        "Teaching logic and computational thinking",
+        "Adapting the method to each learner’s level",
+        "Introducing programming and structured problem solving",
+        "Developing people and sharing knowledge",
+      ],
+    },
+    leadership: {
+      label: "Leadership & social impact",
+      title: "Leadership beyond business.",
+      institutional: {
+        label: "Institutional leadership",
+        role: "President",
+        organization: "Associação de Repúblicas da UNICAMP — the association of UNICAMP’s student houses",
+        points: [
+          "Leading a member-based organization",
+          "Bringing different student houses and their members together",
+          "Representing the association institutionally",
+          "Organizing and coordinating collective initiatives",
         ],
       },
-      {
-        id: "infra",
-        title: "Infrastructure & automation",
-        items: [
-          { name: "CI/CD · GitHub Actions", status: "applied", evidence: "Test and deploy pipelines" },
-          { name: "Linux", status: "applied", evidence: "Day-to-day environment" },
-          { name: "Docker", status: "applied", evidence: "Local Supabase stack for database tests" },
-          { name: "Terraform", status: "study" },
-          { name: "Ansible", status: "study" },
+      impact: {
+        label: "Social impact",
+        title: "Housing for refugee students",
+        partner: "In partnership with CORI, UNICAMP’s international relations office",
+        body:
+          "As president of the association, I helped coordinate an initiative with CORI to welcome refugee university students from Haiti. The project helped secure housing for a number of students — showing how organization, collaboration and institutional coordination can make a real difference in people’s lives.",
+        points: [
+          "Coordination between the association and the university",
+          "Part of an initiative to welcome Haitian refugee students",
+          "Helped make housing possible for students in a refugee situation",
+          "Mobilizing people around a concrete social need",
         ],
       },
-      {
-        id: "integration",
-        title: "Integration & development",
-        items: [
-          { name: "REST APIs", status: "applied", evidence: "PostgREST / RPC, GitHub REST API" },
-          { name: "Webhooks & events", status: "applied", evidence: "workflow_dispatch from a database trigger" },
-          { name: "JavaScript / TypeScript", status: "applied", evidence: "All projects" },
-          { name: "Next.js · React", status: "applied", evidence: "Medical website, community portal" },
-          { name: "Node.js", status: "applied", evidence: "Build and verification scripts" },
-          { name: "Python", status: "applied", evidence: "Test tooling, security audit script" },
-        ],
-      },
-      {
-        id: "data",
-        title: "Data & backend",
-        items: [
-          { name: "PostgreSQL", status: "applied", evidence: "Schemas, views, functions, RLS" },
-          { name: "Supabase", status: "applied", evidence: "Auth, Storage, Vault, pg_net" },
-        ],
-      },
-      {
-        id: "quality",
-        title: "Quality",
-        items: [
-          { name: "Playwright", status: "applied", evidence: "Browser tests" },
-          { name: "Vitest", status: "applied", evidence: "Unit tests" },
-          { name: "pgTAP", status: "applied", evidence: "RLS access-denial tests" },
-        ],
-      },
-      {
-        id: "observability",
-        title: "Observability",
-        items: [
-          { name: "Prometheus", status: "study" },
-          { name: "Grafana", status: "study" },
-        ],
-      },
-    ],
+    },
   },
-  journey: {
-    label: "Experience",
-    title: "A route through engineering, business and people.",
+  learning: {
+    label: "Continuous learning",
+    title: "An engineering education that never stopped.",
     intro:
-      "Not a straight line — four chapters that each added a layer to how I understand technology projects.",
-    contributionsLabel: "What it added",
-    chapters: [
-      {
-        id: "entrepreneurship",
-        title: "Entrepreneurship",
-        period: "Raiz Universitária",
-        organizations: [{ name: "Raiz Universitária", role: "Co-founder" }],
-        body:
-          "Co-founding a startup meant doing a bit of everything — product, operations, events, people — and learning to deliver with limited resources.",
-        highlights: [
-          { value: "80", label: "events" },
-          { value: "5", label: "universities" },
-          { value: "10,000+", label: "students in the community" },
-          { value: "3rd", label: "place — Desafio UNICAMP de Inovação Tecnológica" },
-        ],
-        contributions: ["Execution under constraints", "Turning an idea into adoption", "Founding-team leadership"],
-      },
-      {
-        id: "telecom",
-        title: "Technology, telecom & business",
-        period: "Trópico Telecomunicações",
-        organizations: [{ name: "Trópico Telecomunicações" }],
-        body:
-          "Experience in technology, telecommunications and business development: seeing how infrastructure-heavy products meet commercial decisions.",
-        contributions: ["Business understanding", "Infrastructure context", "Business development"],
-      },
-      {
-        id: "recruitment",
-        title: "Technology recruitment & leadership",
-        period: "7+ years",
-        organizations: [
-          { name: "GoBots" },
-          { name: "Share RH" },
-          { name: "Pier Digital" },
-          { name: "Page Outsourcing / Michael Page" },
-          { name: "Share People Hub" },
-        ],
-        body:
-          "More than seven years in specialized technology recruitment, including leading recruitment teams. It isn’t software engineering — but it demands technical literacy: understanding stacks, architectures and seniority well enough to assess fit, and translating between what engineering teams need and what the business can offer.",
-        contributions: ["Technical communication", "Stakeholder management", "Requirements discovery", "Team leadership"],
-      },
-      {
-        id: "independent",
-        title: "Independent technology projects",
-        period: "Now",
-        organizations: [{ name: "Independent projects" }],
-        body:
-          "Designing and building real applications end to end — requirements, data modelling, security policies, integrations, testing and deployment.",
-        contributions: ["Systems integration", "Cloud & CI/CD", "Product mindset"],
-      },
-    ],
-  },
-  principles: {
-    label: "How I think",
-    title: "Four principles I work by.",
-    items: [
-      {
-        title: "Understand before building.",
-        body:
-          "Many projects fail by solving the wrong problem well. I start with the people, the process and the constraints — and only then with the stack.",
-      },
-      {
-        title: "Architecture before implementation.",
-        body:
-          "A short plan with explicit decisions is cheaper than a rewrite. I write down what we decided, why, and what would make us change our minds.",
-      },
-      {
-        title: "Technology aligned with business.",
-        body:
-          "Every technical choice has a cost, a risk and an owner. The right solution is the one the business can afford to run — not the most impressive one.",
-      },
-      {
-        title: "People make solutions happen.",
-        body:
-          "Years in recruitment taught me that systems are built, operated and used by people. Clear communication is part of the architecture.",
-      },
-    ],
+      "Alongside work, I keep studying — from Linux and networks to SRE, FinOps and infrastructure as code. A selection of completed courses, grouped by area.",
+    note: "Free online courses completed on Alura between 2017 and 2026 — not professional certifications.",
+    recordLink: "View full learning record",
+    introductory: "Introductory",
+    trail: "Learning path",
+    courseOne: "1 course",
+    courseMany: "{n} courses",
+    areas: {
+      devops: "DevOps & Cloud",
+      programming: "Programming & Software Development",
+      security: "Cybersecurity",
+      business: "Business, Management & Product",
+      ai: "Artificial Intelligence",
+      frontend: "Front-end",
+    },
   },
   contact: {
     label: "Contact",

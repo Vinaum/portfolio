@@ -7,7 +7,7 @@ export function Work({ dict }: { dict: Dictionary }) {
   const { work, ids } = dict;
   const projects = getProjects(dict.locale);
   return (
-    <section id={ids.work} aria-labelledby="work-title" className="relative border-t border-line py-28 lg:py-40">
+    <section id={ids.work} aria-labelledby="work-title" className="relative border-t border-line py-32 lg:py-44">
       <div className="container-x">
         <SectionHeader label={work.label} title={work.title} titleId="work-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
