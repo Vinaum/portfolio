@@ -59,7 +59,10 @@ export interface Diagram {
 
 export interface ProjectShared {
   id: ProjectId;
-  slug: Record<Locale, string>;
+  /** URL slug, shared by both languages: /projects/<slug>/ and /en/projects/<slug>/ */
+  slug: string;
+  /** Earlier URLs, kept as redirect pages so old links keep working. */
+  legacySlug: Record<Locale, string>;
   kind: "built" | "concept";
   repo?: string;
   stack: string[];
@@ -80,6 +83,8 @@ export interface ProjectContent {
   shortName: string;
   category: string;
   tagline: string;
+  /** Unique meta description for the project page (≈150–160 characters). */
+  seoDescription: string;
   context: string;
   problem: string;
   objective: string;
@@ -87,8 +92,13 @@ export interface ProjectContent {
   architectureCaption: string;
   flowTitle: string;
   flowCaption: string;
+  /** What you did — stated honestly (incl. AI assistance where the repository shows it). */
+  contribution: string;
   decisions: Decision[];
+  security: string[];
+  delivery: string[];
   implementation: string[];
+  limitations: string[];
   status: { label: string; detail: string };
   results: string[];
   type: string;
@@ -145,7 +155,6 @@ export interface TeamDimension {
   id: "technical" | "composition" | "behavioral" | "business";
   title: string;
   body: string;
-  reading: string;
 }
 
 export interface Dictionary {
@@ -163,7 +172,6 @@ export interface Dictionary {
     capabilities: string;
     work: string;
     clients: string;
-    teams: string;
     beyond: string;
     learning: string;
     contact: string;
@@ -233,22 +241,17 @@ export interface Dictionary {
 
   teams: {
     label: string;
+    /** Short, descriptive heading used inside About & Leadership. */
     title: string;
     statement: string;
     dimensionsLabel: string;
     dimensions: TeamDimension[];
-    figureCaption: string;
-    outcome: string;
-    team: string;
-    profiles: { tech: string; style: string }[];
     stat: { value: string; label: string; note: string };
     bridge: {
       label: string;
       quote: string;
       intro: string;
       abilities: string[];
-      systems: string;
-      people: string;
     };
   };
   capabilities: {
@@ -256,6 +259,7 @@ export interface Dictionary {
     title: string;
     intro: string;
     items: Capability[];
+    stack: { title: string; applied: string; study: string; studyNote: string };
   };
   work: {
     label: string;
@@ -336,17 +340,24 @@ export interface Dictionary {
       solution: string;
       architecture: string;
       flow: string;
+      contribution: string;
       decisions: string;
+      security: string;
+      delivery: string;
       implementation: string;
+      limitations: string;
       technologies: string;
       status: string;
       results: string;
     };
+    planned: string;
+    redirectNotice: string;
     plannedDecisions: string;
     plannedImplementation: string;
     candidateStack: string;
     next: string;
     metaTitleSuffix: string;
+    conceptTitleSuffix: string;
   };
   projects: ProjectContent[];
 }

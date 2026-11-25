@@ -1,22 +1,21 @@
 import type { MetadataRoute } from "next";
-import { absoluteUrl, getProjects, projectPath } from "@/content";
+import { absoluteUrl, getProjects, homePath, projectPath } from "@/content";
 
 export const dynamic = "force-static";
 
+/** Canonical, indexable URLs only — legacy redirect pages are excluded. */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const home = {
-    url: absoluteUrl("/"),
-    lastModified: now,
-    alternates: { languages: { "pt-BR": absoluteUrl("/"), en: absoluteUrl("/en/") } },
-  };
-  const homeEn = { ...home, url: absoluteUrl("/en/") };
-  const cases = getProjects("pt-BR").flatMap((p) => {
+  const lastModified = new Date();
+  const home = { "pt-BR": absoluteUrl(homePath("pt-BR")), en: absoluteUrl(homePath("en")) };
+  const entries: MetadataRoute.Sitemap = [
+    { url: home["pt-BR"], lastModified, priority: 1, alternates: { languages: home } },
+    { url: home.en, lastModified, priority: 1, alternates: { languages: home } },
+  ];
+  for (const p of getProjects("pt-BR")) {
     const languages = { "pt-BR": absoluteUrl(projectPath("pt-BR", p)), en: absoluteUrl(projectPath("en", p)) };
-    return [
-      { url: languages["pt-BR"], lastModified: now, alternates: { languages } },
-      { url: languages.en, lastModified: now, alternates: { languages } },
-    ];
-  });
-  return [home, homeEn, ...cases];
+    const priority = p.kind === "built" ? 0.8 : 0.5;
+    entries.push({ url: languages["pt-BR"], lastModified, priority, alternates: { languages } });
+    entries.push({ url: languages.en, lastModified, priority, alternates: { languages } });
+  }
+  return entries;
 }

@@ -24,6 +24,8 @@ export function LogoMark({
       <img
         src={logo.src}
         alt={alt}
+        width={logo.w}
+        height={logo.h}
         loading="lazy"
         decoding="async"
         data-treatment={logo.treatment}

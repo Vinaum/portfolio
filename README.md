@@ -28,9 +28,16 @@ Next.js 16 (App Router, `output: "export"`) · React 19 · TypeScript · Tailwin
 | PT-BR | EN |
 | --- | --- |
 | `/` | `/en/` |
-| `/projetos/<slug>/` | `/en/work/<slug>/` |
+| `/projects/<slug>/` | `/en/projects/<slug>/` |
 
-Each language has its own root layout, so `<html lang>`, metadata, canonical and `hreflang` are correct in the static HTML. Inside a language, navigation is client-side. Switching language loads the other language's document and stores the choice in `localStorage`. The PT home page sends back to `/en/` only visitors who explicitly chose English before.
+Slugs: `condominium-management`, `medical-platform`, `community-portal`, `business-integration-hub`.
+The earlier URLs (`/projetos/<slug>/`, `/en/work/<slug>/`) are static redirect pages (meta refresh, canonical to the new URL, `noindex`), because GitHub Pages cannot send HTTP 301s.
+
+Each language has its own root layout, so `<html lang>`, metadata, canonical and `hreflang` (with `x-default` → PT-BR) are correct in the static HTML. Switching language loads the other language's document and stores the choice in `localStorage`.
+
+## SEO checks
+
+`npm run check:seo` audits `out/`: one H1 per page, unique titles/descriptions, self-referencing canonicals, reciprocal hreflang, Open Graph and Twitter tags, valid JSON-LD, sitemap ↔ pages and robots.txt. It runs as part of `npm run check`.
 
 ## Where to edit content
 

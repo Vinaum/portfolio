@@ -1,11 +1,11 @@
 import type { Dictionary } from "@/content/types";
-import { SectionHeader } from "@/components/ui/primitives";
+import { MaskWords, SectionHeader } from "@/components/ui/primitives";
 import { LogoMark } from "@/components/ui/LogoMark";
 import { findLogo } from "@/lib/logos";
 
 /** About + Education: the personal narrative beside the academic foundation. */
 export function About({ dict }: { dict: Dictionary }) {
-  const { about, ids } = dict;
+  const { about, ids, teams } = dict;
   const edu = about.education;
   const unicamp = findLogo("unicamp");
 
@@ -54,6 +54,56 @@ export function About({ dict }: { dict: Dictionary }) {
               ))}
             </dl>
           </aside>
+        </div>
+
+        {/* Leadership & team building — the differentiator, condensed */}
+        <div className="mt-28 border-t border-line pt-20 lg:mt-36 lg:pt-28" aria-labelledby="teams-title">
+          <div className="grid-12 gap-y-8">
+            <div className="col-span-12 lg:col-span-5" data-reveal>
+              <h3 id="teams-title" className="t-mono text-accent">
+                {teams.label}
+              </h3>
+              <MaskWords as="p" text={teams.title} className="t-h3 mt-6 max-w-[16ch] text-[clamp(1.9rem,3.2vw,2.9rem)] text-paper" />
+              <div className="mt-12 flex items-end gap-6">
+                <span className="font-display text-[clamp(5rem,9vw,7.5rem)] font-medium leading-[0.8] tracking-[-0.06em] text-paper">
+                  {teams.stat.value}
+                </span>
+                <span className="pb-1">
+                  <span className="block font-display text-[1.15rem] leading-snug tracking-[-0.015em] text-paper">{teams.stat.label}</span>
+                  <span className="t-mono-sm mt-2 block normal-case tracking-[0.03em] text-muted">{teams.stat.note}</span>
+                </span>
+              </div>
+            </div>
+            <div className="col-span-12 lg:col-span-6 lg:col-start-7" data-reveal>
+              <p className="t-lead text-paper/80">{teams.statement}</p>
+              <dl className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+                {teams.dimensions.map((d) => (
+                  <div key={d.id}>
+                    <dt className="font-display text-[1.2rem] leading-tight tracking-[-0.015em] text-paper">{d.title}</dt>
+                    <dd className="mt-2 text-[0.92rem] leading-relaxed text-paper/65">{d.body}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+
+          <div className="grid-12 mt-20 gap-y-8" data-reveal>
+            <blockquote className="col-span-12 lg:col-span-5">
+              <p className="font-display text-[clamp(1.5rem,2.4vw,2.1rem)] leading-[1.15] tracking-[-0.025em] text-paper">
+                {teams.bridge.quote}
+              </p>
+            </blockquote>
+            <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+              <p className="t-mono-sm text-muted">{teams.bridge.label}</p>
+              <ul className="mt-4">
+                {teams.bridge.abilities.map((a) => (
+                  <li key={a} className="border-b border-line/60 py-3 text-[0.97rem] text-paper/85 first:pt-0">
+                    {a}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

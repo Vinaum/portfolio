@@ -35,7 +35,11 @@ export function getProjects(locale: Locale): Project[] {
 }
 
 export function getProjectBySlug(locale: Locale, slug: string): Project | undefined {
-  return getProjects(locale).find((p) => p.slug[locale] === slug);
+  return getProjects(locale).find((p) => p.slug === slug);
+}
+
+export function getProjectByLegacySlug(locale: Locale, slug: string): Project | undefined {
+  return getProjects(locale).find((p) => p.legacySlug[locale] === slug);
 }
 
 /* ---------- Routes (no basePath — next/link adds it) ---------- */
@@ -45,7 +49,12 @@ export function homePath(locale: Locale): string {
 }
 
 export function projectPath(locale: Locale, project: Pick<ProjectShared, "slug">): string {
-  return locale === "en" ? `/en/work/${project.slug.en}/` : `/projetos/${project.slug["pt-BR"]}/`;
+  return locale === "en" ? `/en/projects/${project.slug}/` : `/projects/${project.slug}/`;
+}
+
+/** Earlier project URLs — now static redirect pages. */
+export function legacyProjectPath(locale: Locale, project: Pick<ProjectShared, "legacySlug">): string {
+  return locale === "en" ? `/en/work/${project.legacySlug.en}/` : `/projetos/${project.legacySlug["pt-BR"]}/`;
 }
 
 export function sectionHref(locale: Locale, id: string, onHome = true): string {

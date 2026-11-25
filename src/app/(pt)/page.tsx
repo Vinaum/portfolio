@@ -11,6 +11,7 @@ export const metadata: Metadata = pageMetadata({
   description: dict.meta.description,
   path: "/",
   alternates: { "pt-BR": "/", en: "/en/" },
+  type: "profile",
 });
 
 export default function Page() {

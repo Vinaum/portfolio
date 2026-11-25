@@ -5,9 +5,9 @@ export const en: Dictionary = {
   htmlLang: "en",
   ogLocale: "en_US",
   meta: {
-    title: "Vinicius Campanha Sartori — Solutions Engineer · Systems Integration, Cloud & Automation",
+    title: "Vinicius Sartori | Solutions Engineer & Systems Integration",
     description:
-      "Computer Engineer (UNICAMP) working across solutions design, systems integration, cloud and automation — with a business and people perspective shaped by entrepreneurship, sales, technology recruitment and teaching programming.",
+      "Vinicius Campanha Sartori, Computer Engineer from UNICAMP. Solutions Engineer focused on systems integration, APIs, automation, cloud and digital solutions.",
     keywords: [
       "Solutions Engineer",
       "Systems Integration",
@@ -29,7 +29,6 @@ export const en: Dictionary = {
     capabilities: "capabilities",
     work: "work",
     clients: "clients",
-    teams: "team-building",
     beyond: "beyond-business",
     learning: "learning",
     contact: "contact",
@@ -67,7 +66,7 @@ export const en: Dictionary = {
       "An architecture diagram connecting Business to Applications and Data, Applications to APIs, and APIs to Cloud, Automation and Infrastructure.",
   },
   about: {
-    label: "About",
+    label: "About, education & leadership",
     title: "Technology is more than code. It’s about understanding how everything connects.",
     lead:
       "My path didn’t run in a straight line through software — and that is exactly what shapes how I approach it.",
@@ -88,7 +87,7 @@ export const en: Dictionary = {
     },
   },
   companies: {
-    label: "Experience",
+    label: "Professional experience",
     title: "Where I learned how technology businesses actually work.",
     intro:
       "Four companies shaped my perspective the most — an insurtech, an applied-AI company and two specialized recruitment firms, one of them a global group.",
@@ -154,36 +153,22 @@ export const en: Dictionary = {
         id: "technical",
         title: "Technical Assessment",
         body: "Understanding technical competencies, specializations and professional experience — reading a stack, a career path and a seniority level for what they actually mean.",
-        reading: "Each profile is read for what it can do.",
       },
       {
         id: "composition",
         title: "Team Composition",
         body: "Identifying complementary profiles and combining different strengths, so the team covers what no single person can.",
-        reading: "Profiles are connected by how they complement each other.",
       },
       {
         id: "behavioral",
         title: "Behavioral Intelligence",
         body: "Understanding communication styles, collaboration, leadership and behavioral characteristics — how people will work together, not just what they know.",
-        reading: "The same people, read for how they work.",
       },
       {
         id: "business",
         title: "Business Alignment",
         body: "Connecting people, capabilities and organizational objectives. The right team is defined by the problem the business needs solved.",
-        reading: "Everything converges on the business objective.",
       },
-    ],
-    figureCaption: "Illustrative model: one hypothetical team, read through each of the four dimensions.",
-    outcome: "BUSINESS OBJECTIVE",
-    team: "TEAM",
-    profiles: [
-      { tech: "APIs · Integration", style: "Analytical" },
-      { tech: "Cloud · Infra", style: "Steady" },
-      { tech: "Data", style: "Detail-oriented" },
-      { tech: "Product", style: "Communicator" },
-      { tech: "Front-end", style: "Driver" },
     ],
     stat: {
       value: "17",
@@ -202,8 +187,6 @@ export const en: Dictionary = {
         "Understanding organizational and operational constraints.",
         "Bridging business expectations and technical execution.",
       ],
-      systems: "Systems",
-      people: "People",
     },
   },
   clients: {
@@ -214,16 +197,22 @@ export const en: Dictionary = {
     note: "Names and logos belong to their respective owners and are shown to identify past collaborations.",
   },
   capabilities: {
-    label: "Capabilities",
+    label: "Solutions engineering capabilities",
     title: "Four areas where engineering meets the business.",
     intro:
       "Depth varies across them, and I’d rather show it than claim it — each area lists where the experience actually comes from.",
+    stack: {
+      title: "Tools by evidence",
+      applied: "Applied in projects",
+      study: "In study",
+      studyNote: "Coursework and lab practice — not professional experience.",
+    },
     items: [
       {
         id: "architecture",
         title: "Solutions Architecture",
         summary:
-          "Understanding requirements, analyzing constraints, designing architectures and evaluating technology choices.",
+          "Understanding requirements, analyzing constraints, designing systems architecture and evaluating technology choices.",
         keywords: ["Requirements", "Constraints", "Trade-offs", "Decision records"],
         evidenceLabel: "Applied in",
         evidence:
@@ -233,7 +222,7 @@ export const en: Dictionary = {
         id: "integration",
         title: "Systems Integration",
         summary:
-          "APIs, webhooks, system interoperability, workflow automation and application communication.",
+          "REST APIs, webhooks, SaaS and system interoperability, business process automation and application communication.",
         keywords: ["REST", "Webhooks", "Events", "Workflow automation"],
         evidenceLabel: "Applied in",
         evidence:
@@ -262,7 +251,7 @@ export const en: Dictionary = {
     ],
   },
   work: {
-    label: "Selected work",
+    label: "Selected projects",
     title: "Projects that started from an operational problem — not from a technology choice.",
     intro:
       "Each case is documented from its repository: what was built, how, and what is still in progress. The concept is labelled as a concept.",
@@ -273,10 +262,10 @@ export const en: Dictionary = {
     built: "Built",
   },
   beyond: {
-    label: "Beyond business",
+    label: "Teaching & social impact",
     title: "Impact that never shows up on a balance sheet.",
     teaching: {
-      label: "Teaching & social impact",
+      label: "Teaching programming",
       title: "Teaching technology, empowering people.",
       body:
         "My work in technology education began in social projects, teaching programming to people with no prior experience in computing. With Scratch, Python and Java, I introduced programming logic and computational thinking — making technical concepts accessible and opening up new personal and professional possibilities.",
@@ -376,17 +365,24 @@ export const en: Dictionary = {
       solution: "Proposed solution",
       architecture: "Architecture",
       flow: "Flow",
-      decisions: "Technical decisions",
+      contribution: "My contribution",
+      decisions: "Technical decisions & trade-offs",
+      security: "Security & access control",
+      delivery: "Testing & deployment",
       implementation: "Implementation",
       technologies: "Technologies",
       status: "Current status",
       results: "Documented results",
+      limitations: "Limitations & next steps",
     },
+    planned: "planned",
+    redirectNotice: "This page has moved to",
     plannedDecisions: "Design decisions (planned)",
     plannedImplementation: "Planned scope",
     candidateStack: "Candidate stack",
     next: "Next case",
-    metaTitleSuffix: "Case study — Vinicius Campanha Sartori",
+    metaTitleSuffix: "Case study | Vinicius Sartori",
+    conceptTitleSuffix: "Concept | Vinicius Sartori",
   },
   projects: [
     {
@@ -397,6 +393,8 @@ export const en: Dictionary = {
       type: "Independent project",
       tagline:
         "Stock, purchasing and day-to-day operations for residential condominiums — with tenant isolation enforced by the database itself.",
+      seoDescription:
+        "Case study: a multi-tenant condominium operations platform on Supabase — RLS tenant isolation, RPC-only writes, lot-based inventory and purchase approvals.",
       context:
         "A residential condominium managed its maintenance stock and purchases with a first-generation inventory app. It worked, but it stored stock as an editable number, had no approval trail and had grown beyond its original design.",
       problem:
@@ -410,6 +408,8 @@ export const en: Dictionary = {
       flowTitle: "Purchasing and stock flow",
       flowCaption:
         "Purchasing is separated from receiving. Receipts create lots; issues pick the lot that expires first (FEFO) or the oldest (FIFO).",
+      contribution:
+        "Independent project: requirements and a written technical plan submitted for the client’s approval, data model, security policies, implementation, tests and deployment.",
       decisions: [
         {
           title: "Stock is a result, never a field",
@@ -436,14 +436,30 @@ export const en: Dictionary = {
           body: "New tables coexist with the legacy model so the current app keeps working. Removing the legacy schema is a separate migration that requires explicit approval.",
         },
       ],
+      security: [
+        "Row Level Security isolates each condominium; composite foreign keys block cross-tenant references.",
+        "Four roles, with permissions enforced in the database — not only in the interface.",
+        "The browser cannot write lots, movements or audit records directly; every change goes through RPC functions.",
+        "Strict Content Security Policy, vendored libraries with SHA-256 checksums, and escaping of all user text — an automated audit blocks unescaped HTML.",
+        "Invoices stored in a private bucket.",
+      ],
+      delivery: [
+        "Static hosting compatible with GitHub Pages: plain ES modules, no build step.",
+        "22 versioned SQL migrations, each safe to re-run.",
+        "Static security audit, unit tests, Playwright browser tests with a mocked Supabase, SQL scenarios and a concurrency test on a disposable Postgres.",
+      ],
       implementation: [
         "Four roles: super admin, building manager, stock manager and resident.",
         "Lot-based inventory with expiry, cost and origin; automatic FEFO / FIFO picking with no negative balances.",
         "Purchasing workflow: draft → manager approval → order → partial or full receipt in multiple lots; invoices stored in a private bucket.",
         "Contracted services and payments, retroactive invoices, announcements with read tracking, meeting minutes, recommended providers, towers and apartments.",
         "Dashboard and reports (Chart.js): critical items, expiries, pending purchases, spending and stock coverage.",
-        "22 versioned SQL migrations, each safe to re-run.",
-        "Test layers: static security audit, unit tests, Playwright browser tests with a mocked Supabase, SQL scenarios and a concurrency test on a disposable Postgres.",
+      ],
+      limitations: [
+        "The new version still runs in parallel with the legacy app; the cutover — including an irreversible legacy-removal migration — is pending.",
+        "Supabase free tier: the project pauses when inactive, storage is limited to 1 GB and invitation e-mails are rate-limited.",
+        "Physical stock counts are out of scope for this round (the adjustments table already supports them).",
+        "No usage metrics published yet.",
       ],
       status: {
         label: "Active development",
@@ -463,6 +479,8 @@ export const en: Dictionary = {
       type: "Independent project",
       tagline:
         "A static, fast institutional website that its owner can update — publishing itself through an event-driven pipeline.",
+      seoDescription:
+        "Case study: a static Next.js medical website on GitHub Pages, republished automatically when a Supabase trigger calls GitHub Actions (workflow_dispatch).",
       context:
         "A medical specialist needed an institutional website: practice areas, appointments, publications and contact details — written within the Brazilian Federal Council of Medicine’s advertising rules.",
       problem:
@@ -476,6 +494,8 @@ export const en: Dictionary = {
       flowTitle: "Content publishing pipeline",
       flowCaption:
         "From a change in the admin panel to a new static version online — without anyone running a deploy by hand.",
+      contribution:
+        "Independent project: architecture, implementation, publishing pipeline, tests and deployment. Content and approvals come from the practice.",
       decisions: [
         {
           title: "Static by default",
@@ -502,11 +522,26 @@ export const en: Dictionary = {
           body: "Two scheduled builds a day refresh content and keep the free-tier database active.",
         },
       ],
+      security: [
+        "Content blocks are validated by a SQL function and protected by RLS; only authenticated administrators can edit.",
+        "The GitHub token lives in Supabase Vault, never in the repository.",
+        "Publishing lock: the build fails while any unfilled content marker remains, and indexing is enabled only by an explicit flag.",
+      ],
+      delivery: [
+        "Static export to GitHub Pages with a configurable base path.",
+        "CI on every push: TypeScript, ESLint, Vitest unit tests and Playwright navigation tests, then build and deploy.",
+        "Rebuilds triggered by content changes (database trigger → workflow_dispatch) and twice a day on a schedule.",
+        "Database tests for RLS and notice validation.",
+      ],
       implementation: [
         "Pages for home, about, practice areas, appointments, publications and privacy; sitemap and robots generated at build time.",
         "Admin area with Supabase Auth and an editor for temporary notices with start and end dates.",
-        "CI pipeline: TypeScript, ESLint, unit tests (Vitest) and Playwright navigation tests against a build with a simulated base path — then production build and deploy.",
-        "Database tests for RLS and notice validation.",
+      ],
+      limitations: [
+        "Not public yet: final texts, contact details, photo and confirmed publications are pending from the practice.",
+        "Structured data, final share image and favicon will be added with the real content.",
+        "The privacy policy is still to be written, with an LGPD review.",
+        "A content change needs a full static rebuild before it appears — minutes, not seconds.",
       ],
       status: {
         label: "Pre-launch",
@@ -525,6 +560,8 @@ export const en: Dictionary = {
       type: "Independent project",
       tagline:
         "A members’ portal for a university house community founded in 2007 — memory, networking and the association’s operations, with privacy designed in.",
+      seoDescription:
+        "Case study: a Next.js and Supabase members’ portal with three-layer access control, per-section privacy and pgTAP tests for row-level security.",
       context:
         "A university student house (a república) founded in 2007 has generations of former residents spread across cities and careers. The community wanted a single place for its memory, its network and its association.",
       problem:
@@ -537,6 +574,8 @@ export const en: Dictionary = {
         "Three independent layers of access control — if one fails, the next still holds. The database has the final word.",
       flowTitle: "Access lifecycle",
       flowCaption: "Nobody gets in by default: access is requested, reviewed and granted by invitation.",
+      contribution:
+        "Independent project built with AI-assisted development: I defined the scope, access model and privacy rules, and directed, reviewed, tested and deployed an implementation written largely with Claude, an AI coding assistant.",
       decisions: [
         {
           title: "Defence in depth",
@@ -559,12 +598,30 @@ export const en: Dictionary = {
           body: "A shim imitates Supabase objects (auth.users, auth.uid(), storage) on plain Postgres 16, so RLS tests also run locally.",
         },
       ],
+      security: [
+        "Three independent layers: a proxy route guard, server-side permission checks in layouts, and RLS as the final authority.",
+        "Access by request, review and invitation — nobody gets in by default.",
+        "Members choose the visibility of each section of their profile.",
+        "Uploaded images are re-encoded on the server: non-images are rejected, sizes limited and files converted to WebP.",
+        "pgTAP tests assert that unauthorized access is denied.",
+      ],
+      delivery: [
+        "31 versioned migrations.",
+        "CI: lint, types, Vitest unit tests, build, and pgTAP database tests against the official Supabase image.",
+        "Local RLS tests on plain Postgres 16 through a shim — no Docker required.",
+        "Hosted on Vercel.",
+      ],
       implementation: [
         "Access requests, approval and invitations; profiles with privacy settings.",
         "Directory, events, a shared fund, a store with cart and PIX payments, announcements and stories.",
         "A photo “museum”, job postings and per-event flyers.",
         "Association module: membership, monthly fees via PIX, ledger and documents.",
-        "31 versioned migrations; CI with lint, types, unit tests, build and database tests.",
+      ],
+      limitations: [
+        "Stage 3 (MVP) is still in progress.",
+        "Automated backups are not implemented yet; they are planned for a later stage.",
+        "Publishing the store module depends on a hosting decision.",
+        "Some data-retention clean-up runs on user activity rather than on a scheduler, until the plan allows pg_cron.",
       ],
       status: {
         label: "MVP in progress",
@@ -583,6 +640,8 @@ export const en: Dictionary = {
       type: "Concept / demonstrator",
       tagline:
         "A demonstrator for connecting business applications through APIs, webhooks and observable workflows.",
+      seoDescription:
+        "Concept: design for a business integration hub — REST APIs, signed webhooks, queued idempotent workflows, execution logs and monitoring. Not yet implemented.",
       context:
         "Small and mid-sized businesses often connect their tools with ad-hoc scripts and point-to-point automations. When something fails, it is hard to know where.",
       problem:
@@ -594,6 +653,8 @@ export const en: Dictionary = {
       architectureCaption: "Intended architecture. Dashed lines mark observability and control paths.",
       flowTitle: "Intended event lifecycle",
       flowCaption: "Every inbound event is verified, deduplicated, queued, executed with retries and logged.",
+      contribution:
+        "Concept and architecture design. No code has been published yet.",
       decisions: [
         {
           title: "Idempotency on every inbound event",
@@ -612,12 +673,25 @@ export const en: Dictionary = {
           body: "Structured execution logs and metrics from day one, rather than bolted on after the first incident.",
         },
       ],
+      security: [
+        "HMAC signature verification on every inbound webhook.",
+        "Secrets kept in a vault, never inside workflow definitions.",
+        "Role-based access to connections, with least-privilege connectors.",
+      ],
+      delivery: [
+        "Containerized services (Docker) with a CI/CD pipeline.",
+        "Metrics in Prometheus and dashboards in Grafana.",
+      ],
       implementation: [
         "REST API and webhook endpoints.",
         "Workflow automation with configurable steps.",
         "Application connectors.",
         "Execution logs and monitoring dashboards.",
         "Access control for connections and secrets.",
+      ],
+      limitations: [
+        "Not implemented: this page describes the intended design only.",
+        "The candidate stack has not been validated in practice yet.",
       ],
       status: {
         label: "Concept",

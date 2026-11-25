@@ -5,6 +5,20 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Diagram } from "@/components/diagrams/Diagram";
 import { ArrowRight, ArrowUpRight, MaskWords } from "@/components/ui/primitives";
+import { projectJsonLd } from "@/lib/seo";
+
+function Bullets({ items }: { items: string[] }) {
+  return (
+    <ul className="border-t border-line/70">
+      {items.map((item) => (
+        <li key={item} className="flex gap-4 border-b border-line/70 py-4 text-paper/85">
+          <span className="mt-[0.75rem] h-px w-3 shrink-0 bg-accent" aria-hidden="true" />
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function Block({ n, title, children }: { n: string; title: string; children: React.ReactNode }) {
   return (
@@ -34,6 +48,7 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
     <>
       <Header dict={dict} locale={locale} alternateHref={alternate} onHome={false} />
       <main id="main">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd(dict, project)) }} />
         <article aria-labelledby="case-title">
           {/* Opening */}
           <header className="relative pt-[calc(var(--header-h)+3rem)]">
@@ -119,6 +134,12 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
               </div>
             </Block>
 
+            <Block n="b025" title={s.contribution}>
+              <p className="font-display text-[clamp(1.2rem,1.8vw,1.55rem)] leading-[1.35] tracking-[-0.015em] text-paper">
+                {p.contribution}
+              </p>
+            </Block>
+
             <Block n="b03" title={s.solution}>
               <p className="t-lead max-w-[60ch] text-paper/85">{p.solution}</p>
             </Block>
@@ -184,6 +205,14 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
               </ol>
             </Block>
 
+            <Block n="b065" title={isConcept ? `${s.security} (${cs.planned})` : s.security}>
+              <Bullets items={p.security} />
+            </Block>
+
+            <Block n="b066" title={isConcept ? `${s.delivery} (${cs.planned})` : s.delivery}>
+              <Bullets items={p.delivery} />
+            </Block>
+
             <Block n="b07" title={isConcept ? cs.plannedImplementation : s.implementation}>
               <ul className="border-t border-line">
                 {p.implementation.map((item, i) => (
@@ -227,6 +256,10 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
                   </div>
                 ) : null}
               </div>
+            </Block>
+
+            <Block n="b10" title={s.limitations}>
+              <Bullets items={p.limitations} />
             </Block>
           </div>
 

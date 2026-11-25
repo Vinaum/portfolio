@@ -53,7 +53,10 @@ export function ArrowDown({ className = "" }: { className?: string }) {
   );
 }
 
-/** Editorial section opener: label, a drawn rule, then the title. */
+/**
+ * Section opener: a descriptive H2 (the section name — what search engines and screen readers
+ * use), a drawn rule, then the editorial line as large display text.
+ */
 export function SectionHeader({
   label,
   title,
@@ -68,10 +71,12 @@ export function SectionHeader({
   return (
     <header className="grid-12 gap-y-10">
       <div className="col-span-12" data-reveal="fade">
-        <p className="t-mono text-accent">{label}</p>
+        <h2 id={titleId} className="t-mono text-accent">
+          {label}
+        </h2>
         <div className="mt-5 h-px w-full bg-line rule-draw" aria-hidden="true" />
       </div>
-      <MaskWords as="h2" id={titleId} text={title} className="t-h2 col-span-12 lg:col-span-9" />
+      <MaskWords as="p" text={title} className="t-h2 col-span-12 lg:col-span-9" />
       {children ? <div className="col-span-12 grid-12">{children}</div> : null}
     </header>
   );

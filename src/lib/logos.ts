@@ -35,6 +35,9 @@ export interface Logo {
   scale: number;
   /** Width / height of the trimmed artwork. */
   aspect: number;
+  /** Intrinsic pixel size of the trimmed file (lets the browser reserve space — no layout shift). */
+  w: number;
+  h: number;
 }
 
 interface Measured {
@@ -65,5 +68,7 @@ export function findLogo(id: LogoId): Logo | null {
     treatment: logoOverrides[id] ?? (m.alpha ? "silhouette" : "invert"),
     scale: opticalScale(m) * (logoScale[id] ?? 1),
     aspect: m.w / m.h,
+    w: m.w,
+    h: m.h,
   };
 }

@@ -11,10 +11,11 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "check:links": "node scripts/check-links.mjs",
-    "check": "npm run lint && npm run typecheck && npm run test && npm run build && npm run check:links",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build && npm run check:links && npm run check:seo",
     "logos": "node scripts/prepare-logos.mjs",
     "predev": "node scripts/prepare-logos.mjs",
-    "prebuild": "node scripts/prepare-logos.mjs"
+    "prebuild": "node scripts/prepare-logos.mjs",
+    "check:seo": "node scripts/audit-seo.mjs"
   },
   "engines": {
     "node": ">=22"

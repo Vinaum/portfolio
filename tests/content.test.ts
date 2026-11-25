@@ -37,12 +37,28 @@ describe("projects", () => {
     for (const l of locales) expect(getProjects(l)).toHaveLength(projectsShared.length);
   });
 
-  it("slugs are unique and URL-safe", () => {
-    for (const l of locales) {
-      const slugs = projectsShared.map((p) => p.slug[l]);
+  it("slugs (current and legacy) are unique and URL-safe", () => {
+    const sets = [projectsShared.map((p) => p.slug), ...locales.map((l) => projectsShared.map((p) => p.legacySlug[l]))];
+    for (const slugs of sets) {
       expect(new Set(slugs).size).toBe(slugs.length);
       slugs.forEach((s) => expect(s).toMatch(/^[a-z0-9-]+$/));
     }
+  });
+
+  it("every project documents contribution, security, delivery and limitations", () => {
+    for (const l of locales)
+      for (const p of getProjects(l)) {
+        expect(p.content.contribution.length).toBeGreaterThan(20);
+        expect(p.content.security.length).toBeGreaterThan(0);
+        expect(p.content.delivery.length).toBeGreaterThan(0);
+        expect(p.content.limitations.length).toBeGreaterThan(0);
+        expect(p.content.seoDescription.length).toBeLessThanOrEqual(160);
+      }
+  });
+
+  it("page titles and descriptions are unique", () => {
+    const all = locales.flatMap((l) => [getDictionary(l).meta.description, ...getProjects(l).map((p) => p.content.seoDescription)]);
+    expect(new Set(all).size).toBe(all.length);
   });
 
   it("concepts are never presented with a repository or documented results", () => {
@@ -55,8 +71,8 @@ describe("projects", () => {
 
   it("routes are language-specific", () => {
     const p = projectsShared[0];
-    expect(projectPath("pt-BR", p)).toMatch(/^\/projetos\//);
-    expect(projectPath("en", p)).toMatch(/^\/en\/work\//);
+    expect(projectPath("pt-BR", p)).toMatch(/^\/projects\//);
+    expect(projectPath("en", p)).toMatch(/^\/en\/projects\//);
   });
 
   it("diagram labels resolve in both languages", () => {

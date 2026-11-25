@@ -23,10 +23,10 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const links = [
-    { id: ids.about, label: nav.about },
-    { id: ids.companies, label: nav.experience },
-    { id: ids.capabilities, label: nav.capabilities },
     { id: ids.work, label: nav.work },
+    { id: ids.capabilities, label: nav.capabilities },
+    { id: ids.companies, label: nav.experience },
+    { id: ids.about, label: nav.about },
     { id: ids.contact, label: nav.contact },
   ];
 
@@ -42,7 +42,7 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
   // Active section indicator.
   useEffect(() => {
     if (!onHome) return;
-    const sections = [ids.about, ids.companies, ids.capabilities, ids.work, ids.clients, ids.teams, ids.beyond, ids.learning, ids.contact]
+    const sections = [ids.work, ids.clients, ids.capabilities, ids.companies, ids.about, ids.beyond, ids.learning, ids.contact]
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
     const map: Record<string, string> = {
@@ -154,6 +154,14 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
         </nav>
 
         <div className="flex items-center gap-6">
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="me noopener noreferrer"
+            className="t-mono hidden text-muted transition-colors hover:text-accent xl:inline"
+          >
+            LinkedIn ↗
+          </a>
           {langSwitch}
           <button
             ref={buttonRef}

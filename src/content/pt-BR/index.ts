@@ -5,9 +5,9 @@ export const ptBR: Dictionary = {
   htmlLang: "pt-BR",
   ogLocale: "pt_BR",
   meta: {
-    title: "Vinicius Campanha Sartori — Solutions Engineer · Integração de Sistemas, Cloud e Automação",
+    title: "Vinicius Sartori | Solutions Engineer e Integração de Sistemas",
     description:
-      "Engenheiro de Computação (UNICAMP) atuando em desenho de soluções, integração de sistemas, cloud e automação — com visão de negócios e de pessoas construída no empreendedorismo, em vendas, no recrutamento de tecnologia e no ensino de programação.",
+      "Vinicius Campanha Sartori, Engenheiro de Computação pela UNICAMP. Solutions Engineer com experiência em integração de sistemas, APIs, automação, cloud e desenvolvimento de soluções digitais.",
     keywords: [
       "Solutions Engineer",
       "Integração de sistemas",
@@ -29,7 +29,6 @@ export const ptBR: Dictionary = {
     capabilities: "competencias",
     work: "projetos",
     clients: "clientes",
-    teams: "formacao-de-times",
     beyond: "alem-dos-negocios",
     learning: "aprendizado",
     contact: "contato",
@@ -67,7 +66,7 @@ export const ptBR: Dictionary = {
       "Um diagrama de arquitetura que conecta Negócio a Aplicações e Dados, Aplicações a APIs, e APIs a Cloud, Automação e Infraestrutura.",
   },
   about: {
-    label: "Sobre",
+    label: "Sobre, formação e liderança",
     title: "Tecnologia é mais do que código. É entender como tudo se conecta.",
     lead:
       "Meu caminho não foi uma linha reta dentro do software — e é exatamente isso que define como eu trabalho com ele.",
@@ -88,7 +87,7 @@ export const ptBR: Dictionary = {
     },
   },
   companies: {
-    label: "Experiência",
+    label: "Experiência profissional",
     title: "Onde aprendi como empresas de tecnologia realmente funcionam.",
     intro:
       "Quatro empresas moldaram mais a minha visão — uma insurtech, uma empresa de IA aplicada e duas consultorias de recrutamento especializado, uma delas um grupo global.",
@@ -154,36 +153,22 @@ export const ptBR: Dictionary = {
         id: "technical",
         title: "Avaliação Técnica",
         body: "Entender competências técnicas, especializações e experiência profissional — ler uma stack, uma trajetória e um nível de senioridade pelo que realmente significam.",
-        reading: "Cada perfil é lido pelo que sabe fazer.",
       },
       {
         id: "composition",
         title: "Composição de Times",
         body: "Identificar perfis complementares e combinar forças diferentes, para que o time cubra o que nenhuma pessoa cobre sozinha.",
-        reading: "Os perfis se conectam pela forma como se complementam.",
       },
       {
         id: "behavioral",
         title: "Inteligência Comportamental",
         body: "Entender estilos de comunicação, colaboração, liderança e características comportamentais — como as pessoas vão trabalhar juntas, não só o que sabem.",
-        reading: "As mesmas pessoas, lidas pela forma como trabalham.",
       },
       {
         id: "business",
         title: "Alinhamento ao Negócio",
         body: "Conectar pessoas, capacidades e objetivos da organização. O time certo é definido pelo problema que o negócio precisa resolver.",
-        reading: "Tudo converge para o objetivo de negócio.",
       },
-    ],
-    figureCaption: "Modelo ilustrativo: um time hipotético, lido por cada uma das quatro dimensões.",
-    outcome: "OBJETIVO DE NEGÓCIO",
-    team: "TIME",
-    profiles: [
-      { tech: "APIs · Integração", style: "Analítico" },
-      { tech: "Cloud · Infra", style: "Estável" },
-      { tech: "Dados", style: "Detalhista" },
-      { tech: "Produto", style: "Comunicador" },
-      { tech: "Front-end", style: "Executor" },
     ],
     stat: {
       value: "17",
@@ -202,8 +187,6 @@ export const ptBR: Dictionary = {
         "Entender restrições organizacionais e operacionais.",
         "Fazer a ponte entre as expectativas do negócio e a execução técnica.",
       ],
-      systems: "Sistemas",
-      people: "Pessoas",
     },
   },
   clients: {
@@ -214,10 +197,16 @@ export const ptBR: Dictionary = {
     note: "Nomes e logotipos pertencem às respectivas empresas e identificam colaborações anteriores.",
   },
   capabilities: {
-    label: "Competências",
+    label: "Competências em Solutions Engineering",
     title: "Quatro áreas onde a engenharia encontra o negócio.",
     intro:
       "A profundidade varia entre elas, e prefiro mostrar a afirmar — cada área indica de onde vem a experiência.",
+    stack: {
+      title: "Ferramentas por evidência",
+      applied: "Aplicadas em projetos",
+      study: "Em estudo",
+      studyNote: "Cursos e prática de laboratório — não experiência profissional.",
+    },
     items: [
       {
         id: "architecture",
@@ -233,7 +222,7 @@ export const ptBR: Dictionary = {
         id: "integration",
         title: "Integração de Sistemas",
         summary:
-          "APIs, webhooks, interoperabilidade entre sistemas, automação de fluxos e comunicação entre aplicações.",
+          "APIs REST, webhooks, interoperabilidade entre sistemas e SaaS, automação de processos de negócio e comunicação entre aplicações.",
         keywords: ["REST", "Webhooks", "Eventos", "Automação de fluxos"],
         evidenceLabel: "Aplicado em",
         evidence:
@@ -262,7 +251,7 @@ export const ptBR: Dictionary = {
     ],
   },
   work: {
-    label: "Projetos",
+    label: "Projetos selecionados",
     title: "Projetos que nasceram de um problema operacional — não de uma escolha de tecnologia.",
     intro:
       "Cada caso é documentado a partir do seu repositório: o que foi construído, como, e o que ainda está em andamento. O conceito está identificado como conceito.",
@@ -273,10 +262,10 @@ export const ptBR: Dictionary = {
     built: "Construído",
   },
   beyond: {
-    label: "Além dos negócios",
+    label: "Ensino e impacto social",
     title: "Impacto que não aparece no balanço.",
     teaching: {
-      label: "Ensino e impacto social",
+      label: "Ensino de programação",
       title: "Ensinando tecnologia, transformando pessoas.",
       body:
         "Minha experiência com educação tecnológica começou em projetos sociais, ensinando programação a pessoas sem qualquer conhecimento prévio. Utilizando ferramentas como Scratch e linguagens como Python e Java, trabalhei na introdução à lógica de programação e ao pensamento computacional, tornando conceitos técnicos acessíveis e estimulando novas possibilidades profissionais e pessoais.",
@@ -376,17 +365,24 @@ export const ptBR: Dictionary = {
       solution: "Solução proposta",
       architecture: "Arquitetura",
       flow: "Fluxo",
-      decisions: "Decisões técnicas",
+      contribution: "Minha contribuição",
+      decisions: "Decisões técnicas e trade-offs",
+      security: "Segurança e controle de acesso",
+      delivery: "Testes e publicação",
       implementation: "Implementação",
       technologies: "Tecnologias",
       status: "Situação atual",
       results: "Resultados documentados",
+      limitations: "Limitações e próximos passos",
     },
+    planned: "planejado",
+    redirectNotice: "Esta página mudou de endereço:",
     plannedDecisions: "Decisões de desenho (planejadas)",
     plannedImplementation: "Escopo planejado",
     candidateStack: "Stack candidata",
     next: "Próximo caso",
-    metaTitleSuffix: "Estudo de caso — Vinicius Campanha Sartori",
+    metaTitleSuffix: "Estudo de caso | Vinicius Sartori",
+    conceptTitleSuffix: "Conceito | Vinicius Sartori",
   },
   projects: [
     {
@@ -397,6 +393,8 @@ export const ptBR: Dictionary = {
       type: "Projeto independente",
       tagline:
         "Estoque, compras e operação do dia a dia para condomínios residenciais — com isolamento entre condomínios garantido pelo próprio banco de dados.",
+      seoDescription:
+        "Estudo de caso: plataforma multi-inquilino de gestão condominial em Supabase — isolamento por RLS, escrita só via RPC, estoque por lotes e aprovação de compras.",
       context:
         "Um condomínio residencial controlava o estoque de manutenção e as compras com um primeiro aplicativo de estoque. Ele funcionava, mas guardava o saldo como um número editável, não tinha trilha de aprovação e havia crescido além do desenho original.",
       problem:
@@ -410,6 +408,8 @@ export const ptBR: Dictionary = {
       flowTitle: "Fluxo de compras e estoque",
       flowCaption:
         "A compra é separada do recebimento. Recebimentos criam lotes; saídas consomem o lote que vence primeiro (FEFO) ou o mais antigo (FIFO).",
+      contribution:
+        "Projeto independente: requisitos e um plano técnico escrito, submetido à aprovação do cliente, modelo de dados, políticas de segurança, implementação, testes e publicação.",
       decisions: [
         {
           title: "Estoque é resultado, nunca um campo",
@@ -436,14 +436,30 @@ export const ptBR: Dictionary = {
           body: "As tabelas novas convivem com o modelo antigo, e o aplicativo atual continua funcionando. Remover o legado é uma migration separada, que exige aprovação explícita.",
         },
       ],
+      security: [
+        "Row Level Security isola cada condomínio; chaves estrangeiras compostas impedem referências cruzadas entre condomínios.",
+        "Quatro papéis, com permissões garantidas no banco — não apenas na interface.",
+        "O navegador não grava lotes, movimentações nem auditoria diretamente; toda mudança passa por funções RPC.",
+        "Política de segurança de conteúdo rígida, bibliotecas em vendor/ com soma SHA-256 e escape de todo texto do usuário — uma auditoria automática bloqueia HTML sem escape.",
+        "Notas fiscais em armazenamento privado.",
+      ],
+      delivery: [
+        "Hospedagem estática compatível com GitHub Pages: módulos ES puros, sem etapa de build.",
+        "22 migrations SQL versionadas, todas seguras para reexecução.",
+        "Auditoria estática de segurança, testes de unidade, testes de navegador com Playwright e Supabase simulado, cenários SQL e teste de concorrência em um Postgres descartável.",
+      ],
       implementation: [
         "Quatro papéis: superadmin, síndico, gestor de estoque e morador.",
         "Estoque por lotes com validade, custo e origem; baixa automática FEFO / FIFO sem saldo negativo.",
         "Fluxo de compras: rascunho → aprovação do síndico → pedido → recebimento parcial ou total em vários lotes; notas fiscais em armazenamento privado.",
         "Serviços contratados e pagamentos, notas fiscais retroativas, comunicados com controle de leitura, atas, prestadores recomendados, torres e apartamentos.",
         "Painel e relatórios (Chart.js): itens críticos, vencimentos, compras pendentes, gastos e cobertura de estoque.",
-        "22 migrations SQL versionadas, todas seguras para reexecução.",
-        "Camadas de teste: auditoria estática de segurança, testes de unidade, testes de navegador com Playwright e Supabase simulado, cenários SQL e teste de concorrência em um Postgres descartável.",
+      ],
+      limitations: [
+        "A nova versão ainda roda em paralelo à antiga; a virada — incluindo uma migration irreversível que remove o legado — está pendente.",
+        "Plano gratuito do Supabase: o projeto pausa por inatividade, o armazenamento é limitado a 1 GB e o envio de convites por e-mail tem limite por hora.",
+        "A conferência física de estoque ficou fora desta rodada (a tabela de ajustes já a suporta).",
+        "Ainda não há métricas de uso publicadas.",
       ],
       status: {
         label: "Em desenvolvimento ativo",
@@ -463,6 +479,8 @@ export const ptBR: Dictionary = {
       type: "Projeto independente",
       tagline:
         "Um site institucional estático e rápido que o próprio dono consegue atualizar — e que se publica sozinho por um pipeline orientado a eventos.",
+      seoDescription:
+        "Estudo de caso: site médico estático em Next.js no GitHub Pages, republicado automaticamente por um gatilho do Supabase que aciona o GitHub Actions.",
       context:
         "Um médico especialista precisava de um site institucional: áreas de atuação, consultas, publicações e contatos — escrito dentro das regras de publicidade do Conselho Federal de Medicina.",
       problem:
@@ -476,6 +494,8 @@ export const ptBR: Dictionary = {
       flowTitle: "Pipeline de publicação de conteúdo",
       flowCaption:
         "De uma mudança no painel a uma nova versão estática no ar — sem ninguém rodar um deploy à mão.",
+      contribution:
+        "Projeto independente: arquitetura, implementação, pipeline de publicação, testes e publicação. O conteúdo e as aprovações vêm do consultório.",
       decisions: [
         {
           title: "Estático por padrão",
@@ -502,11 +522,26 @@ export const ptBR: Dictionary = {
           body: "Dois builds agendados por dia atualizam o conteúdo e mantêm ativo o banco do plano gratuito.",
         },
       ],
+      security: [
+        "Os blocos de conteúdo são validados por uma função SQL e protegidos por RLS; só administradores autenticados editam.",
+        "O token do GitHub fica no Supabase Vault, nunca no repositório.",
+        "Trava de publicação: o build falha enquanto houver marcadores de conteúdo pendente, e a indexação só é liberada por uma flag explícita.",
+      ],
+      delivery: [
+        "Export estático para o GitHub Pages com base path configurável.",
+        "CI a cada push: TypeScript, ESLint, testes de unidade com Vitest e testes de navegação com Playwright, depois build e publicação.",
+        "Rebuilds disparados por mudanças de conteúdo (gatilho no banco → workflow_dispatch) e duas vezes por dia, por agendamento.",
+        "Testes de banco para RLS e validação dos avisos.",
+      ],
       implementation: [
         "Páginas de início, sobre, áreas de atuação, consultas, publicações e privacidade; sitemap e robots gerados no build.",
         "Área administrativa com Supabase Auth e editor de avisos temporários com data de início e fim.",
-        "Pipeline de CI: TypeScript, ESLint, testes de unidade (Vitest) e testes de navegação com Playwright em um build com base path simulado — depois build de produção e publicação.",
-        "Testes de banco para RLS e validação dos avisos.",
+      ],
+      limitations: [
+        "Ainda não está no ar: textos finais, contatos, foto e publicações confirmadas dependem do consultório.",
+        "Dados estruturados, imagem de compartilhamento e favicon finais entram com o conteúdo real.",
+        "A política de privacidade ainda será redigida, com revisão da LGPD.",
+        "Uma mudança de conteúdo precisa de um novo build estático para aparecer — minutos, não segundos.",
       ],
       status: {
         label: "Pré-lançamento",
@@ -525,6 +560,8 @@ export const ptBR: Dictionary = {
       type: "Projeto independente",
       tagline:
         "Um portal de integrantes para a comunidade de uma república universitária fundada em 2007 — memória, networking e a operação da associação, com privacidade desde o desenho.",
+      seoDescription:
+        "Estudo de caso: portal de integrantes em Next.js e Supabase, com controle de acesso em três camadas, privacidade por seção e testes pgTAP de RLS.",
       context:
         "Uma república universitária fundada em 2007 reúne gerações de ex-moradores espalhados por cidades e carreiras. A comunidade queria um único lugar para sua memória, sua rede e sua associação.",
       problem:
@@ -537,6 +574,8 @@ export const ptBR: Dictionary = {
         "Três camadas independentes de controle de acesso — se uma falhar, a próxima ainda segura. O banco tem a palavra final.",
       flowTitle: "Ciclo de acesso",
       flowCaption: "Ninguém entra por padrão: o acesso é solicitado, analisado e concedido por convite.",
+      contribution:
+        "Projeto independente com desenvolvimento assistido por IA: defini escopo, modelo de acesso e regras de privacidade, e conduzi, revisei, testei e publiquei uma implementação escrita em grande parte com o Claude, assistente de programação com IA.",
       decisions: [
         {
           title: "Defesa em profundidade",
@@ -559,12 +598,30 @@ export const ptBR: Dictionary = {
           body: "Um shim imita objetos do Supabase (auth.users, auth.uid(), storage) em um Postgres 16 comum, para que os testes de RLS rodem também localmente.",
         },
       ],
+      security: [
+        "Três camadas independentes: barreira de rotas no proxy, checagem de permissão no servidor e RLS como autoridade final.",
+        "Acesso por solicitação, análise e convite — ninguém entra por padrão.",
+        "Cada integrante escolhe a visibilidade de cada seção do próprio perfil.",
+        "Imagens enviadas são reprocessadas no servidor: o que não é imagem é recusado, o tamanho é limitado e o arquivo convertido para WebP.",
+        "Testes pgTAP garantem que acessos não autorizados são negados.",
+      ],
+      delivery: [
+        "31 migrations versionadas.",
+        "CI: lint, tipos, testes de unidade com Vitest, build e testes de banco com pgTAP na imagem oficial do Supabase.",
+        "Testes de RLS locais em Postgres 16 comum, por meio de um shim — sem Docker.",
+        "Hospedagem na Vercel.",
+      ],
       implementation: [
         "Solicitação, aprovação e convite de acesso; perfis com configurações de privacidade.",
         "Diretório, eventos, caixinha, loja com carrinho e PIX, comunicados e histórias.",
         "Um “museu” de fotos, divulgação de vagas e flyer por evento.",
         "Módulo da associação: adesão, mensalidades por PIX, livro-caixa e documentos.",
-        "31 migrations versionadas; CI com lint, tipos, testes de unidade, build e testes de banco.",
+      ],
+      limitations: [
+        "A Etapa 3 (MVP) ainda está em andamento.",
+        "O backup automático ainda não foi implementado; está previsto para uma etapa posterior.",
+        "A publicação do módulo de loja depende de uma decisão sobre a hospedagem.",
+        "Parte da limpeza de dados antigos roda conforme o uso, e não por agendamento, até o plano permitir pg_cron.",
       ],
       status: {
         label: "MVP em andamento",
@@ -583,6 +640,8 @@ export const ptBR: Dictionary = {
       type: "Conceito / demonstrador",
       tagline:
         "Um demonstrador para conectar aplicações de negócio por meio de APIs, webhooks e fluxos observáveis.",
+      seoDescription:
+        "Conceito: desenho de um hub de integração — APIs REST, webhooks assinados, fluxos idempotentes com fila, logs e monitoramento. Ainda não implementado.",
       context:
         "Pequenas e médias empresas costumam conectar suas ferramentas com scripts improvisados e automações ponto a ponto. Quando algo falha, é difícil saber onde.",
       problem:
@@ -594,6 +653,8 @@ export const ptBR: Dictionary = {
       architectureCaption: "Arquitetura pretendida. Linhas tracejadas indicam caminhos de observabilidade e controle.",
       flowTitle: "Ciclo de vida pretendido de um evento",
       flowCaption: "Todo evento recebido é verificado, deduplicado, enfileirado, executado com retentativas e registrado.",
+      contribution:
+        "Concepção e desenho de arquitetura. Nenhum código foi publicado ainda.",
       decisions: [
         {
           title: "Idempotência em todo evento recebido",
@@ -612,12 +673,25 @@ export const ptBR: Dictionary = {
           body: "Logs estruturados de execução e métricas desde o primeiro dia, e não adicionados depois do primeiro incidente.",
         },
       ],
+      security: [
+        "Verificação de assinatura HMAC em todo webhook recebido.",
+        "Segredos guardados em um cofre, nunca nas definições de fluxo.",
+        "Acesso às conexões por papel, com conectores de privilégio mínimo.",
+      ],
+      delivery: [
+        "Serviços em contêineres (Docker) com pipeline de CI/CD.",
+        "Métricas no Prometheus e painéis no Grafana.",
+      ],
       implementation: [
         "Endpoints de API REST e de webhooks.",
         "Automação de fluxos com etapas configuráveis.",
         "Conectores de aplicações.",
         "Logs de execução e painéis de monitoramento.",
         "Controle de acesso a conexões e segredos.",
+      ],
+      limitations: [
+        "Não implementado: esta página descreve apenas o desenho pretendido.",
+        "A stack candidata ainda não foi validada na prática.",
       ],
       status: {
         label: "Conceito",

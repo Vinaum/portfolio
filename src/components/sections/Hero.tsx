@@ -3,7 +3,7 @@ import { site } from "@/content";
 import { HeroDiagram } from "@/components/diagrams/HeroDiagram";
 import { LogoMark } from "@/components/ui/LogoMark";
 import { findLogo } from "@/lib/logos";
-import { ArrowDown, ArrowRight, MaskWords } from "@/components/ui/primitives";
+import { ArrowDown, ArrowRight, ArrowUpRight, MaskWords } from "@/components/ui/primitives";
 
 export function Hero({ dict }: { dict: Dictionary }) {
   const { hero, ids } = dict;
@@ -56,6 +56,10 @@ export function Hero({ dict }: { dict: Dictionary }) {
               {hero.ctaSecondary}
               <ArrowRight />
             </a>
+            <a href={site.linkedin} target="_blank" rel="me noopener noreferrer" className="t-mono link-u ml-2 inline-flex items-center gap-2 self-center text-paper">
+              LinkedIn
+              <ArrowUpRight />
+            </a>
           </div>
         </div>
 
@@ -82,8 +86,8 @@ export function Hero({ dict }: { dict: Dictionary }) {
             ))}
           </ul>
           <div className="col-span-2 hidden items-center justify-end lg:flex">
-            <a href={`#${ids.about}`} className="t-mono flex items-center gap-3 text-muted transition-colors hover:text-accent">
-              {dict.nav.about}
+            <a href={`#${ids.work}`} className="t-mono flex items-center gap-3 text-muted transition-colors hover:text-accent">
+              {dict.nav.work}
               <ArrowDown />
             </a>
           </div>

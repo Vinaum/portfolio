@@ -28,7 +28,8 @@ function linearFlow(steps: { label: Text; sub?: Text; tone?: DiagramNode["tone"]
 export const projectsShared: ProjectShared[] = [
   {
     id: "condominium",
-    slug: { "pt-BR": "plataforma-gestao-condominial", en: "condominium-operations-platform" },
+    slug: "condominium-management",
+    legacySlug: { "pt-BR": "plataforma-gestao-condominial", en: "condominium-operations-platform" },
     kind: "built",
     repo: "https://github.com/Vinaum/gestao-estoque-luminiiv",
     stack: [
@@ -94,7 +95,8 @@ export const projectsShared: ProjectShared[] = [
   },
   {
     id: "medical",
-    slug: { "pt-BR": "site-medico-plataforma-de-conteudo", en: "medical-website-content-platform" },
+    slug: "medical-platform",
+    legacySlug: { "pt-BR": "site-medico-plataforma-de-conteudo", en: "medical-website-content-platform" },
     kind: "built",
     repo: "https://github.com/Vinaum/site-hemato",
     stack: [
@@ -146,7 +148,8 @@ export const projectsShared: ProjectShared[] = [
   },
   {
     id: "community",
-    slug: { "pt-BR": "portal-de-comunidade", en: "community-portal" },
+    slug: "community-portal",
+    legacySlug: { "pt-BR": "portal-de-comunidade", en: "community-portal" },
     kind: "built",
     repo: "https://github.com/Vinaum/portal-paidabartira",
     stack: [
@@ -194,7 +197,8 @@ export const projectsShared: ProjectShared[] = [
   },
   {
     id: "integration-hub",
-    slug: { "pt-BR": "hub-de-integracao", en: "business-integration-hub" },
+    slug: "business-integration-hub",
+    legacySlug: { "pt-BR": "hub-de-integracao", en: "business-integration-hub" },
     kind: "concept",
     stack: ["REST APIs", "Webhooks", "Node.js", "TypeScript", "PostgreSQL", "Docker", "Prometheus", "Grafana", "AWS"],
     architecture: {

@@ -12,11 +12,11 @@ export function Contact({ dict }: { dict: Dictionary }) {
   return (
     <section id={ids.contact} aria-labelledby="contact-title" className="relative overflow-hidden border-t border-line pb-24 pt-32 lg:pt-44">
       <div className="container-x">
-        <p className="t-mono text-accent" data-reveal="fade">
+        <h2 id="contact-title" className="t-mono text-accent" data-reveal="fade">
           {c.label}
-        </p>
+        </h2>
 
-        <MaskWords as="h2" id="contact-title" text={c.headline} className="t-display mt-14 max-w-[14ch] text-paper" />
+        <MaskWords as="p" text={c.headline} className="t-display mt-14 max-w-[14ch] text-paper" />
 
         {/* Closing figure: the connection the whole page has been drawing. */}
         <div className="mt-14 hidden md:block" data-reveal="fade" aria-hidden="true">

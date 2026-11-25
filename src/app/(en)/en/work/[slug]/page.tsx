@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { CaseStudy } from "@/components/projects/CaseStudy";
-import { caseMetadata, caseStaticParams, resolveCase } from "@/lib/case-route";
+import { getDictionary } from "@/content";
+import { LegacyRedirect } from "@/components/projects/LegacyRedirect";
+import { legacyMetadata, legacyStaticParams, resolveLegacy } from "@/lib/case-route";
 
 type Props = { params: Promise<{ slug: string }> };
 
+/** Former URL — kept so existing links still work. */
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return caseStaticParams("en");
+  return legacyStaticParams("en");
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  return caseMetadata("en", (await params).slug);
+  return legacyMetadata("en", (await params).slug);
 }
 export default async function Page({ params }: Props) {
-  const project = resolveCase("en", (await params).slug);
-  return <CaseStudy project={project} locale="en" />;
+  const { project, target } = resolveLegacy("en", (await params).slug);
+  return <LegacyRedirect target={target} name={project.content.name} notice={getDictionary("en").caseStudy.redirectNotice} />;
 }
