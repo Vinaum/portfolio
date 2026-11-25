@@ -66,11 +66,9 @@ export const ptBR: Dictionary = {
     diagramTitle: "Diagrama de contexto do sistema",
     diagramDescription:
       "Um diagrama de arquitetura que conecta Negócio a Aplicações e Dados, Aplicações a APIs, e APIs a Cloud, Automação e Infraestrutura.",
-    figure: "FIG. 01 — CONTEXTO DO SISTEMA",
   },
   about: {
     label: "Sobre",
-    code: "CONTEXTO",
     title: "Tecnologia é mais do que código. É entender como tudo se conecta.",
     lead:
       "Meu caminho não foi uma linha reta dentro do software — e é exatamente isso que define como eu trabalho com ele.",
@@ -98,7 +96,6 @@ export const ptBR: Dictionary = {
   },
   companies: {
     label: "Empresas e Experiência",
-    code: "AMBIENTES",
     title: "Onde aprendi como empresas de tecnologia realmente funcionam.",
     intro:
       "Três ambientes moldaram mais a minha visão: uma insurtech de alto crescimento, uma empresa de IA aplicada e um dos grupos de recrutamento especializado mais conhecidos do mundo.",
@@ -151,7 +148,6 @@ export const ptBR: Dictionary = {
   },
   teams: {
     label: "Formação de times",
-    code: "SISTEMAS DE PESSOAS",
     title: "Construindo times que constroem soluções.",
     statement:
       "Formar times de alta performance não é apenas encontrar pessoas talentosas. É entender como competências técnicas, perfis comportamentais, estilos de comunicação e forças complementares se combinam para resolver desafios complexos de negócio.",
@@ -182,7 +178,6 @@ export const ptBR: Dictionary = {
         reading: "Tudo converge para o objetivo de negócio.",
       },
     ],
-    figure: "FIG. — MODELO DE COMPOSIÇÃO DE TIME",
     figureCaption: "Modelo ilustrativo: um time hipotético, lido por cada uma das quatro dimensões.",
     outcome: "OBJETIVO DE NEGÓCIO",
     team: "TIME",
@@ -216,7 +211,6 @@ export const ptBR: Dictionary = {
   },
   clients: {
     label: "Clientes",
-    code: "CONFIANÇA",
     title: "Empresas que já confiaram no meu trabalho.",
     intro: "Organizações com quem trabalhei ou para quem entreguei.",
     items: [],
@@ -224,7 +218,6 @@ export const ptBR: Dictionary = {
   },
   capabilities: {
     label: "Competências",
-    code: "MAPA DE COMPETÊNCIAS",
     title: "Quatro áreas onde a engenharia encontra o negócio.",
     intro:
       "A profundidade varia entre elas, e prefiro mostrar a afirmar — cada área indica de onde vem a experiência.",
@@ -273,7 +266,6 @@ export const ptBR: Dictionary = {
   },
   work: {
     label: "Projetos",
-    code: "CASOS",
     title: "Projetos que nasceram de um problema operacional — não de uma escolha de tecnologia.",
     intro:
       "Cada caso é documentado a partir do seu repositório: o que foi construído, como, e o que ainda está em andamento. O conceito está identificado como conceito.",
@@ -285,7 +277,6 @@ export const ptBR: Dictionary = {
   },
   technology: {
     label: "Tecnologia",
-    code: "TAXONOMIA DA STACK",
     title: "Um mapa de ferramentas — e de como eu as conheço.",
     intro:
       "Sem barras de porcentagem. Cada ferramenta é marcada pela evidência por trás dela: aplicada nos projetos acima, ou em estudo e prática de laboratório.",
@@ -355,7 +346,6 @@ export const ptBR: Dictionary = {
   },
   journey: {
     label: "Trajetória",
-    code: "PERCURSO",
     title: "Um percurso entre engenharia, negócios e pessoas.",
     intro:
       "Não foi uma linha reta — são quatro capítulos, e cada um acrescentou uma camada à forma como entendo projetos de tecnologia.",
@@ -363,7 +353,6 @@ export const ptBR: Dictionary = {
     chapters: [
       {
         id: "entrepreneurship",
-        index: "I",
         title: "Empreendedorismo",
         period: "Raiz Universitária",
         organizations: [{ name: "Raiz Universitária", role: "Cofundador" }],
@@ -379,7 +368,6 @@ export const ptBR: Dictionary = {
       },
       {
         id: "telecom",
-        index: "II",
         title: "Tecnologia, telecom e negócios",
         period: "Trópico Telecomunicações",
         organizations: [{ name: "Trópico Telecomunicações" }],
@@ -389,7 +377,6 @@ export const ptBR: Dictionary = {
       },
       {
         id: "recruitment",
-        index: "III",
         title: "Recrutamento de tecnologia e liderança",
         period: "7+ anos",
         organizations: [
@@ -405,7 +392,6 @@ export const ptBR: Dictionary = {
       },
       {
         id: "independent",
-        index: "IV",
         title: "Projetos independentes de tecnologia",
         period: "Agora",
         organizations: [{ name: "Projetos independentes" }],
@@ -417,7 +403,6 @@ export const ptBR: Dictionary = {
   },
   principles: {
     label: "Como penso",
-    code: "PRINCÍPIOS DE TRABALHO",
     title: "Quatro princípios que guiam meu trabalho.",
     items: [
       {
@@ -444,7 +429,6 @@ export const ptBR: Dictionary = {
   },
   contact: {
     label: "Contato",
-    code: "INTERFACE",
     headline: "Tem um desafio que vale a pena resolver?",
     body:
       "Estou aberto a posições em Solutions Engineering, Integração, Implantação e Consultoria Técnica — e a conversas sobre problemas que valem a pena resolver.",
@@ -488,7 +472,6 @@ export const ptBR: Dictionary = {
     plannedImplementation: "Escopo planejado",
     candidateStack: "Stack candidata",
     next: "Próximo caso",
-    figure: "FIG.",
     metaTitleSuffix: "Estudo de caso — Vinicius Campanha Sartori",
   },
   projects: [

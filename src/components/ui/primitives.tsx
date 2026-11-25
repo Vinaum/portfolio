@@ -53,20 +53,14 @@ export function ArrowDown({ className = "" }: { className?: string }) {
   );
 }
 
-/**
- * Editorial section opener: index · label · system code, a drawn rule, then the title.
- */
+/** Editorial section opener: label, a drawn rule, then the title. */
 export function SectionHeader({
-  index,
   label,
-  code,
   title,
   titleId,
   children,
 }: {
-  index: string;
   label: string;
-  code: string;
   title: string;
   titleId: string;
   children?: ReactNode;
@@ -74,14 +68,7 @@ export function SectionHeader({
   return (
     <header className="grid-12 gap-y-10">
       <div className="col-span-12" data-reveal="fade">
-        <div className="t-mono flex items-center gap-4 text-muted">
-          <span className="text-accent">{index}</span>
-          <span className="text-paper">{label}</span>
-          <span aria-hidden="true" className="hidden sm:inline">
-            /
-          </span>
-          <span className="hidden sm:inline">{code}</span>
-        </div>
+        <p className="t-mono text-accent">{label}</p>
         <div className="mt-5 h-px w-full bg-line rule-draw" aria-hidden="true" />
       </div>
       <MaskWords as="h2" id={titleId} text={title} className="t-h2 col-span-12 lg:col-span-9" />

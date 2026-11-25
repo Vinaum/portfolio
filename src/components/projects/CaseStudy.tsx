@@ -6,12 +6,11 @@ import { Footer } from "@/components/layout/Footer";
 import { Diagram } from "@/components/diagrams/Diagram";
 import { ArrowRight, ArrowUpRight, MaskWords } from "@/components/ui/primitives";
 
-function Block({ n, title, children, id }: { n: string; title: string; children: React.ReactNode; id?: string }) {
+function Block({ n, title, children }: { n: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} aria-labelledby={`${id ?? n}-h`} className="grid-12 gap-y-6 border-t border-line py-14 lg:py-20" data-reveal>
+    <section aria-labelledby={`${n}-h`} className="grid-12 gap-y-6 border-t border-line py-14 lg:py-20" data-reveal>
       <div className="col-span-12 lg:col-span-3">
-        <h2 id={`${id ?? n}-h`} className="t-mono flex gap-4 text-paper">
-          <span className="text-accent">{n}</span>
+        <h2 id={`${n}-h`} className="t-mono text-accent">
           {title}
         </h2>
       </div>
@@ -30,7 +29,6 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
   const idx = all.findIndex((x) => x.id === project.id);
   const next = all[(idx + 1) % all.length];
   const alternate = projectPath(otherLocale(locale), project);
-  const pIndex = idx + 1;
 
   return (
     <>
@@ -50,7 +48,7 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
                 </Link>
                 <span aria-hidden="true">/</span>
                 <span className="text-accent" aria-current="page">
-                  P/{String(pIndex).padStart(2, "0")}
+                  {p.shortName}
                 </span>
               </nav>
 
@@ -104,11 +102,11 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
           </header>
 
           <div className="container-x mt-10">
-            <Block n="01" title={s.context}>
+            <Block n="b01" title={s.context}>
               <p className="font-display text-[clamp(1.35rem,2.2vw,1.9rem)] leading-[1.3] tracking-[-0.02em] text-paper">{p.context}</p>
             </Block>
 
-            <Block n="02" title={`${s.problem} / ${s.objective}`}>
+            <Block n="b02" title={`${s.problem} / ${s.objective}`}>
               <div className="grid gap-10 md:grid-cols-2">
                 <div>
                   <p className="t-mono text-muted">{s.problem}</p>
@@ -121,7 +119,7 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
               </div>
             </Block>
 
-            <Block n="03" title={s.solution}>
+            <Block n="b03" title={s.solution}>
               <p className="t-lead max-w-[60ch] text-paper/85">{p.solution}</p>
             </Block>
           </div>
@@ -130,13 +128,9 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
           <section aria-labelledby="arch-h" className="border-y border-line bg-graphite/40 py-16 lg:py-24">
             <div className="container-x">
               <div className="flex flex-wrap items-baseline justify-between gap-4" data-reveal="fade">
-                <h2 id="arch-h" className="t-mono flex gap-4 text-paper">
-                  <span className="text-accent">04</span>
+                <h2 id="arch-h" className="t-mono text-accent">
                   {s.architecture}
                 </h2>
-                <span className="t-mono-sm text-muted">
-                  {cs.figure} P{pIndex}.1
-                </span>
               </div>
               <figure className="mt-10">
                 <div className="-mx-[var(--gutter)] overflow-x-auto px-[var(--gutter)] md:mx-0 md:px-0" tabIndex={0} aria-label={s.architecture}>
@@ -156,13 +150,7 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
               </figure>
 
               <div className="mt-20 flex flex-wrap items-baseline justify-between gap-4" data-reveal="fade">
-                <h2 className="t-mono flex gap-4 text-paper">
-                  <span className="text-accent">05</span>
-                  {s.flow} — {p.flowTitle}
-                </h2>
-                <span className="t-mono-sm text-muted">
-                  {cs.figure} P{pIndex}.2
-                </span>
+                <h2 className="t-mono text-accent">{p.flowTitle}</h2>
               </div>
               <figure className="mt-10">
                 <div className="-mx-[var(--gutter)] overflow-x-auto px-[var(--gutter)] md:mx-0 md:px-0" tabIndex={0} aria-label={p.flowTitle}>
@@ -185,30 +173,28 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
           </section>
 
           <div className="container-x">
-            <Block n="06" title={isConcept ? cs.plannedDecisions : s.decisions}>
+            <Block n="b06" title={isConcept ? cs.plannedDecisions : s.decisions}>
               <ol className="grid gap-px border border-line bg-line md:grid-cols-2">
-                {p.decisions.map((d, i) => (
+                {p.decisions.map((d) => (
                   <li key={d.title} className="bg-obsidian p-6 lg:p-8">
-                    <p className="t-mono text-accent">D.{String(i + 1).padStart(2, "0")}</p>
-                    <h3 className="mt-4 font-display text-[1.3rem] leading-snug tracking-[-0.015em] text-paper">{d.title}</h3>
+                    <h3 className="font-display text-[1.3rem] leading-snug tracking-[-0.015em] text-paper">{d.title}</h3>
                     <p className="mt-3 text-[0.97rem] leading-relaxed text-paper/72">{d.body}</p>
                   </li>
                 ))}
               </ol>
             </Block>
 
-            <Block n="07" title={isConcept ? cs.plannedImplementation : s.implementation}>
+            <Block n="b07" title={isConcept ? cs.plannedImplementation : s.implementation}>
               <ul className="border-t border-line">
                 {p.implementation.map((item, i) => (
-                  <li key={i} className="grid grid-cols-[3rem_1fr] gap-4 border-b border-line py-4 text-paper/85">
-                    <span className="t-mono pt-[3px] text-muted">{String(i + 1).padStart(2, "0")}</span>
+                  <li key={i} className="border-b border-line py-4 text-paper/85">
                     {item}
                   </li>
                 ))}
               </ul>
             </Block>
 
-            <Block n="08" title={isConcept ? cs.candidateStack : s.technologies}>
+            <Block n="b08" title={isConcept ? cs.candidateStack : s.technologies}>
               <ul className="flex flex-wrap gap-2">
                 {project.stack.map((t) => (
                   <li key={t} className="chip text-paper">
@@ -218,7 +204,7 @@ export function CaseStudy({ project, locale }: { project: Project; locale: Local
               </ul>
             </Block>
 
-            <Block n="09" title={p.results.length ? `${s.status} / ${s.results}` : s.status}>
+            <Block n="b09" title={p.results.length ? `${s.status} / ${s.results}` : s.status}>
               <div className="grid gap-10 md:grid-cols-2">
                 <div>
                   <p className="flex items-center gap-3 font-display text-[1.6rem] tracking-[-0.02em] text-paper">

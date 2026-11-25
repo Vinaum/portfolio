@@ -59,7 +59,7 @@ function TeamDiagram({ dict, dim }: { dict: Dictionary; dim: TeamDimension["id"]
   );
 }
 
-export function TeamBuilding({ dict, index }: { dict: Dictionary; index: string }) {
+export function TeamBuilding({ dict }: { dict: Dictionary }) {
   const { teams: t, ids } = dict;
   const [active, setActive] = useState(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -82,7 +82,7 @@ export function TeamBuilding({ dict, index }: { dict: Dictionary; index: string 
   return (
     <section id={ids.teams} aria-labelledby="teams-title" className="relative border-t border-line bg-graphite/40 py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index={index} label={t.label} code={t.code} title={t.title} titleId="teams-title">
+        <SectionHeader label={t.label} title={t.title} titleId="teams-title">
           <p className="t-lead col-span-12 text-paper/75 lg:col-span-7" data-reveal>
             {t.statement}
           </p>
@@ -107,11 +107,8 @@ export function TeamBuilding({ dict, index }: { dict: Dictionary; index: string 
                   onClick={() => setActive(i)}
                   onKeyDown={(e) => onKey(e, i)}
                   onMouseEnter={() => setActive(i)}
-                  className="dim-tab grid w-full grid-cols-[2.75rem_1fr] gap-3 border-b border-line py-6 pl-5 pr-3 text-left"
+                  className="dim-tab block w-full border-b border-line py-6 pl-5 pr-3 text-left"
                 >
-                  <span className={`t-mono pt-1 ${active === i ? "text-accent" : "text-muted"}`}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                   <span>
                     <span
                       className={`block font-display text-[1.35rem] leading-tight tracking-[-0.02em] transition-colors ${
@@ -136,12 +133,6 @@ export function TeamBuilding({ dict, index }: { dict: Dictionary; index: string 
             data-reveal
           >
             <div className="border border-line bg-obsidian/80 p-4 sm:p-8">
-              <div className="t-mono-sm mb-4 flex items-center justify-between gap-4 text-muted">
-                <span>{t.figure}</span>
-                <span className="text-accent">
-                  {String(active + 1).padStart(2, "0")} / {String(t.dimensions.length).padStart(2, "0")}
-                </span>
-              </div>
               <TeamDiagram dict={dict} dim={current.id} />
               <p className="mt-4 border-t border-line pt-4 font-display text-[1.15rem] tracking-[-0.015em] text-paper" aria-live="polite">
                 {current.title} — <span className="text-paper/70">{current.reading}</span>
@@ -184,9 +175,8 @@ export function TeamBuilding({ dict, index }: { dict: Dictionary; index: string 
               </div>
             </div>
             <ol className="col-span-12 border-t border-line lg:col-span-7 lg:col-start-6">
-              {t.bridge.abilities.map((a, i) => (
-                <li key={a} className="grid grid-cols-[3rem_1fr] items-baseline gap-4 border-b border-line py-5">
-                  <span className="t-mono text-accent">{String(i + 1).padStart(2, "0")}</span>
+              {t.bridge.abilities.map((a) => (
+                <li key={a} className="border-b border-line py-5">
                   <span className="font-display text-[clamp(1.15rem,1.7vw,1.45rem)] leading-snug tracking-[-0.015em] text-paper">{a}</span>
                 </li>
               ))}

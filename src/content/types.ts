@@ -117,7 +117,6 @@ export interface TechGroup {
 
 export interface Chapter {
   id: string;
-  index: string;
   title: string;
   period: string;
   organizations: { name: string; role?: string }[];
@@ -195,11 +194,9 @@ export interface Dictionary {
     facts: string[];
     diagramTitle: string;
     diagramDescription: string;
-    figure: string;
   };
   about: {
     label: string;
-    code: string;
     title: string;
     lead: string;
     paragraphs: string[];
@@ -209,7 +206,6 @@ export interface Dictionary {
   };
   clients: {
     label: string;
-    code: string;
     title: string;
     intro: string;
     /**
@@ -222,7 +218,6 @@ export interface Dictionary {
   };
   companies: {
     label: string;
-    code: string;
     title: string;
     intro: string;
     sectorLabel: string;
@@ -236,12 +231,10 @@ export interface Dictionary {
   };
   teams: {
     label: string;
-    code: string;
     title: string;
     statement: string;
     dimensionsLabel: string;
     dimensions: TeamDimension[];
-    figure: string;
     figureCaption: string;
     outcome: string;
     team: string;
@@ -258,14 +251,12 @@ export interface Dictionary {
   };
   capabilities: {
     label: string;
-    code: string;
     title: string;
     intro: string;
     items: Capability[];
   };
   work: {
     label: string;
-    code: string;
     title: string;
     intro: string;
     viewCase: string;
@@ -276,7 +267,6 @@ export interface Dictionary {
   };
   technology: {
     label: string;
-    code: string;
     title: string;
     intro: string;
     applied: string;
@@ -287,7 +277,6 @@ export interface Dictionary {
   };
   journey: {
     label: string;
-    code: string;
     title: string;
     intro: string;
     contributionsLabel: string;
@@ -295,13 +284,11 @@ export interface Dictionary {
   };
   principles: {
     label: string;
-    code: string;
     title: string;
     items: { title: string; body: string }[];
   };
   contact: {
     label: string;
-    code: string;
     headline: string;
     body: string;
     email: string;
@@ -343,7 +330,6 @@ export interface Dictionary {
     plannedImplementation: string;
     candidateStack: string;
     next: string;
-    figure: string;
     metaTitleSuffix: string;
   };
   projects: ProjectContent[];

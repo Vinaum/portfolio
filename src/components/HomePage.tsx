@@ -19,7 +19,7 @@ import { Contact } from "@/components/sections/Contact";
 export function HomePage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const alt = homePath(otherLocale(locale));
-  // Section order. Numbering follows automatically; empty sections are skipped.
+  // Section order. Empty sections are skipped.
   const sections = [
     { key: "about", C: About },
     { key: "companies", C: Companies },
@@ -39,8 +39,8 @@ export function HomePage({ locale }: { locale: Locale }) {
       <Header dict={dict} locale={locale} alternateHref={alt} onHome />
       <main id="main">
         <Hero dict={dict} />
-        {sections.map(({ key, C }, i) => (
-          <C key={key} dict={dict} index={String(i + 1).padStart(2, "0")} />
+        {sections.map(({ key, C }) => (
+          <C key={key} dict={dict} />
         ))}
       </main>
       <Footer dict={dict} />

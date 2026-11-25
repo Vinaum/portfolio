@@ -9,7 +9,6 @@ interface Props {
   locale: Locale;
   title: string;
   description: string;
-  figure: string;
 }
 
 const W = heroDiagram.width;
@@ -21,7 +20,7 @@ const H = heroDiagram.height;
  * No animation loop — pointer updates are coalesced into a single rAF per event burst,
  * and SMIL packets pause whenever the diagram leaves the viewport.
  */
-export function HeroDiagram({ locale, title, description, figure }: Props) {
+export function HeroDiagram({ locale, title, description }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -130,27 +129,10 @@ export function HeroDiagram({ locale, title, description, figure }: Props) {
           description={description}
           className="block h-full w-full"
           packets
-          indices
           idPrefix="hero"
         />
       </div>
 
-      {/* Annotation layer: figure label and drawing metadata */}
-      <svg
-        viewBox={`-30 -30 ${W + 60} ${H + 60}`}
-        className="layer-annot hide-sm pointer-events-none absolute inset-0 h-full w-full"
-        aria-hidden="true"
-      >
-        <text x="0" y="-16" className="fill-[#929B94] font-mono text-[10px] tracking-[0.12em]">
-          {figure}
-        </text>
-        <text x={W} y={H + 22} textAnchor="end" className="fill-[#929B94] font-mono text-[10px] tracking-[0.12em]">
-          REV. 2026 · SCALE 1:1
-        </text>
-        <text x="0" y={H + 22} className="fill-[#36A477] font-mono text-[10px] tracking-[0.12em]">
-          ● LIVE
-        </text>
-      </svg>
     </div>
   );
 }

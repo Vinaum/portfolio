@@ -25,10 +25,7 @@ export function ProjectPlate({
     <article className="plate border-b border-line" aria-labelledby={titleId} data-reveal>
       <div className="grid-12 gap-y-10 py-14 lg:py-20">
         <div className={`col-span-12 flex flex-col lg:col-span-5 ${flip ? "lg:order-2 lg:col-start-8" : ""}`}>
-          <div className="t-mono flex flex-wrap items-center gap-x-4 gap-y-2 text-muted">
-            <span className="text-accent">P/{String(index + 1).padStart(2, "0")}</span>
-            <span>{p.category}</span>
-          </div>
+          <p className="t-mono text-muted">{p.category}</p>
           <h3 id={titleId} className="plate-title mt-6 font-display text-[clamp(2rem,3.4vw,3.25rem)] leading-[1.02] tracking-[-0.035em] text-paper/90">
             <Link href={href} className="after:absolute after:inset-0 after:z-[2] after:content-['']">
               {p.name}
@@ -70,10 +67,6 @@ export function ProjectPlate({
               idPrefix={`plate-dg-${project.id}`}
             />
           </div>
-          <figcaption className="t-mono-sm mt-3 flex justify-between gap-4 text-muted">
-            <span>FIG. P{index + 1}.1</span>
-            <span className="truncate">{dict.caseStudy.sections.architecture}</span>
-          </figcaption>
         </figure>
       </div>
     </article>

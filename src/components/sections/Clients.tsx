@@ -4,13 +4,13 @@ import { LogoMark } from "@/components/ui/LogoMark";
 import { findLogo } from "@/lib/logos";
 
 /** Hidden while dict.clients.items is empty — never shows placeholder names. */
-export function Clients({ dict, index }: { dict: Dictionary; index: string }) {
+export function Clients({ dict }: { dict: Dictionary }) {
   const { clients: c, ids } = dict;
   if (c.items.length === 0) return null;
   return (
     <section id={ids.clients} aria-labelledby="clients-title" className="relative border-t border-line py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index={index} label={c.label} code={c.code} title={c.title} titleId="clients-title">
+        <SectionHeader label={c.label} title={c.title} titleId="clients-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {c.intro}
           </p>
@@ -22,12 +22,11 @@ export function Clients({ dict, index }: { dict: Dictionary; index: string }) {
             return (
               <li
                 key={item.name}
-                className="company group relative flex min-h-[13rem] flex-col justify-between border-b border-r border-line p-7 lg:p-9"
+                className="company group relative flex min-h-[13rem] flex-col justify-between gap-6 border-b border-r border-line p-7 lg:p-9"
                 data-reveal
                 style={{ ["--d" as string]: (i % 3) * 90 }}
               >
                 <span className="company-rule absolute inset-x-0 top-[-1px] h-px bg-accent" aria-hidden="true" />
-                <span className="t-mono-sm text-accent">C.{String(i + 1).padStart(2, "0")}</span>
                 <div className="flex min-h-[4.5rem] items-center">
                   {logo ? (
                     <LogoMark logo={logo} alt={item.name} height={2.6} className="max-w-[85%]" />

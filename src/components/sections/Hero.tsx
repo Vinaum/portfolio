@@ -64,7 +64,6 @@ export function Hero({ dict }: { dict: Dictionary }) {
             locale={dict.locale}
             title={hero.diagramTitle}
             description={hero.diagramDescription}
-            figure={hero.figure}
           />
         </div>
       </div>
@@ -77,7 +76,6 @@ export function Hero({ dict }: { dict: Dictionary }) {
                 key={f}
                 className={`t-mono flex items-center gap-3 py-5 text-muted ${i > 0 ? "sm:border-l sm:border-line sm:pl-5" : ""} ${i > 0 ? "border-t border-line sm:border-t-0" : ""}`}
               >
-                <span className="text-accent">{String(i + 1).padStart(2, "0")}</span>
                 {i === 0 && unicamp ? <LogoMark logo={unicamp} alt="" height={1.4} /> : null}
                 {f}
               </li>

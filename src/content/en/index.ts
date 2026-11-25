@@ -66,11 +66,9 @@ export const en: Dictionary = {
     diagramTitle: "System context diagram",
     diagramDescription:
       "An architecture diagram connecting Business to Applications and Data, Applications to APIs, and APIs to Cloud, Automation and Infrastructure.",
-    figure: "FIG. 01 — SYSTEM CONTEXT",
   },
   about: {
     label: "About",
-    code: "CONTEXT",
     title: "Technology is more than code. It’s about understanding how everything connects.",
     lead:
       "My path didn’t run in a straight line through software — and that is exactly what shapes how I approach it.",
@@ -98,7 +96,6 @@ export const en: Dictionary = {
   },
   companies: {
     label: "Companies & Experience",
-    code: "ENVIRONMENTS",
     title: "Where I learned how technology businesses actually work.",
     intro:
       "Three environments shaped my perspective the most: a high-growth insurtech, an applied-AI company and one of the world’s best-known specialized recruitment groups.",
@@ -151,7 +148,6 @@ export const en: Dictionary = {
   },
   teams: {
     label: "Team building",
-    code: "PEOPLE SYSTEMS",
     title: "Building teams that build solutions.",
     statement:
       "Building high-performing teams is not just about finding talented individuals. It is about understanding how technical skills, behavioral profiles, communication styles and complementary strengths come together to solve complex business challenges.",
@@ -182,7 +178,6 @@ export const en: Dictionary = {
         reading: "Everything converges on the business objective.",
       },
     ],
-    figure: "FIG. — TEAM COMPOSITION MODEL",
     figureCaption: "Illustrative model: one hypothetical team, read through each of the four dimensions.",
     outcome: "BUSINESS OBJECTIVE",
     team: "TEAM",
@@ -216,7 +211,6 @@ export const en: Dictionary = {
   },
   clients: {
     label: "Clients",
-    code: "TRUST",
     title: "Companies that have trusted my work.",
     intro: "Organizations I have worked with or delivered for.",
     items: [],
@@ -224,7 +218,6 @@ export const en: Dictionary = {
   },
   capabilities: {
     label: "Capabilities",
-    code: "CAPABILITY MAP",
     title: "Four areas where engineering meets the business.",
     intro:
       "Depth varies across them, and I’d rather show it than claim it — each area lists where the experience actually comes from.",
@@ -273,7 +266,6 @@ export const en: Dictionary = {
   },
   work: {
     label: "Selected work",
-    code: "CASE FILES",
     title: "Projects that started from an operational problem — not from a technology choice.",
     intro:
       "Each case is documented from its repository: what was built, how, and what is still in progress. The concept is labelled as a concept.",
@@ -285,7 +277,6 @@ export const en: Dictionary = {
   },
   technology: {
     label: "Technology",
-    code: "STACK TAXONOMY",
     title: "A map of tools — and how I know them.",
     intro:
       "No percentage bars. Each tool is marked by the evidence behind it: applied in the projects above, or currently in study and lab practice.",
@@ -355,7 +346,6 @@ export const en: Dictionary = {
   },
   journey: {
     label: "Experience",
-    code: "TRAJECTORY",
     title: "A route through engineering, business and people.",
     intro:
       "Not a straight line — four chapters that each added a layer to how I understand technology projects.",
@@ -363,7 +353,6 @@ export const en: Dictionary = {
     chapters: [
       {
         id: "entrepreneurship",
-        index: "I",
         title: "Entrepreneurship",
         period: "Raiz Universitária",
         organizations: [{ name: "Raiz Universitária", role: "Co-founder" }],
@@ -379,7 +368,6 @@ export const en: Dictionary = {
       },
       {
         id: "telecom",
-        index: "II",
         title: "Technology, telecom & business",
         period: "Trópico Telecomunicações",
         organizations: [{ name: "Trópico Telecomunicações" }],
@@ -389,7 +377,6 @@ export const en: Dictionary = {
       },
       {
         id: "recruitment",
-        index: "III",
         title: "Technology recruitment & leadership",
         period: "7+ years",
         organizations: [
@@ -405,7 +392,6 @@ export const en: Dictionary = {
       },
       {
         id: "independent",
-        index: "IV",
         title: "Independent technology projects",
         period: "Now",
         organizations: [{ name: "Independent projects" }],
@@ -417,7 +403,6 @@ export const en: Dictionary = {
   },
   principles: {
     label: "How I think",
-    code: "OPERATING PRINCIPLES",
     title: "Four principles I work by.",
     items: [
       {
@@ -444,7 +429,6 @@ export const en: Dictionary = {
   },
   contact: {
     label: "Contact",
-    code: "INTERFACE",
     headline: "Have a challenge worth solving?",
     body:
       "I’m open to Solutions Engineering, Integration, Implementation and Technical Consulting roles — and to conversations about problems worth solving.",
@@ -488,7 +472,6 @@ export const en: Dictionary = {
     plannedImplementation: "Planned scope",
     candidateStack: "Candidate stack",
     next: "Next case",
-    figure: "FIG.",
     metaTitleSuffix: "Case study — Vinicius Campanha Sartori",
   },
   projects: [

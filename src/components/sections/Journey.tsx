@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { Dictionary } from "@/content/types";
 import { SectionHeader } from "@/components/ui/primitives";
 
-export function Journey({ dict, index }: { dict: Dictionary; index: string }) {
+export function Journey({ dict }: { dict: Dictionary }) {
   const { journey: j, ids } = dict;
   const [active, setActive] = useState(0);
 
@@ -29,7 +29,7 @@ export function Journey({ dict, index }: { dict: Dictionary; index: string }) {
   return (
     <section id={ids.experience} aria-labelledby="journey-title" className="relative border-t border-line py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index={index} label={j.label} code={j.code} title={j.title} titleId="journey-title">
+        <SectionHeader label={j.label} title={j.title} titleId="journey-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {j.intro}
           </p>
@@ -50,7 +50,6 @@ export function Journey({ dict, index }: { dict: Dictionary; index: string }) {
                       className="chapter-link group flex items-baseline gap-4"
                       aria-current={active === i ? "step" : undefined}
                     >
-                      <span className="chapter-index t-mono w-6 text-muted transition-colors">{c.index}</span>
                       <span>
                         <span className="block font-display text-[1.15rem] leading-tight tracking-[-0.015em] transition-colors group-hover:text-paper">
                           {c.title}
@@ -76,7 +75,7 @@ export function Journey({ dict, index }: { dict: Dictionary; index: string }) {
                   <div className="flex items-start justify-between gap-6">
                     <div>
                       <p className="t-mono text-accent">
-                        {c.index} · {c.period}
+                        {c.period}
                       </p>
                       <h3 className="t-h3 mt-4 text-paper">{c.title}</h3>
                     </div>

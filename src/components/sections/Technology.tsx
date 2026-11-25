@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/ui/primitives";
 
 type Filter = "all" | TechStatus;
 
-export function Technology({ dict, index }: { dict: Dictionary; index: string }) {
+export function Technology({ dict }: { dict: Dictionary }) {
   const { technology: t, ids } = dict;
   const [filter, setFilter] = useState<Filter>("all");
   const options: { id: Filter; label: string }[] = [
@@ -18,7 +18,7 @@ export function Technology({ dict, index }: { dict: Dictionary; index: string })
   return (
     <section id={ids.technology} aria-labelledby="technology-title" className="relative border-t border-line bg-graphite/40 py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index={index} label={t.label} code={t.code} title={t.title} titleId="technology-title">
+        <SectionHeader label={t.label} title={t.title} titleId="technology-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {t.intro}
           </p>
@@ -55,10 +55,7 @@ export function Technology({ dict, index }: { dict: Dictionary; index: string })
         <div className="tech-map mt-0 grid grid-cols-1 border-l border-line sm:grid-cols-2 lg:grid-cols-3" data-filter={filter}>
           {t.groups.map((g, gi) => (
             <div key={g.id} className="border-b border-r border-line p-6 sm:p-8" data-reveal style={{ ["--d" as string]: (gi % 3) * 90 }}>
-              <h3 className="t-mono flex items-baseline justify-between gap-4 text-paper">
-                <span>{g.title}</span>
-                <span className="text-muted">T.{String(gi + 1).padStart(2, "0")}</span>
-              </h3>
+              <h3 className="t-mono text-paper">{g.title}</h3>
               <ul className="mt-8 flex flex-col gap-5">
                 {g.items.map((item) => (
                   <li key={item.name} className="tech-item flex gap-3" data-status={item.status}>

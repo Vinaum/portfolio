@@ -22,8 +22,6 @@ export interface DiagramProps {
   draw?: boolean;
   /** Enable hover highlighting of connected nodes / edges. */
   interactive?: boolean;
-  /** Show node index numbers (N.01 …). */
-  indices?: boolean;
   /** Extra class names applied per element for responsive hiding. */
   hideSubOnSmall?: boolean;
   idPrefix: string;
@@ -39,7 +37,6 @@ export function Diagram({
   packets = false,
   draw = true,
   interactive = true,
-  indices = false,
   idPrefix,
 }: DiagramProps) {
   const [hot, setHot] = useState<string | null>(null);
@@ -149,11 +146,6 @@ export function Diagram({
                   {line}
                 </text>
               ))}
-              {indices ? (
-                <text className="node-sub hide-sm" x={n.x + n.w - 10} y={n.y + 16} textAnchor="end">
-                  {`N.${String(i + 1).padStart(2, "0")}`}
-                </text>
-              ) : null}
             </g>
           );
         })}

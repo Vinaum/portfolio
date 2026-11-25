@@ -3,12 +3,12 @@ import { SectionHeader } from "@/components/ui/primitives";
 import { companyLogo } from "@/lib/logos";
 import { LogoMark } from "@/components/ui/LogoMark";
 
-export function Companies({ dict, index }: { dict: Dictionary; index: string }) {
+export function Companies({ dict }: { dict: Dictionary }) {
   const { companies: c, ids } = dict;
   return (
     <section id={ids.companies} aria-labelledby="companies-title" className="relative border-t border-line py-28 lg:py-40">
       <div className="container-x">
-        <SectionHeader index={index} label={c.label} code={c.code} title={c.title} titleId="companies-title">
+        <SectionHeader label={c.label} title={c.title} titleId="companies-title">
           <p className="t-lead col-span-12 text-paper/70 lg:col-span-6" data-reveal>
             {c.intro}
           </p>
@@ -28,10 +28,7 @@ export function Companies({ dict, index }: { dict: Dictionary; index: string }) 
                 style={{ ["--d" as string]: i * 120 }}
               >
                 <span className="company-rule absolute inset-x-0 top-[-1px] h-px bg-accent" aria-hidden="true" />
-                <div className="t-mono flex items-start justify-between gap-4 text-muted lg:min-h-[2.6rem]">
-                  <span className="text-accent">E.{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-right">{co.sector}</span>
-                </div>
+                <p className="t-mono text-muted lg:min-h-[2.6rem]">{co.sector}</p>
 
                 <h3 className="mt-8 flex min-h-[5rem] items-center justify-center lg:mt-12 lg:min-h-[6.5rem]">
                   {logo ? (

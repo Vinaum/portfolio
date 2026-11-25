@@ -187,14 +187,13 @@ export function Header({ dict, locale, alternateHref, onHome }: Props) {
       >
         <nav aria-label="Mobile" className="container-x flex min-h-full flex-col justify-between py-10">
           <ol className="flex flex-col">
-            {links.map((l, i) => (
+            {links.map((l) => (
               <li key={l.id} className="border-b border-line">
                 <a
                   href={sectionHref(locale, l.id, onHome)}
                   onClick={() => setOpen(false)}
                   className="flex items-baseline gap-5 py-5 font-display text-[2.1rem] leading-none tracking-[-0.03em] text-paper transition-colors hover:text-accent"
                 >
-                  <span className="t-mono text-accent">{String(i + 1).padStart(2, "0")}</span>
                   {l.label}
                 </a>
               </li>

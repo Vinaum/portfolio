@@ -2,7 +2,7 @@ import type { Dictionary } from "@/content/types";
 import { site } from "@/content";
 import { ArrowUpRight, MaskWords } from "@/components/ui/primitives";
 
-export function Contact({ dict, index }: { dict: Dictionary; index: string }) {
+export function Contact({ dict }: { dict: Dictionary }) {
   const { contact: c, ids } = dict;
   const rows = [
     { label: "E-mail", cta: c.email, value: site.email, href: `mailto:${site.email}`, external: false, hint: c.emailHint },
@@ -12,14 +12,9 @@ export function Contact({ dict, index }: { dict: Dictionary; index: string }) {
   return (
     <section id={ids.contact} aria-labelledby="contact-title" className="relative overflow-hidden border-t border-line pb-20 pt-28 lg:pt-40">
       <div className="container-x">
-        <div className="t-mono flex items-center gap-4 text-muted" data-reveal="fade">
-          <span className="text-accent">{index}</span>
-          <span className="text-paper">{c.label}</span>
-          <span aria-hidden="true" className="hidden sm:inline">
-            /
-          </span>
-          <span className="hidden sm:inline">{c.code}</span>
-        </div>
+        <p className="t-mono text-accent" data-reveal="fade">
+          {c.label}
+        </p>
 
         <MaskWords as="h2" id="contact-title" text={c.headline} className="t-display mt-14 max-w-[14ch] text-paper" />
 
